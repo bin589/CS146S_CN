@@ -1,0 +1,371 @@
+Mihail Eric (00:59.926)
+Just sit here? Yeah, sure.
+
+Mihail Eric (01:57.876)
+Let's settle down and get started. We're 35 seconds over. Can people hear me? This feels amplified. Does this work for people? Yeah? I don't love it. It feels a little awkward, and this thing in my back pocket feels a little strange too. Hopefully I don't need to project as much, which I think was a bit of a problem last time.
+
+Welcome back. We have a quick one-two here with Tuesdays and Thursdays, so I'm glad to see everyone again, or at least most of the folks. Let's dive into it.
+
+I want to start with some logistics for people who are here for the first time, as well as a few updates for those who were here on Tuesday. First, I believe Isaac put out the final project specifications. That's the capstone for the quarter. There are roughly four milestones along the way, including a proposal and some intermediate milestones, to get you looking at things before the last week of the quarter, when people start getting really crazy with the vibe coding.
+
+We've spaced that out, and you should have already seen the project agenda. We're allowing up to one additional partner in the class for this project. You can have one human partner and as many coding agents as you want. A swarm of them, in fact. That's all fair game.
+
+Mihail Eric (03:41.624)
+You can also do it by yourself. A lot of people choose to, and I think that's acceptable, maybe even appropriate these days, given how powerful coding agents are.
+
+One thing I forgot to mention last time: in addition to the other perks of the class, such as the OSS partners whose projects we'll get to contribute to and the guest speakers coming in, we're also getting credits from a bunch of providers. These include a lot of the top coding agent startups and companies. Some are technically still private companies, but it's hard to call a ten-billion-dollar company a startup. That's the crazy world we live in today.
+
+That includes Claude. Through the class, we've been able to get Claude Code credits, Factory credits, and xAI credits. I don't know why some of these are hyperlinked, probably because they look like a domain. I'll just add a domain suffix to everyone else, and then it's fair again.
+
+Devin is included too. Windsurf and Devin are part of the same company, Cognition. All four have agreed to offer credits. As you're vibe coding, botmaxing, and token maxing, you should be ready to go without burning through your own credit cards. Exciting times.
+
+We'll probably release those sometime next week. To distribute them, we might collect your emails or something to that effect. Some providers have QR codes, but expect that next week.
+
+We also mentioned the OSS partner component of the class. We'll explain exactly what form that takes next week. If you're wondering what it will mean, we'll outline it then. A few of the partners are so excited about being in the class that they're actually going to come in.
+
+Mihail Eric (05:40.28)
+They'll walk through their projects and, in some cases, do virtual or in-person office hours. We're figuring out the logistics. I believe at least one or two people will come in, and we'll probably have them speak for five to ten minutes before class about their projects. Every OSS partner will be featured next week.
+
+A lot of people have asked about applications to get off the waitlist. I don't think the prerequisites are especially high, but they are the minimum set I think you need to be successful in the class. There are ways to get exceptions, usually for people who didn't do their undergraduate work at Stanford but took equivalent courses elsewhere and can demonstrate that.
+
+The application deadline is the 27th, which I think is Sunday. We'll review the applications and let people in depending on whether they meet those prerequisites. I've been getting emails asking, “Did you see my application?” I probably haven't yet, though I've likely seen your email. The applications are in a backlog in a Google Form, and we'll go through them over the next few days.
+
+Any questions? Yes?
+
+Yes, they're on the course website. Tuesday's slides are there, but today's aren't. That's correct. I'll make an effort to get them up before class. That's a good callout.
+
+Mihail Eric (07:28.536)
+Yes. [Unclear passage.]
+
+Mihail Eric (07:41.038)
+If you're not in Ed, you can message us. Are you auditing? Is that why? No? Okay. If you're an enrolled student, you should be able to access it.
+
+Mihail Eric (07:58.626)
+Okay, we'll figure that out. I also just noticed this interesting setup you have here. It's like two separate side desks. Nobody else found that funny? All right, just me. Here I am trying to connect with the students again, and it's falling flat. You guys like hacky sack? Is that anything? All right.
+
+Today we're going deeper into some of the topics we touched on last week—or rather, two days ago. Toward the end of Tuesday's class, we went through a demonstration showing that, in about 150 to 200 lines of code, you can build the bare bones of a coding agent. It can interpret user requests, edit code and files, and generate things of some complexity, starting with “Hello, world.” We pushed the limits a little.
+
+Tuesday was a proof of concept: look what you can do in 200 lines of code. Today, I want to bring us up to the modern day in coding agents and their harnesses. We're going to dissect the anatomy of a state-of-the-art coding agent and see what's happening under the hood.
+
+We'll be able to see everything except the intelligence layer, which is the model. The model is private: some big set of two-trillion-plus-parameter models sitting on servers distributed around the world. We can't see that, but we can see the harness around it. We'll get into what that means over the next few slides.
+
+Two days ago, we went through the core execution loop of a coding agent. You have a user interacting with a coding agent harness, such as Claude, Windsurf, or Devin. The intelligence layer is the LLM, a set of parameters trained on a ton of data using intricate training algorithms. We won't cover those here; that could be, and I'm sure is, a whole course in its own right. Then there's the interaction with a tool set.
+
+Mihail Eric (10:20.666)
+When you engage with these coding agents, you're issuing prompts. Under the hood, you're going through this loop: talk to the harness through its interface, have it interact with an LLM, and go back and forth with a set of tools. Those tools ground the LLM in the world and let it do things like search the web or interact with your file system.
+
+That's the core, but we're going deeper today. We'll focus on everything around that execution loop. The loop is still there, but there are a bunch of bells and whistles around it that we call the harness.
+
+Because we're trying to stay on the cutting edge, we're going to look at the coding agent harness for Claude Code, specifically with Opus 5.5. This literally came out about two days ago. What we're looking at is two days old; it doesn't get much more modern than that.
+
+Let's look at what it takes to build a harness around Opus 5.5. According to the benchmarks Anthropic put up, it's state of the art. Though right before or after that, literally on the same day, OpenAI also released a new model. That's the dynamic between these two companies: they time their releases for the same day.
+
+Beyond the simple tool-and-LLM loop we saw two slides ago, most coding agent harnesses today are much more complex. One key takeaway is that harness design is probably one of the hardest and most important problems in coding agents, and in agents more broadly. We're focusing on coding and software systems, but many of these principles apply to any vertical, whether that's sales, legal—
+
+Mihail Eric (12:16.582)
+—customer support, or something else. A lot goes into the harness around the intelligence of an LLM.
+
+A few components are now fairly standard: the system prompt; custom configuration files, such as AGENTS.md and CLAUDE.md; and tool lists, which specify the available tools. You should be familiar with that last part. Two days ago, we discussed editing, listing, and reading files. We can extend that to other tools, both those that come out of the box and additional ones.
+
+We also have things like plan mode, built-in modes that let you do other things within the harness. We can kick off subagents, and we have skills, hooks, and compaction. Those are just a few examples. Quite a bit is baked into what we call the harness.
+
+When we use a system like Claude Code, we're using an interface with a lot of functionality surrounding the core intelligence. It looks something like this. The agent loop is what we focused on two days ago: talk to the LLM, have it respond, possibly request a tool call, execute that call, and return the result. Everything else I've been discussing feeds into that loop.
+
+Within the core loop, we think about the context window, which we'll spend time on this quarter; the model, which is the intelligence layer; and tool execution. We covered that part two days ago. Today, we're talking about all the other pieces from the previous slide. Any questions or thoughts?
+
+Mihail Eric (14:11.202)
+Yes. [Unclear passage.]
+
+Mihail Eric (14:20.888)
+We're going to do this interactively. I'm not just going to throw slides at you. Together, we'll walk through the harness around a set of calls to Claude Code. I'll switch between slides with high-level principles and an actual demonstration of the harness.
+
+The first thing I want to focus on is tool lists. We'll start relatively easy. Tools are the things the LLM has access to beyond its static weights and training. They're its way of accessing the real world, whether that's your local file system, something on your computer, or something on the web.
+
+The tools we put into a harness enhance the LLM with capabilities such as search, shell commands, and agent tasks. These are especially relevant to coding, but the same principles apply outside the coding space. We can talk more about this after class, but even agents outside coding are increasingly being designed around coding capabilities. That's become one way to design harnesses for other domains as well.
+
+In Claude's case, there are about 40 built-in tools that you get when you download and use Claude Code. These are capabilities the Anthropic team has decided the coding agent should have access to. I'd go a step further: the model has been optimized to use those tools.
+
+I'll show you what those roughly 40 tools look like. Think of this as the Anthropic team saying, “These are the capabilities you should have every time you interact with Claude, and we've made a system that's good at using them.” That happens through processes such as post-training, which enhances the LLM's capabilities.
+
+Mihail Eric (16:38.412)
+In addition to the native tools, there are MCP tools. I'm sure some people have heard of MCP. If you haven't, it's a way to integrate external tools and resources into the harness.
+
+One thing I want to highlight before we get into an example: you can think of a tool as a function, as we saw two days ago. Everything in its definition—the description, comments, name, and full signature—becomes part of your prompt. It gets injected into the context.
+
+When you're writing a function to expose as a tool to a coding agent, being clear and consistent in the Python docstring is incredibly important. So is being clear about the argument types. All of that gets surfaced to the LLM, and it's what the LLM uses to understand what to do and when to use the tool. That's an important point for designing MCP servers and tools for agents in general.
+
+Let's see this in practice. I believe we also released the first assignment today, due on Sunday. It has you working through an exercise similar to what I'm about to show. You'll take a Claude Code instance, issue calls, intercept the requests and responses, and unpack them to see what's going on under the hood.
+
+We'll dissect what happens every time we issue a prompt to Claude. Let's see what that looks like.
+
+Mihail Eric (18:33.782)
+To get everyone on the same page, we're using a proxy tool that intercepts requests and responses from Claude Code. Everyone will have access to it. This is a quick preview of what it looks like.
+
+When we issue calls to Claude Code, we'll see something like this. If you've taken 144, have you used Wireshark? Are you still doing that? Okay. With Wireshark, you capture network packets and inspect what's happening at the protocol level. We're doing something similar here: capturing requests and responses and unpacking them. Another analogy is the debugging console in Chrome or any other browser. This tool is nice because it lets us unpack the information.
+
+For this demonstration, I made a simple to-do tool. Can people see this? Let me zoom in. Is the size good? Yes? Awesome, thank you.
+
+It's a command-line to-do tool. You can add tasks, list them, mark them as done, add subtasks, and so on. I effectively vibe-coded it and then chose to extend it.
+
+The bottom of the screen shows that the CLI tool exists. Above that is the conversation I had at 4 a.m. with Claude Code. I issued a bunch of prompts, captured the requests, and logged them to files. We're going to look at those files to see what it all looks like. Let's enlarge this a little too.
+
+Mihail Eric (20:40.62)
+This is the full trace: all the requests and responses from my session with Claude Code. It's a JSON file with a structure that's quite nice for us to parse because it clearly separates what's happening.
+
+To give you a sense of where I entered the conversation, you can see the model mentioned here, followed by a set of messages. If you remember two days ago, we had a conversation list that we appended to as we issued requests, user messages, and system messages. Think of this messages object as exactly that list.
+
+We also have the same concept of roles. Here's a user role, followed by the actual content of the message. This is one of the messages, and it's the first thing I said when I was trying to understand what was happening in this repo I'd vibe-coded. I was trying to get reacquainted with it.
+
+There's some material above this that I'll get to, but for now, think of this as our starting point: the first question I asked.
+
+There are a bunch of messages. Some have the user role, typically for something I've issued, though that can also include tool-call responses. There are system-level messages where the harness, Claude Code, injects things behind the scenes. Then there are assistant messages, which are Claude doing things, such as issuing tool calls.
+
+Each of these blocks is a message. Some are enriched in ways that help Claude do its work, even though we don't normally see that information. That's why we're intercepting these requests: to look under the hood.
+
+Mihail Eric (22:42.862)
+Is everyone with me on the setup and what we're doing?
+
+We said we'd start with tools, so let's dive into the tool lists. There's a lot going on here. We won't go through every line, but I want to focus on a few key parts of the structure.
+
+Below the user and assistant messages, there's a tools block in the intercepted request. The tools are explicitly listed in this component. The tools object is a list, and each entry is a dictionary.
+
+One example is the agent tool. What does it do? It lets you launch a new agent to handle complex, multistep tasks, and the description explains that agent's capabilities. There's also a schema that you can think of as the function signature for this tool. The properties are things you can specify. When a tool is called, you'll see values supplied for some of these properties.
+
+It's pretty elaborate. The important point is that all of this gets injected into the LLM's context window.
+
+Mihail Eric (24:11.47)
+There are other tools here too, such as artifact tools. Some definitions are quite elaborate, depending on the complexity of the underlying tool. I won't go through every one; I just want you to get a sense of this block.
+
+I took the tools block and separated out the native tools that come with Claude from the additional tools, such as MCP tools. We mentioned roughly 40 built-in tools. Here they are.
+
+There are tools for accessing files, interacting with the shell through Bash, and monitoring things in something like a cron fashion. You can search the web and use LSP search to inspect the language you're working in. LSP stands for Language Server Protocol.
+
+There are agent-specific tools, tools for planning and isolation, and scheduling tools, including a specific cron tool. There are tools for creating artifacts and listing MCP resources, which are different from MCP tools. You also have tools for interacting with the user, invoking skills, asking questions, pushing notifications, and sending feedback.
+
+About 40 tools. Any questions so far? Yes? Is this all the body of one request? Yes, that's right.
+
+Mihail Eric (25:58.866)
+It's a lot of stuff. That's exactly right, and it's a good callout. MCP came first, and skills were introduced later. One reason for introducing skills was progressive disclosure: bringing information into the context when it's relevant to the LLM.
+
+Here, we're dropping in all the tools. Every MCP server you've loaded, including third-party servers, appears in this block. Every time you send a request, it gets that set of tools.
+
+Skills, which we'll discuss shortly, initially include only a small amount of metadata describing what the skill does. Based on that metadata and its relevance to the task, the system can pull in the rest of the skill when it needs it.
+
+But yes, to your point, this is all included, and it's a lot. That's one reason we'll spend time on context engineering. You have to be careful about which MCP tools and servers you introduce because they can blow up your context. The more irrelevant material you include, the more likely the coding agent is to perform poorly on tasks.
+
+There have been studies looking at the point where performance starts dropping off: how many tokens in does that happen? That's why we need to be mindful of this block. It gets included in the request.
+
+Mihail Eric (27:41.454)
+So the question is why Claude doesn't use vectors when kicking off agents, instead of natural language. [Question wording unclear in the transcript.]
+
+I don't know the exact details, but much of the training is based on natural-language text. Code and instructions are represented as text snippets. That's true both of the web corpus used for training and of the custom data that humans annotate to improve these systems. It would be very hard for humans to communicate in vectors or another non-human-readable format.
+
+Mihail Eric (28:36.396)
+Yeah, almost certainly. It's hard to know exactly what that processing looks like. This is the raw form of the request, but when it's ingested, there's probably some processing to collapse or minify it.
+
+This is the most human-readable form we can parse. It's not necessarily the form that gets fed into the LLM. There's almost certainly something else happening there, with some material being stripped out or transformed. [End of explanation unclear.]
+
+Mihail Eric (29:18.286)
+I think this is already pretty detailed. We're literally looking at the contents of every tool. To go further, you'd probably have to be on the server where the LLM is hosted, looking at what happens immediately before the tokenized input is sent to it. I don't think we're likely to see that, and some of it is probably their secret sauce.
+
+One other thing worth mentioning: these were the native tools, but to Peter's question, it's not just those. Forty tools is already a lot, and there are also external MCP servers.
+
+I'm still in the tool-list object here. You can see a name beginning with “mcp__claude_ai” and a Claude Docs tool. [Exact tool name unclear.] That's a way of identifying an MCP server tool. The “mcp__” prefix tells you it's an external tool.
+
+I can show you another one. Claude has a bunch of these. I think I have one from Mintlify, which is for documentation hosting. You can also have tools for Notion, Slack, and so on. All of those get injected into the tool list too.
+
+Mihail Eric (30:54.658)
+Yes, somewhere in the metadata. I'm not going through every piece of metadata here, but there are checksums, hashes, and UIDs on various objects. That's a good callout. Not having things like that can create a security vulnerability.
+
+Mihail Eric (31:25.272)
+People are jumping ahead to skills here. MCP is a primitive. You can think of an MCP tool almost like an API call: an input-output mechanism.
+
+When we talk about skills, we're codifying procedures: multiple steps, multiple tool calls, and prompts between calls. An MCP tool is the smallest primitive for interacting with an underlying third-party resource. A skill wraps tools, functions, scripts, and other resources into multistep operations. Having that level of granularity is helpful.
+
+Okay, let's keep moving.
+
+Mihail Eric (32:19.66)
+So, tools: there are about 40 built in, and depending on how many MCP servers you add, that can grow to a lot more.
+
+I'll add a historical observation, something to keep in mind if you've already built your own harnesses or plan to. One reason Claude Code became so popular around December of last year was its minimalist harness. For a long time, it had a restrictive set of tools that could still do almost everything. Forty is still not a lot in that context.
+
+Examples of powerful tools include Bash and SQL. You can do complex operations by giving an LLM access to the file system and a CLI. You can say, “Use Bash to do this or that.” It's effectively a complete language in its own right.
+
+They stripped down a lot of what had become bloated. In the early days—and by that I mean around late 2024, when MCP came out—servers such as GitHub's had something like 110 tools out of the box: list issues, create an issue, comment on an issue, and so on. Those are useful, but they add a lot of context. The more you bloat the context, the worse the LLM can become at its task.
+
+Claude was a big step forward in consolidating that: keep it simple, start with three to five tools that do a lot, and expand from there. The general industry trend is toward reducing complexity. The more you can do with fewer tools, the better. People think about finding those powerful Swiss Army knife tools. SQL and Bash are two examples.
+
+Okay, the system prompt. Have people heard of system prompts? Familiar with them? I see some nods and a lot of silence. Cool.
+
+Mihail Eric (34:30.87)
+I'll assume the silence is agreement. For anyone who isn't familiar, a system prompt is effectively a blueprint for the LLM's behavior. I'll show you where it appears.
+
+It's a block of text that defines aspects of the harness and its behavior, including guardrails and information about the environment. The harness injects this static text without you saying anything. You don't control this system prompt; the harness sets it. It also finds its way into every request Claude sends.
+
+Let me show you. The tools take up a lot of space. The actual text of my conversation stops at about line 600, so I need to go back up here.
+
+Mihail Eric (35:32.942)
+Okay, great. Above this was my conversation. Right here, there's a block literally called “system,” which defines the system prompt.
+
+There are two blocks relevant to us. The first says, “You are Claude Code, Anthropic's official CLI for Claude.” That's the harness telling the LLM, in natural language, what it is as a system.
+
+The second block is where the more substantial instructions are. I'll expand it to show the contents. This is the Claude Opus 5.5 system prompt. It's about 80 lines—or closer to 50. It's quite a bit shorter than previous versions.
+
+Here's the blueprint of what the harness tells the LLM about its behavior: you're an interactive agent helping users with software engineering tasks. Here are things to be careful about, including security-related instructions. There's information about what the harness is and how to interact with it.
+
+There's also information about sessions. These are things the creators of the Claude Code harness have decided the LLM should know when doing its task. There's a fairly large block about memory, which is a relatively new—
+
+Mihail Eric (37:08.974)
+—addition to Anthropic's systems and Claude Code: an implicit memory mechanism that learns from your behavior. In a sense, of course they should have something like this, but for a while, companies' attempts to implement it weren't very good. They've now revisited it.
+
+The memory is stored at this location in the file system. Every time the LLM determines it should write something to memory, the prompt specifies a format to use. If I opened that location, which I won't do in the interest of time, we'd see metadata blocks for the memories Claude has extracted. There are a lot of instructions about how to write and interact with those memories.
+
+There's information about the environment, including which Claude models are available, and a little information about context management.
+
+One quick note before I take questions: this is a much shorter system prompt. Until the last month or two, it was around 200 to 250 lines. Much of it explained things like how to use Git and issue tasks. Those were instructions considered important to give the model explicitly, but they seem less necessary now.
+
+I suspect the training process has captured much of that information in the model's parameters. This connects to the point about reducing MCP tools to avoid context bloat: we also want to reduce the bloat from an incredibly long system prompt.
+
+I think about a month ago they reduced the system prompt by about 8%. They'll try to strip out as much as they can because I didn't write any of this, yet every time—
+
+Mihail Eric (39:11.008)
+—I issue a request to Claude, it's in my context window. I don't even see it, but it's there. By my first request, perhaps tens of thousands of tokens have already been consumed by material outside my control. [Numerical comparison unclear in the transcript.]
+
+Then I'm confused when it doesn't work or performs worse than expected. I think they want to reduce that surprise for users.
+
+[Brief exchange unclear.]
+
+Mihail Eric (39:55.074)
+You absolutely can't. [The preceding question is unclear.] I'm sure people have tried. People have been trying prompt injection for a long time, and I imagine they've addressed the simplest attempts. I don't think this is their secret sauce, and I'm sure they have a whole team dedicated to preventing that kind of situation.
+
+Mihail Eric (40:19.137)
+I don't see it as quite as troublesome an attack vector as you might think. Two things: first, capturing these requests and responses isn't hard. There's an open-source tool for it. Second, they leaked their whole system about six months ago, or something like that, so it wasn't entirely a choice.
+
+I didn't use the leaked code. I used ordinary, Wireshark-style inspection, and I was able to do this even before the leak. When it happened, people said, “Oh my God, now we know how Claude works.” But we already knew how it worked. We didn't need a code leak for that.
+
+You could do the same thing with Codex. Its harness is literally on GitHub. So I don't think visibility into the harness is as much of an attack vector as you might expect.
+
+[Brief exchange unclear.]
+
+Mihail Eric (41:30.849)
+You're jumping ahead. We're going to talk about CLAUDE.md right after this, so I'll answer that in a minute or two.
+
+The question is: there's a memory path here, so is the memory local to each execution of Claude Code, or something else? Given how the path is defined, I think this is at the project level. Here you can see the path to where my code exists, and a similar setup would exist for other projects.
+
+Is that memory also appended to the system prompt? “Appended” is a strong word. I'd think of these as separate blocks that get concatenated into the prompt sent in the request. It's part of the prompt, but I would still think of it as a separate object from the system prompt itself.
+
+Okay, one more question, then let's move forward. A question about the memory system—[remainder of question unclear].
+
+Mihail Eric (42:44.417)
+That's a good callout, and these design decisions are benchmark-driven. The question was: where does retrieval happen? Should we use RAG or GraphRAG to pull in relevant memories?
+
+It turns out that the added complexity of those systems doesn't always provide much advantage over letting the system parse flat text. Research and benchmarks have looked at this. It depends a lot on the task, so I won't make a blanket generalization.
+
+At the company where I work, we've built our own harness and agent. We're in sales rather than coding, and we've also ended up using flat files for memory.
+
+Okay, CLAUDE.md: these are agent configuration files. CLAUDE.md is specific to Claude, while AGENTS.md is the more universal standard. It seemed everyone had agreed on AGENTS.md except Anthropic, which wanted to do things differently. Then, a few weeks ago, they started joining the party too. You can symlink CLAUDE.md to AGENTS.md. Trying to be different didn't really pay off in this case.
+
+Mihail Eric (44:22.863)
+They're functionally the same. They operate in the same way and serve the same purpose, but have different names. It's an annoyance when you switch between Codex and Anthropic. A very weak walled garden, I'd say.
+
+This is a user-controlled counterpart to the system prompt. The system prompt is static, set by the harness, and injected behind the scenes. CLAUDE.md is also injected, but we control it.
+
+Let's go back to the code. In this to-do app, among a bunch of other files, I have a CLAUDE.md that describes the project's structure at a high level. I don't want to spend too much time on how to design one optimally, because we'll devote an entire lecture to customizing agents and making these files useful.
+
+For now, all I want you to know is that I wrote this. Well, Claude and I wrote it together. We collaborated. At its core, it's a description of where things are in the project.
+
+Now let's return to the top of the trace. Remember, my first command was, “What are the core components of this to-do app?” That's what I typed. Everything above it is technically part of this user block, but it isn't something I explicitly entered there. I didn't type “system reminder” or any of that other material. The harness added it behind the scenes.
+
+One of those additions is the contents of my CLAUDE.md. If you look at the—
+
+Mihail Eric (46:09.871)
+—top block, it says these instructions override default behavior and must be followed exactly as written. Then it gives the path to my CLAUDE.md.
+
+I'll expand this block. Maybe I didn't put it in its own separate file. Let me find the configuration files. Okay, here it is. This is that block copied into an empty file, matching the CLAUDE.md I showed earlier.
+
+This is where I have control over the behavior of the LLM, or the coding agent in this case.
+
+Mihail Eric (47:05.085)
+[Opening exchange unclear.]
+
+In general, the consensus on CLAUDE.md or AGENTS.md is that it's helpful to include some directions for running the code, such as tests and starting the server, but not too many. It's a fine line. If you include too much, you overconstrain the system.
+
+That's one reason people are becoming more minimalist with system prompts and similar instructions. You think you're helping by giving it more information, but you can end up overconstraining it, almost overfitting it to your instructions.
+
+Usually, you wouldn't include entire blocks of code. You might include one or two commands: the exact command to run unit tests, or the one to start the server. Again, I don't want to spend too much time on this right now.
+
+Okay, one question, then we'll move on.
+
+Mihail Eric (48:03.021)
+It's so you can go from raw text to something a little prettier. I could have given it a .txt extension. This is just for demonstration.
+
+To clarify, that block doesn't exist as a separate Markdown file in the trace. I pulled it out of the JSON and put it into an empty file. That's the operation I performed.
+
+All right, let's talk about plan mode. It's a mode you can use when talking to these agents, specifically for designing specifications and working through harder tasks.
+
+Maybe nine or more months ago, most coding agent harnesses introduced a plan mode. It's a way to develop specs and go back and forth with the user to clarify requirements and architecture.
+
+I could show it in the trace, but in the interest of time, I'll share the trace with you. You'll also capture your own traces in the assignment, so you'll see it yourself.
+
+This is the plan-mode prompt. It's literally a block of text. I'm using Claude Code here, but the idea generalizes to pretty much every modern coding harness, including Codex. You can switch into plan mode. In Claude's case, there's a tool for entering that mode—I forget its exact name—and the harness injects this block of text explaining what to do. When you're finished, there's a separate tool to exit plan mode.
+
+As the name suggests, it's for planning a larger task. Claude's prompt describes a workflow for generating plans. Phase one is understanding the user's requirements, and the harness explains how you're—
+
+Mihail Eric (50:12.483)
+—supposed to do that. There's even a point where you kick off agents to explore the codebase. That's all part of phase one. Phase two is design. Then there's a review phase, a final plan, and instructions to exit plan mode when you're done.
+
+An important part is the artifact generated at the end: the plan file. That's what you produce after working through the steps of planning the task.
+
+For this demonstration, I wanted to extend my to-do app to support scheduled tasks or periodic reminders, such as “Water my plants every week.” I entered plan mode, went back and forth with it, and generated a plan. That process started with this prompt being injected; the LLM followed it, and we worked through the plan together.
+
+Mihail Eric (51:14.773)
+Skills have come up a few times. We'll spend a lot of time on them, including an entire lecture on optimal skill design. For now, I want to give you a taste of what they are.
+
+At their core, skills describe a written procedure. That can include multiple tool calls and scripts stitched together with prompts, allowing more elaborate tasks.
+
+Skills can be invoked proactively based on the context, or explicitly by the user. For example, I could ask it to review my code, or it could detect that a task is complete and invoke a code-review skill.
+
+I wrote a skill for this class called “check code quality.” The pattern is to define a SKILL.md file. We'll spend more time on how to write these, but here I've just described what to do and what good code quality looks like compared with poor code quality.
+
+The trace shows where the skill was invoked. Let me show you.
+
+Mihail Eric (52:41.773)
+At one point in the conversation, I explicitly invoked the skill because I wanted it to appear in the trace. I said something like, “Check my code quality. Use the skill.”
+
+Under the hood, a text block was injected with a command message for “check code quality.” That indicates to the LLM that it's time to check the code's quality. The harness then pulls in the contents of the skill file. Here you can see it locating the file and inserting its contents into the context.
+
+Mihail Eric (53:30.029)
+One more minute, then I'll go through the last one or two smaller points.
+
+Mihail Eric (53:40.343)
+Subagents let you delegate parts of a task. You have a main orchestrator agent, the main control loop in Claude Code, and you can invoke helpers or workers with their own fresh context windows. That lets you parallelize work and define specific behaviors for different tasks.
+
+When those workers finish, they return their outputs to the main agent. The benefit is that each subagent starts with a fresh context rather than inheriting all the context of the parent. Its exploration happens outside the main control flow, and the result is brought back when it's done. It's a way to manage context more effectively.
+
+I called a subagent at one point in this trace. You can see the tool call. I think I asked it to check performance, or something like that; I don't remember exactly. The point is that an agent was spawned through a tool call, did its work, and returned the result.
+
+There are also hooks, which I'll touch on only briefly. The last big topic is compaction. You may have heard that term. When your context gets increasingly long, compaction is a way to—
+
+Mihail Eric (55:25.327)
+—consolidate and summarize it, reducing context bloat. There's a compact mode, much as there's a plan mode. Compaction happens in one of two ways: automatically, when you're about to exceed the context window, perhaps approaching a million tokens or whatever the limit is; or manually, when you invoke it yourself.
+
+We'll discuss best practices for when to invoke it proactively. There's a whole prompt governing how to produce the summary. The summary then replaces the context it summarizes. For example, you might take 500,000 tokens and compact them into 150,000. That's what the LLM sees moving forward.
+
+Okay, last slide, then we'll wrap up. I've gone a little over. Sorry about that.
+
+Hopefully this has given you a taste of what goes into more complex harnesses. There are a lot of bells and whistles around the core loop, but the trend is toward simplicity. We still want fewer, more powerful tools.
+
+It's hard to demonstrate that without showing a before-and-after comparison, but the roughly 40 native tools in Claude are a smaller set than in past versions of the harness. Harness designers are relying more on the capabilities of the underlying model—
+
+Mihail Eric (57:04.491)
+—rather than having the harness do the heavy lifting for difficult tasks.
+
+That's a big question in agent design: do you invest in the model or the harness? We regularly seesaw between the two. Sometimes people say the value and a company's moat are in the harness. Then they point to the billions of dollars spent training LLMs and argue that the investment should go into the models. We go back and forth all the time.
+
+Right now, we're at a point where people want the harness to be as simple and concise as possible. You can still do interesting things in it; just be careful about blowing up the context.
+
+We'll talk about something called the “dumb zone,” which is an official term in coding. No, it's just an informal name for when the LLM starts getting less effective. We'll discuss how to avoid it, and many context-engineering principles come into play there.
+
+One last point about simplicity in harnesses: prompt lengths change. Sometimes they're long; sometimes they're short. Right now, the tendency is toward shorter prompts because we want to avoid context bloat and be mindful of context windows. Shorter prompts are also easier to adapt to the task.
+
+All right. I'll stay for questions. Thank you for staying a little over. We'll go into more of this next week.

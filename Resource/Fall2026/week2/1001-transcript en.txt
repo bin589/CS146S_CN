@@ -1,0 +1,225 @@
+Mihail Eric (00:45)
+
+Let's get started. We have a fancy day today. I'm excited about what's happening and to see everyone. We're almost at the end of the week.
+
+A few logistics before we get to the meat of today's class. First, the OSS partner assignments should be out by the end of tomorrow. About 80 of you have already submitted your partner preferences. Please do so; otherwise, you'll get randomly assigned. That's not a bad thing, but if you want some control over your fate, put your preferences in. They're all great projects and partners to be involved with.
+
+I didn't mention this last time, but I don't think we're super stringent about grading in this class. We grade a lot of things based on completion, to an extent. Don't quote me on this exactly, but for the OSS partner contributions, a lot of it is about getting the PR merged into main or master in the repo you're contributing to.
+
+May I finish this bit, and then I'll take questions?
+
+One hard requirement for grading: if you're going to put up an AI-slop PR, that's not going to work. The maintainers are being gracious with their time. They're making themselves available to review our code, PRs, and contributions. Out of gratitude, and as you should in any team, review your code and make sure you're not just slop-grenading your teammates. We're going to hold ourselves to that standard.
+
+For this assignment, AI slop gets a zero. That's a hard line in the sand, and we'll defer to the maintainers on it. You can usually tell when you see it. You can use AI coding agents to generate your PRs, of course. You should; that's the whole point of the class. But you shouldn't think, “Oh my God, this is due in an hour,” write something, submit it, and put it on Gradescope. That will not look good.
+
+Now, a question. Is it about this or something else?
+
+The OSS partner sign-ups? It's a loose deadline, but you should submit your preferences; otherwise, you'll get randomly assigned. If you want some say over what you're contributing to, submit them.
+
+The second deadline worth mentioning is that project proposals are due tonight. This is just the first milestone, not the bulk of the project. I think there are three more milestones along the way. This is to make sure we're not all waiting until the last week to do the entire project. It's a forcing function to get you thinking about what you want to do: preliminary milestones and high-level ideas we can give you feedback on, to make sure you're doing something interesting and substantive.
+
+Finally, we have Ashley from Factory with us today. She's here in spirit right now, but eventually she'll be here in person. That's what she told me by email earlier today. She went to Stanford some years back, so she should know how to find this room, unless they've changed its name. I don't think they have.
+
+She'll walk us through the Factory AI system, a coding agent and broader coding platform, and onboard everyone. I'll try to finish a few minutes before class is over and give her about 20 to 25 minutes for the workshop. You're not required to stay. You can use it for your projects, and I think it's a very cool platform.
+
+Later in the quarter, Eno, Factory's CTO, will also give a guest lecture. He's super smart, one of the brightest people I know working on coding agents. I learn a lot when I talk to him. He's thoughtful and a very cool guy. Ashley is also on the Factory team and will give today's workshop. Any questions?
+
+Turns out they don't move anything from this room. I believe this is also mine from two weeks ago. If you want two-week-old water, that's on you. Apparently, they don't clean these things. I've learned.
+
+Today we're focusing on MCP, tool calling, and beyond. We'll cover the fundamentals of MCP at a theoretical level: how it's designed and what the protocol is. Then we'll go one level beyond and talk about actual modern-day practices people use.
+
+MCP has been around for close to two years at this point, so we've learned a lot as a community about what works and what doesn't. I think it's still one of the most important foundational building blocks for LLMs in general, especially coding agents. We'll learn about MCP, what it means for tool-calling LLMs, and modern best practices based on the scars we've accumulated over the last two years.
+
+The high-level point is that LLMs today are pretrained systems. They train on a lot of data, including web data and more customized datasets. To a large extent, what they've learned in their parameters is static information: a point-in-time snapshot of the data they were trained on.
+
+They're useful and powerful as static systems. But when we want to use them in a modern context, reacting to things happening in the world and to the most up-to-date versions of systems, we need to extend their functionality beyond the pretrained weights. We've developed tools, among other things, and protocols such as MCP to give LLMs more dynamic capabilities.
+
+First, have people used MCP? Are you familiar with the concept? I'm getting a few head shakes and a few nonresponses. That's pretty standard.
+
+MCP stands for Model Context Protocol. It's an open protocol developed by Anthropic, I believe about two years ago. It allows systems, such as wrappers around APIs, to provide relevant context to AI models, typically LLMs, in a way that generalizes across the underlying system or API. I'll explain what that means, what existed before, and why MCP was developed.
+
+In the simplest terms, MCP provides a standard format and protocol for exposing tools to LLMs. These aren't just tools we develop locally, but tools from third-party services or systems. If you're interacting with Gmail or DoorDash, you don't want to build the integration yourself and expose it to your LLM. Ideally, you can say, “That's already been handled by a talented team of developers getting paid a lot of money. I'm going to tap into DoorDash's functionality and make it available to my LLM.” MCP is the format and protocol that enables this.
+
+A little terminology and background: traditionally, when we wanted to connect coding agents or LLMs to third-party services, we had to build connectors for every point-to-point solution. If you had M LLMs or coding agents on one side and N services on the other, you needed M × N connectors between the hosts or agents and the underlying tools.
+
+MCP provides a more efficient way to do this. We don't have to reimplement the standard pieces common across connectors, including authentication, error handling, rate limiting, and many of the things we'd otherwise have to think about when building an API connector.
+
+As long as the LLM side knows how to speak MCP and the connector side speaks the other side of the protocol, you don't have to recreate all those aspects. You handle those pieces once. Gmail can expose itself to every LLM coding agent, and each coding agent can speak to Gmail. That's the main value proposition.
+
+The output format is standardized too. It's pretty much all JSON under the hood: LLMs talking JSON to underlying connectors. That's the common format we've agreed on as a community. It's structured and viewable.
+
+The value is going from M × N to M + N. I'll show how that happens in the next diagrams.
+
+In the old world, you have LLMs on one side. In my fancy diagram, the different colors represent different models, agents, or platforms exposing agents. On the other side, you have third-party services you want to interact with: perhaps the Twitter API, Facebook, or SOAP at the bottom. SOAP represents an older, legacy way of exposing third-party services to other systems.
+
+If you wanted an LLM to connect to Twitter, a SOAP system, and Facebook, you'd build bidirectional connections to each one. The first LLM needs three connections, the second needs three, and the third needs three. That's 3 × 3, or nine connections. I guess 18 if you count each direction separately, though there could just be one edge between each pair.
+
+With MCP, we can get rid of that excessive crossing of edges in the middle. The LLM side implements the receiving side of the protocol. The third-party service side implements its side, the giving side. MCP defines the standardized language for those connectors.
+
+We've gone from nine connections to six: three on the coding-agent or LLM side and three on the services side. That doesn't seem like a huge improvement, but it makes a big difference at scale. You might have hundreds or more coding agents and models, and even more services. Think of all the third-party APIs you'd want to integrate with or expose to coding agents. A large set on each side gives you a huge multiplicative result. MCP makes it additive. Any questions?
+
+This diagram is almost too simplified. The middle is my overall bucket for MCP, representing the protocol. In practice, there are servers associated with each API: an MCP server for Twitter, one for Facebook, and so on. The middle symbol represents the common language, not a server itself. That's probably a little confusing.
+
+Great question, and a good lead-in to the terminology. These are the terms you need to know to sound smart talking about MCP.
+
+The host is what we mean when we say Cursor or Claude Desktop. The MCP client is effectively a library sitting on the host. The protocol defines the client, and the client maintains a stateful session per server.
+
+A server is a wrapper around a third-party or first-party tool. With third-party tools, you usually interact over the wire through a protocol such as HTTP. If you're building your own MCP server, which will be an exercise in one of this week's or next week's assignments, you'll often keep it local. Your coding agent can then talk to it through stdio, or standard input and output.
+
+If I'm integrating with Gmail, I might be speaking through HTTP to an MCP server hosted outside my machine. Servers can be local or remote. Usually, third-party services you haven't built are used in a remote context.
+
+The last term is “tool.” We've talked about tools as a way of exposing capabilities to LLMs. In MCP, think of a tool almost like an API, with big air quotes. It's not exactly an API, but it is a callable function you expose to a client of the protocol.
+
+The typical client flow is roughly four or five steps. There's more complexity in the protocol, and you're welcome to read the publicly available, open-source specification. At a high level, when you're interacting with an MCP server, the client typically starts with discovery.
+
+Think of Cursor as your host, with a client running inside it. The client asks an MCP server, or a set of servers, “What tools are available to me?” That's the first line here: the client calls tools/list. It makes a request to discover what's available.
+
+The servers return JSON describing each tool: its name, summary, and JSON schema. Remember when we looked under the hood of Claude Code and its harness? It's the same structure. This is what the LLM needs to know to use a tool and decide when to use it.
+
+The host then injects that information into the model's context. A user request, such as something we ask Cursor, triggers the model. If the model decides it should use an MCP tool, it emits a structured tool call based on the definitions it received. The local or remote MCP server executes the call, returns the response, and the conversation resumes. We've seen versions of this in the last few classes, including when we implemented tool calls ourselves.
+
+Here's a visualization. The previous slide was a verbal description; this is a schematic. Imagine we're the user talking to an LLM or chatbot such as ChatGPT. This isn't specifically a coding scenario. We ask the system to summarize emails from Jack. Who's Jack? I don't know.
+
+The user's query is received by the host, where the MCP client sits. Hosts include Claude, Cursor, and Windsurf. Then we have step two: discovery. What capabilities are available to the LLM? The MCP servers provide that information.
+
+In this toy example, imagine we've connected three third-party services through MCP servers: Gmail, S3, and DoorDash. Is that S3? You're an Amazon guy; you should know S3. I was looking at you for a softball there.
+
+These three servers expose different tools to the LLM. The important thing is that we didn't implement them. We could have, but in this example they're third-party servers defined by developers elsewhere, such as an Amazon team exposing AWS tools. We just want to integrate with them.
+
+We've authenticated to those servers through OAuth, and discovery returns the tools we can use. Step three is the intelligence layer: the LLM. We combine the query with the available tools and ask, “Given this request about email, which tool should we use?” The LLM identifies Gmail as relevant and returns a structured tool call.
+
+The MCP server executes it. Since we're summarizing emails, it's probably a Gmail list tool. Under the hood, the server usually interacts with APIs, which is why we describe it as a wrapper around APIs. It executes the operation, gets a response, returns it, and we proceed.
+
+Correct me if I'm wrong, but the question is whether MCP is just for APIs, or whether it can expose other things and be used by other systems.
+
+Typically, we're talking about agents, but anyone can interact with the protocol as long as they define their interactions according to it. It isn't only for agents. If two separate systems want to exchange information and adhere to the definitions, either can be on the receiving or giving end.
+
+It just happens that we usually think of the receiving side as an LLM. The protocol is optimized around what we think is important for LLMs, and the servers are usually wrappers around APIs. That doesn't have to be the case, but it's what commonly happens in practice.
+
+On the difference between a client and a host: in practice, people don't talk about the host as much. We usually talk about the client library. Think of the underlying Python or JavaScript SDK sitting inside Cursor. That's the client. Cursor is the thing running the SDK that defines how to expose and connect to MCP servers.
+
+Going back to the first part: perhaps even the machine is the host. Sorry, VS Code is the host. In the stripped-down harness we built, we weren't even defining a protocol or an additional layer. You could think of VS Code or Cursor as the host, and the agreed definition of how tools should be defined as the client side. We defined tool signatures in a certain way, and adhering to those definitions lets the pieces work together.
+
+Great question about tool bloat: are all the tools exposed? By default, you get all of them. If you remember the Claude harness trace I showed, it was around 10,000 lines of JSONL. The actual conversation, including prompts, was maybe 600 or 700 lines. The rest was the prettified version of all the available tools: schemas, expected arguments, and names.
+
+Granted, the Claude Code harness I was running was a little bloated, but by default, all those tools are exposed. This is a considerable limitation of MCP and a good lead-in to what we'll discuss later. With the naive version, you'll hit tool issues very quickly.
+
+Part of the problem is saturating your context. The other part is confusing the LLM. I talked a few classes ago about the “dumb zone” versus the “smart zone.” Past a certain number of tokens, it's hard to reason about that many tools. More tools also increase the possibility of confusion.
+
+There are methods and papers about running RAG before MCP. An intermediary layer indexes all the tools, performs semantic search to pull the most relevant ones, caps the results at something like 10, and exposes only those in the context. That's one version. I'll show another approach that's more common in industry for getting around tool bloat.
+
+You're right that it's an issue, especially when you don't control the servers you interact with. I don't control the Gmail or general G Suite MCP server, the AWS S3 server, or the DoorDash server.
+
+In the early days, people naively built servers with a one-to-one mapping from API endpoints to MCP tools. That's exactly what we did. It isn't how people generally approach it now, but it was the early approach. If you connected to the GitHub MCP server, there were something like 150 tools. You could use one server, and that was about it. There wasn't room for much else. It was inefficient. We've gotten better, but it's a limitation. That's a long answer to a short question.
+
+Typically, you connect through OAuth or another authentication method. You run a command to add the server in Codex or Claude, supplying its name or where it exists, and authenticate. You need to establish a secure connection if it's a third-party service. Once you're authenticated, the tools are available to your client.
+
+The authentication token has a time to live, or TTL. Eventually it expires and you need to reauthenticate. In practice, you authenticate once and have access for the token's lifetime.
+
+At a high level, yes, but the nuance is where this becomes useful. In MCP's early days, people treated an API endpoint and an MCP tool as one-to-one equivalents. They were jumping on the hype train.
+
+The baseline problem is still: how do we expose tools to LLMs? We could use APIs directly. You could put API tokens in the context and have the model make calls. You could also use a CLI. We'll discuss the trade-offs between those approaches and an MCP server. MCP is the protocol we've developed to optimize exposing tools to LLMs, with benefits including standardization, security, and versioning.
+
+We could probably use a break. I was so inspired by the enthusiasm for Hacky Sack that I researched my family history. It turns out I'm related to the person who invented Hacky Sack. This is a picture of my grandfather. Based on the short shorts, it's probably from 1820 or something.
+
+Back to our regularly scheduled program.
+
+Let's talk about MCP server design. Everything before this was theory: a little dry, but an important foundation. What does it mean in practice?
+
+I won't spend time on the vanilla, naive approach of mapping each API endpoint to an MCP tool. We tried it in the first three or four months of server design, back in 2024 and early 2025, and it didn't work well. We got tool bloat, context bloat, and confused LLMs. Those earlier models were even worse at disambiguating tools.
+
+I remember when Cursor only allowed 88 tools in the IDE. You couldn't even load some servers in their entirety. GitHub alone gave you something like 120 to 150 tools. It wasn't a good system.
+
+Let's discuss what comes after that vanilla approach. As I've mentioned, you shouldn't think of an MCP server as just a REST API wrapper. LLMs reason about the context you provide. API endpoints were designed for human consumption, and sometimes not even particularly well for humans. That isn't necessarily the best way for an LLM to consume the information. A one-to-one mapping leaves something on the table.
+
+There are plenty of bad APIs and endpoints that work but are hard for an LLM to reason about because they're too granular. One side effect is a lot of small tools: get a UID, get a resource, and so on. If you have a get-X tool for every possible resource, the API definitions alone might saturate the context window.
+
+That creates large, complex context. It also means agents spend a lot of time orchestrating simple pieces of logic. I'll show a before-and-after example.
+
+For this first option, suppose you say, “I'm better than a one-to-one mapping. I took 146S; I can do better.” The suggested practice is to design tool definitions around outcomes rather than individual operations.
+
+Consider two ways of doing the same thing. One is more drawn out and granular, with more opportunities for error. Option one is “send payment to this user's email.” You provide the email, send the payment, and you're done.
+
+Option two follows a more traditional API-to-tool mapping. Maybe the API never defined “send payment to email”; it only defined “send payment to account.” How do you get the account ID? You list the accounts associated with the user's email. But perhaps you only have a user ID from an authentication token, so first you have to get the email from that ID.
+
+You get the email, list the accounts for it, and then send the payment using the account ID. That's three tool calls you have to get right in succession. Each is a separate LLM request-response round trip, and you hope it works. The first approach is a single call. You're operationalizing the outcome rather than exposing every step needed to reach it.
+
+This approach to improved MCP servers focuses on the semantics of what we want LLMs to do. Traditional APIs weren't necessarily designed around semantics; they were designed to expose or modify each piece of data.
+
+Another practice is being explicit about arguments. Remember the tools from the first class: read file, edit file, and list files? We explicitly typed the arguments. Type annotations, docstrings, and function names are all part of the context the LLM uses to reason about what to do.
+
+A lazy approach in Python might be to use *args and **kwargs everywhere. It's easy and it works, but it's confusing for an LLM to reason about what belongs in those arguments. In the early days of building MCP servers, one of the first things to go wrong was a mismatch between the arguments and the tool call. The model selected the right tool but supplied the wrong arguments. Among other reasons, we weren't strict enough about telling it what needed to be true of the function call.
+
+Avoid massive, untyped dictionaries. You can use a dictionary, but use Pydantic or type annotations to describe it. That gives the LLM a more meaningful hint than arbitrary inputs.
+
+I've made this point, so I won't belabor it: instructions are context, docstrings are context, and every annotation is context. When you design an MCP server, everything you write is for both you and the LLM to consume. Treat it accordingly.
+
+That includes error messages. Even something as benign as raising a generic Exception instead of a ValueError, NameError, or a custom error type matters. Opt for specific or custom error types. They provide hints that help the LLM interpret errors and debug.
+
+An extension of that point is naming tools for discovery. When we looked at the Claude harness, there was a separate naming scheme for the local tools we exposed.
+
+Sorry, I'm not going to accept that. I don't know what's in there, and I don't want to see it. This is being recorded; I don't want to get canceled here.
+
+Back to MCP servers: the naming scheme for your tools is important too. Any questions?
+
+Audience:
+
+For best practice number one, in your example, are you trusting the LLM to figure out how to get the account ID from the user's email? Or do you program that so it follows all those APIs?
+
+Mihail Eric:
+
+In practice, it's hard to predict the optimal semantics to expose to an LLM. You don't know all the ways it will use the tools or all the tools you'll make available.
+
+Often, what happens is that you're not very thoughtful about tool design initially. You go a little crazy to get high coverage and support every case you can think of. Then you realize you have 100 tools and need to reduce that number. At that point, you consolidate. You look at the LLM's traces and identify common patterns.
+
+For example, you might have separate tools for searching meetings, transcripts, and Slack threads. You can search every channel, but now you have three tool definitions. One way to consolidate them is to make a search_resource tool, with the resource to search as a parameter.
+
+When you designed the first tools, you might not even have supported Slack or email. How could you predict that you'd need something general-purpose across channels? Usually, you start eagerly, throw things at the wall, and see what sticks. Then the LLM gets confused even on simple tasks, so you consolidate. It's refactoring. You don't necessarily work everything out in advance.
+
+The next question is how to design a harness that will be distributed to everyone versus something more local. It depends on how it will be made available, which may sound like a cop-out.
+
+There's a quote I like: software engineering is what happens when you add time and people to programming. It becomes an engineering discipline when many people contribute to something over time.
+
+If you know it will be broadly exposed, think carefully about the design, the consumers, and the different classes of consumers. If it's only for yourself, you can probably get away with less rigorous practices.
+
+We'll take one more question and move on in the interest of time. I have one more broad MCP server technique to share before handing it over to the Factory folks. Let's give it up for them.
+
+That could be a half-hour discussion on its own. I can't be very prescriptive because it depends. There are different techniques for deciding when to use a smarter model, based on task complexity, cost, whether you have a fine-tuned model, and many other factors.
+
+You're right that this is a toy example. In practice, a model could probably figure out the sequence. But you're leaving something on the table: even if it correctly executes the three steps, it will be more expensive, slower, and have a higher likelihood of error. Those factors suggest you should optimize. We can discuss the trade-offs for your use case and different models, and talk about routing later. That's a separate topic.
+
+I want to get through option two because it reflects modern practice in MCP server design. It's related to the RAG point: instead of putting every tool from every server into the context at once, what if something could pull in the right tools when needed?
+
+The basic approach is to create a meta MCP server between you and the other servers. It exposes just two tools: search and execute. Search finds relevant servers, tools, and definitions. Execute performs the operation after you've searched and narrowed down the relevant candidates. That's high-level; let me make it more concrete.
+
+The agent calls search to find relevant tools and their definitions. The execute step uses generated deterministic code to perform the operation. This middle layer dynamically generates code that strings tools or functions together. Instead of making the LLM work through each individual tool call, these two meta tools support generating the code needed for the operation.
+
+I'll describe the benefits and then show an example. First, it massively reduces context because you no longer load every available tool into the context window at once. Second, because you interact through search and execute, the interface is agnostic to how many servers you have. An arbitrary number of MCP servers can be indexed for search.
+
+Some studies of this technique report more than 90% token reduction. It has different names in industry, but one term to remember is “code mode”: generating tool calls and issuing server requests through code.
+
+For a concrete example, suppose the request is, “Find a Jira ticket and update it with information from Google Drive.” That's a fairly standard operation for a software engineering team to ask an LLM to perform.
+
+Under the hood, a block of code is generated dynamically from that request. It searches the available tools and filters them based on the request. The thing labeled here isn't exactly equivalent to the search tool on the previous slide, but it returns the tools and filters them.
+
+The point is that this code is dynamically generated. It isn't a block you wrote in advance. The LLM sees the request to find a Jira ticket, knows it has a code-mode SDK, and generates code to retrieve the most relevant tools.
+
+Coming out of that block, you have the relevant tool definitions. The second step is execute. Imagine the search returned tools for searching Jira with JQL, getting Google Workspace Drive content, and updating a Jira ticket. A second block of code is dynamically generated to string those operations together.
+
+That block is executed as a process, not by the LLM itself. We never loaded the full tool set into the model's context. Code was generated and run, typically in a VM, returning the relevant tools and passing the results along.
+
+One question on this, then we'll wrap up.
+
+Audience:
+
+Does the filtering have to be done semantically?
+
+Mihail Eric:
+
+It can be semantic or lexical. Here, it's lexical: the LLM recognizes that Jira and Google Drive are mentioned and generates basic JavaScript to filter on those keywords using includes. We could extend it to semantic search too.
+
+I won't go through this next part because we'll discuss it later in the quarter. MCP gateways are a separate topic, especially for team use. I'll leave that as a teaser. We also have a whole lecture on agent skills next week, so we'll go much deeper then.
+
+We're at time, and I want to leave room for our guests. Any questions? I'll post the slides later. Feel free to message me or come to office hours, I believe tomorrow, if anything isn't clear.
+
+I'll turn it over to the Factory folks. I know some people have to leave, but please stay if you can; they're awesome.

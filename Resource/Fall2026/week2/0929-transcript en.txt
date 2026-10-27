@@ -1,0 +1,287 @@
+Mihail Eric (01:22)
+
+Thank you for the participation, from the one person who's not even in the class. That's lovely. I also thought I'd ask, did we have a good weekend? As if the weekend happened yesterday. I feel like there's a point in the week where you're not allowed to ask that question anymore. Tuesday afternoon feels like it's heading toward unacceptable. Thank you. More validation.
+
+Good to see everyone. We have a lot to cover today, so let's get into it. All the applications for the class were due on Sunday. If you haven't heard back by now, it's unlikely you're in the class for credit. You're welcome to audit, of course. Everyone is welcome here.
+
+The other thing happening this week that I want you to bookmark is a workshop from one of our credit partners. We have a few different kinds of partners: guest lecturers, people giving us compute credits, and OSS partners. Factory is one of the companies giving us credits. They're one of the top startups in coding agents today, valued at something like five billion dollars after their recent raise.
+
+Outside of the oodles of money, what matters for the class is that they're awesome people. Eno, their CTO, is coming to give a talk later in the quarter, I think in a few weeks. He's one of the smartest people I've spoken to in coding agents.
+
+Because they're giving us credits, they want to onboard everyone onto the Factory platform. Ashley from their team is coming on Thursday to do a workshop showing how to use Factory and officially onboard everyone. This will be outside the regularly scheduled class time, so you're not required to attend. We'll have our regular class, which I might end a few minutes early, followed by a 20- to 25-minute slot for Ashley.
+
+I think she's going to do something relevant to Stanford to show the power of Factory. Show up if you're interested. It would be good to get some face time with her and learn how to use the system.
+
+Today we're also officially announcing the OSS Partners program, which is one of the most exciting things about this iteration of the class. It's been a few months in the making. We have a lot of partners building cool software that we get to contribute to, and contributing is part of your assignments.
+
+Isaac, correct me if I'm wrong: today is the deadline to submit preferences? There's a form to collect the email addresses you want to use for correspondence, along with your Discord and Slack information. Our partners interact with their communities in different ways. Some use Slack, some email, some GitHub issues, and some Discord. We want to aggregate that information.
+
+Put your preferences in the form. We'll do something like a stable matching problem, matching people against their rankings so that every partner gets students working on the project and you get as high up your preference list as possible.
+
+There will be a swap in the middle of the quarter, so you won't be with one partner for the entire quarter. You'll work with at least two. You're welcome to do more. Part of the exercise is going through the process of onboarding onto multiple substantial codebases. You'll have two opportunities, and I think we're targeting at least four contributions. The due dates for each OSS contribution are in the class schedule.
+
+I won't go through every partner, because it's a long list, but here's a taste of who we're working with this quarter. Anyscale is in the ML inference and training space. Arize is an observability platform. Browserbase is one of the hottest startups in browser agents and using browsers for agents. cmux is a popular developer tool. CopilotKit is behind AG-UI, an agent protocol for building frontend systems. CrewAI is an agent orchestration platform used by many enterprises.
+
+HeyGen is a generation system [transcript says "audio"; intended media type unclear]. Marimo came out of Stanford. One of my closest friends from undergrad founded it. It's effectively a next-generation Jupyter notebook, an awesome piece of software. OpenHands is one of the more popular coding agents that took the open-source route, whereas many coding agents are closed source.
+
+Pi is another popular coding agent, which I think powers OpenClaw. Unsloth is a fine-tuning platform that companies use to customize open-weight models. Vercel is a web app platform.
+
+Any questions about the program? You're welcome to ask questions online, but since we're here, we have a minute.
+
+[Audience question] When you say these partners are providing developer or maintainer support, what does that look like?
+
+It depends on the partner. At the very least, each has a dedicated maintainer you can interact with if issues come up. They'll primarily be responsible for reviewing PRs and making sure things get shipped into the codebases. Think of them as your points of contact at each partner.
+
+Beyond that, some want to do biweekly office hours, either in person or virtually. Some want to come and meet you. I think the person from cmux is coming next week. He wants to show you cmux, but he's also a pretty cracked coding agent user and developer. I think he'll show how he parallelizes across dozens of agents, if not more.
+
+At a minimum, you have a point of contact and a way to reach them outside the standard route a random contributor would use. There's an express lane to the people responsible for these projects. Some partners are offering more beyond that.
+
+[Audience question] How do we find out when they're coming and how to contact them?
+
+We'll work out those logistics. Start by ranking your preferences. Then we'll share when they're coming and exactly how to contact them. A lot of that will involve onboarding onto their Slacks or Discords, with dedicated channels for us.
+
+Also, there are open seats over there, unless you want to sit where you are. I had to make it super awkward. There's hacky sack. I'm going to push this premise to the end, damn it. Let's keep going.
+
+One more partner: Warp. I thought V was the last letter of the alphabet, of course. Warp has a cool way of engaging with us. They sell software factories, which we'll talk about later in the quarter, and they're allowing us to build their software factories. It's a cool way to interact with them.
+
+And Zilliz. There we go, there's a Z. They're in vector databases, used by companies around the world. I swear I think this is the last open-source partner.
+
+Today's focus is advanced prompting and context engineering for complex codebases. One of our goals is to take very good software developers with strong theoretical foundations and academic backgrounds and give them the tools to succeed in the real world. A lot of what we'll cover is what you'd experience or use in an industry job.
+
+One of the biggest things you have to learn is how to operate coding agents at a scale beyond a handful of local files. We're talking about hundreds or thousands of files across millions of lines of code, at something like Google scale. Once you hit that scale, you run into the inherent context window limitations of coding agents. Some have up to a million tokens, but not all tokens are created equal. You probably have fewer than a million that you can use for meaningful work before performance degrades.
+
+That means you have to be more thoughtful when working on complex software where a lot of code and context could be ingested by the agent. That's what we're going to focus on today. We can all vibe code and use vanilla prompting, up to a point. That's my main thesis.
+
+I also want to cover onboarding onto unfamiliar codebases, which you'll do through the OSS Partners program, and solving particularly complex coding tasks. We'll cover a framework for spec-driven engineering. There are many ways to do this, but I'll spend most of today on one framework and then give you the names of a few others to explore. Spec-driven engineering is probably the de facto way people in industry solve more difficult tasks.
+
+We'll focus on REPIT: research, propose, plan, implement, and test. Those are the five steps. We'll work through what each means, and I'll share other frameworks that touch on similar ideas. You can try them and pick what you like. Many of the core principles are similar.
+
+Does anyone remember when "vibe coding" was coined? It wasn't that long ago. A year and a half in the modern world is an eternity, but it's only been about that long. It came from a tweet by Andrej Karpathy, a Stanford alum who was in Fei-Fei's lab and has gone on to do a lot of awesome things.
+
+It was a shower thought, literally, in his words. The idea was: what if we do this thing called vibe coding, don't even think about it, and just say, "Jesus, take the wheel"? We'll see what happens. It's cool and makes for a popular tweet. You get Wikipedia articles when you do that. But to solve hard problems in difficult codebases, we need to go a level beyond vibe coding.
+
+Sometimes people call this the vibe coding class. That's not what I want it to be called. This is about systematic principles for using coding agents.
+
+Here's a thought exercise: how would you build a Mint clone? Some of you may remember Mint. It was a consumer expense-tracking app. You could input your budget, connect your credit cards, track expenses, and see how much you were spending on different things. Mint was an early version of this and was bought by Intuit. There are other players now, like Monarch.
+
+Let's go one step further. Imagine we already have a fully fleshed-out Mint clone and need to extend it. To do that at production scale, we have to be methodical about how we write code using coding agents.
+
+First, you have to understand an unfamiliar codebase, especially one you haven't contributed to or written yourself. You need to find your way around it and know enough to direct your agent. Then you need to propose solutions. If I gave you a task in a codebase you didn't write and knew nothing about, how would you approach it? You'd propose some solutions, identify the most promising one, implement it, and test it.
+
+Some of you might say, "We do test-driven development. Don't you start with tests and work back to the solution?" That's fine; it works here too. I'm not prescriptive about the order. The core pieces are the same, even if they're rearranged slightly.
+
+This is a framework I use a lot in my day-to-day work, and people I know use similar principles under different names. I want to walk through REPIT and apply it to a problem.
+
+I'll show you a minimalist Mint clone and its current state. Then we'll extend it with a new feature: a trend line showing spending by category over time.
+
+I said this isn't the vibe coding class, but I'll be honest: this app was vibe coded. I'm not a frontend developer. I know enough to be dangerous, but not enough to be useful. I asked what a Mint clone would look like, and this is functionally what we need. Now we want to extend it.
+
+You can see anomalies and upload CSV files. There's no credit card integration or connection to third-party services. You can see basic charts, set budget limits, and inspect a line-by-line breakdown of spending across categories.
+
+This isn't my spending. It's made-up data. I don't know what this "unusually large purchase" is. It could be anything; let your imagination run free. But the trend line showing spending by category over time isn't here yet. How are we going to add it? Let's use the framework.
+
+Can everyone see my screen? Good. I'll work through each step of the framework to add this feature and show the prompts behind each step.
+
+For context, I don't know how this app is written. Again, I'm not a useful frontend developer. Vue? I have no idea. I didn't write this code myself, but I need to contribute to it and extend it, so I'll use this framework.
+
+The first step is research. This is an opportunity to seed the agent's context with useful information about the codebase without feeding it all the raw code. We're distilling the codebase into a consolidated representation that gives the coding agent enough to start making proposals about solutions.
+
+We begin by aggregating what's happening in the codebase. I've put together some skills, and the first is "research codebase." Under the hood, the skill is tied to a prompt. While it's thinking, which is where most of the LLM inference happens, let's look through that prompt.
+
+The research phase is responsible only for documenting what exists in the codebase. It isn't responsible for implementation or proposing a solution. Its job is to define the behavioral contracts that exist today. The prompt is explicit: only document what exists today; don't suggest improvements.
+
+It might read mentioned files, decompose the request into research areas, and work through checklists. The important thing is the artifact at the end: a structured research document describing what the agent learned about components or areas of the codebase, potentially with references to code. The prompt also describes the output format.
+
+While it processes, it's aggregating context. At the end, we'll have a document containing that context. Any questions so far?
+
+[Audience question unclear in the source transcript.]
+
+That's correct. Handwritten with my many fingers.
+
+"A/B tested" is a strong phrase, but it has been tested. I built it iteratively over probably a year or a year and a half of active development. I started with a document and added to it line by line. I'd see what happened during research, then append or change things when I saw something I didn't like. So it was A/B tested in a very qualitative fashion.
+
+The question is about testing the skill and arriving at this structure. There are two parts. One is my personal testing, but it's also committed to a team-wide repository. Other developers use and test it too. The code representing this framework is among the most scrutinized in our codebase today.
+
+I'm not running a formal comparison every time I add a line. But people will say, "This regressed; change this," or, "Add this line." [End of thought unclear in the source transcript.]
+
+Context7 is an MCP server for external, third-party documentation. You can remove that line if all you care about is the local code. But if you need to ask how a particular library or version works, Context7 can pull in the latest documentation. There are other MCP servers for this too.
+
+[Audience question about making skills available in a fresh repository; exact wording unclear.]
+
+If you're cloning an existing repository and the skills are committed to version control, you get them for free. You can also package skills as plugins and make them available across your organization, or use global plugins that encapsulate multiple skills. There are different ways to do it.
+
+I'll kick off the next step, then talk through it.
+
+[Brief audience exchange unclear in the source transcript.]
+
+Yes, it touches on similar principles. Let's proceed.
+
+The research step seeds an understanding of the codebase in the agent for the first time. As you can see, it generated fairly extensive documentation about how the code currently works.
+
+That document serves two purposes. One is to seed the coding agent, because subsequent steps build on it. The other is to help my own understanding. I want to know enough to be useful. I don't need every detail, but I need a mental model to discern good from bad.
+
+At this point, I maintain that we still need a mental model of the code as it exists. That doesn't mean understanding Terraform in extraordinary detail. But I should be able to see that there's a frontend and a backend, that Vue is involved, and that backend models exist in a particular form. If I had to go into the code, I could look at it. This document is a reference for me too.
+
+Next comes "propose." So far, we have a generic document describing the state of the codebase. It says nothing about the feature we're trying to build. We're now going to get more opinionated. The feature is a trend line showing spending by category over time.
+
+I'll put that in and let it work. The "make proposals" step is another skill. It has more content, but functionally it's simple: given the consolidated representation of the codebase, take the feature and propose two distinct solutions.
+
+You can ask for three or four, but I've seen diminishing returns beyond two. These proposals are grounded in the existing research document. You can pull that document in, or explicitly seed it into the context.
+
+The agent captures the user's request, parses the research, creates solutions, performs some validation, and produces something in this format. You don't necessarily have to write this artifact to a file, though you can.
+
+The important parts are the context for each proposal, an overview of the solution, key changes, trade-offs, validation, and open questions. This phase and the next are where you should be most involved as the user and expert deciding on the agent's behavior.
+
+I can see two proposals here and their trade-offs. I'll read through them. One is server-side, with a multi-series upload response. I don't know if I want to go down that path. The other works with the uploaded transactions on the client. That feels more lightweight, with purely frontend changes. For a live demo, the less I can mess with the backend, the better. I'll pick proposal two.
+
+Outside a live demo, I'd look at this closely. What are the trade-offs? What do I care about? As the technical person who understands the product requirements, system requirements, and system limitations, I choose among the proposals and proceed. I'll kick off the next step and pause for questions.
+
+[Audience question] If the project already has a lot of Markdown documentation about its structure, do you skip the research phase and tell the agent to read it? Or is it better for setting up context to have the agent redo the work?
+
+Good question. If there's existing documentation, do you ingest it, scrap it, or find a middle ground? It depends entirely on how good the documentation is. If it's well maintained and accurately represents the codebase, I'd recommend reusing it and adjusting the skills to take it as a starting point.
+
+Some work is repeated in my example because I'm not ingesting existing docs. That's because docs often aren't well maintained. Things have improved with coding agents, and you can run them on a schedule to keep docs current, but often that isn't happening.
+
+Given a choice between ingesting bad docs and starting from scratch, I'd start from scratch. You want the agent to build its understanding without being confused by stale information. The best practice is to make sure those outdated docs either don't exist or are brought up to date. We'll talk more about that.
+
+[Audience question not captured clearly; response concerns the number of proposals.]
+
+It's largely heuristic. You can extend it to three, four, or more. I've found a point of diminishing returns. If you're familiar with PCA in machine learning, I want principal components that are orthogonal to each other: one axis and another perpendicular axis.
+
+You can extend this into more dimensions, but I mainly want to force the agent to identify two different regions of the solution space. In my experience, that usually covers enough of the space while leaving room for my expertise. In larger codebases, you might want to revisit that assumption.
+
+Should there be a separate skill that chooses the proposal? Maybe. At that point, the proposal step would be encapsulated in the agent's own decision-making.
+
+We'll talk about where humans remain helpful as coding gets increasingly good. Today, there are two main places: intent and architecture, and code review. We should insert ourselves as experts who understand the product requirements, system requirements, and constraints.
+
+This is me acknowledging that I should still determine, early in the process, how the agent will operate and implement something. I want to be clear about the specs, research, and actual plan. To me, this is one of the highest-leverage places for a human today.
+
+Will that still be true two years from now? It's hard to say. I think there's a world where coding gets arbitrarily good and we still want a human involved in these early stages. We're recording, so you can fact-check me on that in two years. One more question, then we'll move on.
+
+[Audience question not captured clearly.]
+
+As coding agent harnesses have become more involved, they've taken on more of this responsibility, particularly planning. I have my own planning prompt, but I don't always use it. The built-in planning capabilities in Claude and Codex are quite good.
+
+I still find value in directing agent behavior and standardizing the artifacts and outputs. You don't have to do it this way. I'll post the prompts, and I encourage you to take them apart. Remove lines you don't like and change things. When I taught this previously, a student in healthcare extended REPIT in a way that made sense for them. This isn't a set-in-stone process; it's a starting point for breaking up complex problems.
+
+We're now at the plan phase. We've made two proposals, reviewed them diligently, of course, and committed to one. Now we're forming a plan.
+
+Have people used the built-in planning skills or capabilities? I highly encourage you to use them in your coding agents. Here's my skill. It essentially says: here's a design document template; fill it in based on the proposal.
+
+Why this format? It's a format I like and can easily parse. It contains the information I need to make a judgment. You may not need all of it, but I've developed this template over time to help me assess the quality of the solution the agent is going to implement.
+
+The design document includes the current state of the codebase, functional and nonfunctional requirements, design decisions and trade-offs, and the technical design. There's some code-level detail so I can get into the weeds.
+
+You could argue this component will get smaller over time, but I like being a little hands-on. It's like leafing through a book. I'm not a Kindle guy; I like physical pages. This is my page in the code. I want to see which files are changing, almost like a diff.
+
+You can tell from the capital letters that this was human-written: I wanted it to include line numbers. I added that a few months ago to ground the solution and get a plan that was almost at the code level. We'll see how necessary that remains.
+
+The template also covers testing, which tests to run, observability, and future considerations. One of the most valuable things is explicitly calling out what's outside the scope of the implementation. For this feature, here's what's not going to happen. I put those items under future considerations and say, "Don't touch this. Only implement the work in scope. Defer everything else."
+
+Making that explicit helps prevent the agent from going off the rails and doing unrelated work. There are sections on security, rollouts, and other considerations too.
+
+At the end, we get a fairly involved document. Seeing the layout helps. Are the service boundaries good? Are we modularizing the codebase appropriately? What are the data models?
+
+That's the research document. Whoops, here's the plan. It's following the format I provided: current context, functional requirements, and so on. At this stage, I'd be very involved in reviewing what's here.
+
+[Audience question about validating the research output; exact wording unclear.]
+
+I do less validation on the research side than I used to, because agents have become very good at reading code and distilling it into a consolidated representation. I'm more concerned with implementation than research. Research is effectively compression of information, and I think agents are very good at that. I won't say 100 percent, but good enough that I'm less concerned about validating that stage.
+
+Validation also happens later, particularly in testing. Now that we're implementing, you'll see a form of validation that I didn't explicitly prompt, which is worth highlighting.
+
+Unit tests, integration tests, and smoke tests are among the most valuable ways of verifying solutions. If we believe coding is getting arbitrarily good and the implementation details may matter less, then we care about the input and the output. We need to be stringent about checking the output.
+
+As modern developers, much of our time will go toward setting requirements for the output: how it should work and what behaviors it should have.
+
+While it's implementing, I want to show the incredibly sophisticated implementation prompt. It barely needs to be a prompt. But if you're trying to make an acronym, you need an I, and that's how this happened. Jokes aside, it's essentially just telling the agent to implement the plan.
+
+Meanwhile, Cursor is working through the plan and adding what it needs. It's implicitly opening a browser, interacting with the app, creating synthetic data, and trying to upload it through the CSV interface. It's combining implementation and testing in one step.
+
+This wasn't true six months ago, but now it's good enough to say, after implementing something, "I should probably test this myself and verify what was generated." So it's doing that.
+
+Cursor and many other agents have this built in. If your agent doesn't, you can add something like Playwright MCP. There are several MCP servers that let you augment a harness with the ability to open and act in a browser. We'll talk more about MCP later this week, and I'll give you options for doing this.
+
+[Audience question partially captured: "During the plan..."; remainder unclear.]
+
+That's a fantastic question. We're checking behavioral contracts here. This browser interaction is effectively a behavioral check: I upload a CSV, and I should see the new feature generated.
+
+It appears to be done. I can leave the built-in browser and open the app in a regular browser. At least visually, it seems complete. That was a check of the app's behavior.
+
+There's another set of concerns: performance, quality, readability, and so on. Those aspects beyond the behavioral contract fall under code review. We'll discuss code review and how people approach it today. It's often agent-driven, with separate agents handling particular details.
+
+I'll show you a simple code review skill. I don't necessarily recommend this specific skill; I'm sharing it to spark some curiosity. It checks the diff and outputs "must fix," "recommended fixes," and "consider," like red, yellow, and green.
+
+This particular skill combines security, performance, style, consistency, and edge cases. In practice, people often use four or five agents, each handling one area, such as security or performance. When you open a PR on GitHub, an action runs those agents, and a coordinating agent combines their outputs. You get one report with checks on architecture, style, consistency, and so on.
+
+I put it all in one skill here because that's easier to digest. We'll talk more about this later in the quarter.
+
+The skills are ambiguously named; there's a built-in skill as well. It's working now, and at the end we'll get an output in this format, checking aspects of the implemented feature.
+
+[Audience question] At each step, do you write a document and launch a new session? When do you decide to refresh the context and start from scratch? Also, do certain steps require a stronger model?
+
+Fantastic questions. Where does the human fit in? Do you write artifacts? When do you clear context? You didn't mention compaction, but I'll include it too. When do you use a stronger model?
+
+Some of this is more art than science, but people are increasingly studying these choices. Here's a study I'll post for you. We discussed compaction last class: compressing the representation of the context.
+
+This was a solid blog post studying compaction, when to do it, how it affects cost, and how many tokens you should accumulate before compacting. I won't summarize the whole thing, but one takeaway was somewhere between 250,000 and 450,000 tokens, depending on the model.
+
+It's hard to make a blanket statement. Based on their own traces and uses of coding agents, that was around the point at which they recommended compressing the context into a more consolidated representation. They also studied whether having more context was useful and how often the coding agent actually used more than that. It turned out not to be very often.
+
+That's why I said that although coding agents advertise a million tokens of context, in practice that isn't always a million tokens of useful context. According to this study, it may be closer to half a million truly useful tokens. The concrete takeaway is to compact often.
+
+As for clearing the context: I did something in this demo that I wouldn't recommend. After making and selecting a proposal, I would normally clear the context. Otherwise, both proposals remain there even though you've committed to one. That can confuse the agent about which it's implementing. Yes, you've told it to use proposal two, but the context still contains unused tokens for an alternative you considered and didn't select.
+
+I would clear the context there. In general, I lean toward clearing it. Once I see a few hundred thousand tokens, I try to write the relevant information to a file, ingest that compressed representation into a fresh context, and go from there.
+
+The last question is about model quality. Use a very good model for the early stages. The later stages don't need to be as powerful. Implementation and even testing can use lighter-weight models. For research, proposals, and planning, use a strong model, because that's where most of the thinking happens.
+
+We're almost out of time. I have a few more slides that are important to share, then we'll finish.
+
+We already touched on "smart tokens": the useful part of the context versus the unused or unhelpful part. Roughly, the useful portion may be somewhere between half and, at most, three-quarters. Again, this is more intuition from people noticing when things start going wrong.
+
+The most important best practice is to review your specs. Be especially engaged in research, proposals, and planning.
+
+There's an open question we haven't answered. We just went through five steps, made plans, reviewed them, and implemented a feature. But when should you use vanilla prompting, and when should you switch to a heavier approach?
+
+You can use simple prompting: talk to ChatGPT and say, "Jesus, take the wheel." You can make a single plan by going straight into plan mode in Claude. You can research and then plan, spending more time on the context before planning. Or you can repeat research and planning several times.
+
+Where do we sit among these options? This plot is useful. The axes may shift with model quality, but directionally it's the right way to think about it. Some tasks suit simpler approaches, while others need a more involved process.
+
+What I showed was heavy-handed. I spent 45 minutes talking through prompts to build a dashboard feature in a web app. Looking at task complexity, something like a copy change or a small fix can be handled by talking to Claude or Codex. You'll be fine.
+
+For small features spanning multiple files, start thinking about making a plan. Do you understand all the files well? Maybe, maybe not. To be safe, make a plan.
+
+As complexity increases to medium-sized features, and certainly to a big refactor or migration, you'll want multiple steps of research, proposals, and planning, with separate sessions and subagents. For very large projects in my day-to-day work, I break them into multiple issues, use separate agents for each issue, and stack the issues so agents build on one another's work. At that point, I'm much more thoughtful about the issue descriptions.
+
+The last thing is a few frameworks I'll share links to. Has anyone used Superpowers? Heard of it? Does anyone have superpowers?
+
+I'll show the GitHub page. Superpowers is effectively the framework I described on steroids. It has 300,000 stars. It's a more involved but solid approach to thoughtful planning, outlining specs, and brainstorming with the agent. OpenSpec is another framework you can check out through the slides.
+
+Superpowers is very popular. At its core, the repository is just a set of skills. Look at what's provided: brainstorming, writing plans, executing plans, code review, and more. They're the things we've been talking about. This whole 300,000-star repository is a set of skills.
+
+[The source transcript becomes fragmentary here, apparently during informal conversation after the lecture. Speaker turns are not reliably identifiable. Unclear passages are marked below; isolated acknowledgments and abandoned fragments have been removed.]
+
+[Unclear exchange about a schedule and the final project.]
+
+Sorry, I can't see the time.
+
+[Unclear conversation.]
+
+We just stuck the two together, and there were about 20 projects. [Surrounding context unclear.]
+
+[Unclear conversation about ordering or dependencies.]
+
+What makes money, what you can do that makes money, and what you want to do... [Remainder unclear.] I guess typically you don't get all four.
+
+[Unclear conversation about the class and students.]
+
+Yes, Olivia, I know.
+
+[Unclear conversation about being in the city.]
+
+[Unclear personal conversation.]
+
+I'm not even paid to do this class.
+
+[Remaining conversation is too garbled in the source transcript to reconstruct reliably.]

@@ -1,0 +1,145 @@
+{
+  "retrieved_at": "2026-10-22",
+  "scope": "README.md / Fall 2026 / weeks 1–3 / course schedule column only",
+  "path_base": "repository root",
+  "files": [
+    {
+      "path": "Resource/Fall2026/week1/0922-coding-agent.py",
+      "url": "https://drive.google.com/file/d/1DxKa_autBOu9s8DvItodgUAwH_pBg7aR/view",
+      "bytes": 6395,
+      "sha256": "a70a9bece7952abb6b466eb16ece51ae1716d177d0a1a85c5e017de85ebce2b4"
+    },
+    {
+      "path": "Resource/Fall2026/week1/0922-intro-and-coding-agent en.pptx",
+      "url": "https://docs.google.com/presentation/d/1uztIhjHAG6O_9QOD1N_3wdhwhABml1fANXEN2dGwdbg/export/pptx",
+      "bytes": 9578251,
+      "sha256": "0b27a81ca388c78b33339cde5df3ea062978254cfc70d7fccb353face734bea1"
+    },
+    {
+      "path": "Resource/Fall2026/week1/0924-agent-harness en.pptx",
+      "url": "https://docs.google.com/presentation/d/1RZu-p18Qybbgm8WVP2RH04ESc4Bn377B-T9j5-TBFdQ/export/pptx",
+      "bytes": 818308,
+      "sha256": "f56a462c7f6a1761e3820a7e5ed692969e1beebcab870007cb731b09454f18a9"
+    },
+    {
+      "path": "Resource/Fall2026/week1/0924-prompts/compaction_prompt.md",
+      "url": "https://drive.google.com/file/d/1RU5Gi9olltNQV-qs2_MEwzmYfRiY2_FC/view",
+      "bytes": 6424,
+      "sha256": "d049a948fb439d945386d0976caf9751e6f80c31481b154324aac51e949227dd"
+    },
+    {
+      "path": "Resource/Fall2026/week1/0924-prompts/config_files.md",
+      "url": "https://drive.google.com/file/d/1o_mswpLvqwOvIg1oafFi01xx2NU4WkM0/view",
+      "bytes": 1592,
+      "sha256": "e2149272d8327187fee4bad7bd42e09240618d3c927ad6ab2fd7645987d5cc57"
+    },
+    {
+      "path": "Resource/Fall2026/week1/0924-prompts/plan_mode.md",
+      "url": "https://drive.google.com/file/d/1ben7eiAjEre_6lNl_QrIVyJZF9X3hPKZ/view",
+      "bytes": 5460,
+      "sha256": "6ca0d083783fadecb947f3fb4ab53ae1f989279f5efa97aa0ff0fccbd0fe81fe"
+    },
+    {
+      "path": "Resource/Fall2026/week1/0924-prompts/subagent_prompt.md",
+      "url": "https://drive.google.com/file/d/17HypCtg5px_B_RwoqOWJ27OhoQGQKZdK/view",
+      "bytes": 3247,
+      "sha256": "06345b59fea92714ec5f72ebef4468da717d003c4344628620c9181cbd1affc2"
+    },
+    {
+      "path": "Resource/Fall2026/week1/0924-prompts/system_prompt.md",
+      "url": "https://drive.google.com/file/d/1iABC8ZEqDrazIBxOuZkQeDXjWWhyXuw9/view",
+      "bytes": 6296,
+      "sha256": "ebc6b9a3e6645ffc88981ef24ac006aaf11e4b0e90d26a2056950411800390fb"
+    },
+    {
+      "path": "Resource/Fall2026/week1/0924-prompts/tool_list.md",
+      "url": "https://drive.google.com/file/d/1hWpX0oyNa_APSatFZH4-Re3MXpRNv8xb/view",
+      "bytes": 2913,
+      "sha256": "4e008a72846d463d5a3375d8ff9daff803159d2a772925c983a315e61e8cd976"
+    },
+    {
+      "path": "Resource/Fall2026/week1/0924-transcript en.txt",
+      "url": "https://themodernsoftware.dev/materials/9-24-26-transcript.txt",
+      "bytes": 39513,
+      "sha256": "c19a165345967e2668c0273345e2eac2b42cc9386eede015ce6a0c36c5f5549b"
+    },
+    {
+      "path": "Resource/Fall2026/week2/0929-context-engineering en.pptx",
+      "url": "https://docs.google.com/presentation/d/17brqoQQZHF3K82WgYaV6urAV3Q7iIwyGUBYRvSuY8QY/export/pptx",
+      "bytes": 1157633,
+      "sha256": "f330318b7c642c3a2249b6aafb7d324e21241629477cb74013f23459b87e99ef"
+    },
+    {
+      "path": "Resource/Fall2026/week2/0929-transcript en.txt",
+      "url": "https://themodernsoftware.dev/materials/9-29-26-transcript.txt",
+      "bytes": 33540,
+      "sha256": "c7ad161830111a6c599abb60634e88406d0a506ccf323ca480f1c4e601ce1704"
+    },
+    {
+      "path": "Resource/Fall2026/week2/1001-mcp-and-tools en.pptx",
+      "url": "https://docs.google.com/presentation/d/1q2cB1a7P4XsR0UJqE0RmtZFeggNOLdPaSnOpbBVewHA/export/pptx",
+      "bytes": 2908627,
+      "sha256": "4a8de560f5ff38984b6ff7b7243216cf5781241df6cfef194ecf6ecea4384440"
+    },
+    {
+      "path": "Resource/Fall2026/week2/1001-skills/explore/SKILL.md",
+      "url": "https://drive.google.com/file/d/1UPI_mlJeviZf7-n6Ls4B4XyrDhyJ04m1/view",
+      "bytes": 1066,
+      "sha256": "a71941cc8b935c76b3fad8a6afff003cd4547e9603d7f1c4aa39c24eb0840b0c"
+    },
+    {
+      "path": "Resource/Fall2026/week2/1001-skills/implement/SKILL.md",
+      "url": "https://drive.google.com/file/d/1Xq8Iv341zoMSukZ2KUBpnU-h9F5aJXDX/view",
+      "bytes": 262,
+      "sha256": "8e055b3a9abf7382f9238dc2137ae23d21769d0341dcbb29eac17416ba3a83ef"
+    },
+    {
+      "path": "Resource/Fall2026/week2/1001-skills/make-proposals/SKILL.md",
+      "url": "https://drive.google.com/file/d/1mq6O-GCC0h_r396KnEBjBgWLGcrRI46A/view",
+      "bytes": 2397,
+      "sha256": "6ab4066249e1d413d02a95f77069b6b4a9f9cebc35d8d73a47d468e6ae16e3f0"
+    },
+    {
+      "path": "Resource/Fall2026/week2/1001-skills/plan/SKILL.md",
+      "url": "https://drive.google.com/file/d/1TkGTCb0VJtD2kIg51IqVU5o0uSdXUmYw/view",
+      "bytes": 1104,
+      "sha256": "845ac37aa50e847b0918bd73382e2b6dc650ada9897b9a9fe277851ac175f293"
+    },
+    {
+      "path": "Resource/Fall2026/week2/1001-skills/plan/design_doc_template.md",
+      "url": "https://drive.google.com/file/d/1KBWZRPeLzfbQVmV858l0USprg9E5Z-DJ/view",
+      "bytes": 3011,
+      "sha256": "406b50b9273a9bd6d25fd672cf43439bab9340ec99e6ae3554247a9cfa04ac3a"
+    },
+    {
+      "path": "Resource/Fall2026/week2/1001-skills/research-codebase/SKILL.md",
+      "url": "https://drive.google.com/file/d/16VyQt6ncVzqdHe1S0LvbIusPFFAfg959/view",
+      "bytes": 1764,
+      "sha256": "e0fe7c515b353ae4430b2a75821b64612205deadd7d630722a45d3db6db24179"
+    },
+    {
+      "path": "Resource/Fall2026/week2/1001-skills/review/SKILL.md",
+      "url": "https://drive.google.com/file/d/1E-7WCWVm7_c2d3FoJsL_vrLQcHs0X5IA/view",
+      "bytes": 1157,
+      "sha256": "db0d91661a669e940667f2f0ce9dbc6a05ab01b69c90431643d4b8d588d4a7a6"
+    },
+    {
+      "path": "Resource/Fall2026/week2/1001-transcript en.txt",
+      "url": "https://themodernsoftware.dev/materials/10-1-26-transcript.txt",
+      "bytes": 29384,
+      "sha256": "2d9e7eda8f8e8659d34ad4ae38cbbf19373517468fd8550b76f014e0cba3cd03"
+    },
+    {
+      "path": "Resource/Fall2026/week3/1006-agent-skills en.pptx",
+      "url": "https://docs.google.com/presentation/d/15bPu5c-i8D8McTh6l7SpUPk2n9M_Y-CdDQLfyzL8RD8/export/pptx",
+      "bytes": 346329,
+      "sha256": "94b1d8366d84ff50b0a9c8a3f3e4f3e40b4d9bacf46e34de4db5a547d774918c"
+    },
+    {
+      "path": "Resource/Fall2026/week3/1008-lee-robinson en.html",
+      "url": "https://leerob.com/",
+      "bytes": 802774,
+      "sha256": "771903583dde540ea25756574f33b299a46a54f29e1a439cf28111249b40cfd9"
+    }
+  ]
+}
