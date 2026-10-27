@@ -18,7 +18,7 @@
 
 ## 各篇要点
 
-1. **Context Tax** — 上下文成本是幂律（每翻倍约 6 倍），窗口从 50k 涨到 600k 时实际在用部分几乎不变（47.5% → 2.5%）；压缩甜点约 220k–250k，构建/代码理解可到 300k–450k；压缩后 5 步内纠正率 41.9%（基线 17.7%），且持续 30+ 步。保留 30k–60k 逐字尾部比 4.4k 摘要更划算。
+1. **Context Tax** — 上下文成本是幂律（每翻一倍大约变为 6 倍），窗口从 50k 涨到 600k 时实际在用部分几乎不变（47.5% → 2.5%）；压缩甜点约 220k–250k，构建/代码理解可到 300k–450k；压缩后 5 步内纠正率 41.9%（基线 17.7%），且持续 30+ 步。保留 30k–60k 逐字尾部比 4.4k 摘要更划算。
 2. **OpenSpec** — Explore → Propose → Review → Apply → Archive 五步闭环；产物 `proposal.md` / `specs/<capability>/spec.md` / `design.md` / `tasks.md`；delta spec 用 ADDED/MODIFIED/REMOVED/RENAMED，场景必须四个 `####`；实现前先评审 specs，实现时用干净上下文。
 3. **Superpowers** — brainstorming → worktree → writing-plans → subagent-driven-development/executing-plans → TDD → code review → finish branch；skills 自动触发、强制而非建议；理念是 TDD、系统化、降低复杂度、证据优先。
 4. **Enterprise MCP** — 远程 MCP server + Cloudflare Access（OAuth/SSO/MFA）+ MCP server portals（集中发现、DLP、按组按工具授权）+ Code Mode（52 工具 9.4k tokens → 2 工具 600 tokens，降 94%）+ AI Gateway（成本/模型路由）+ Gateway 检测 Shadow MCP（JSON-RPC `"method"` 正则）。
