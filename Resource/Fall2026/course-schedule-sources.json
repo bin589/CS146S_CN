@@ -1,6 +1,6 @@
 {
-  "retrieved_at": "2026-10-22",
-  "scope": "README.md / Fall 2026 / weeks 1–3 / course schedule column only",
+  "retrieved_at": "2026-10-27",
+  "scope": "README.md / Fall 2026 / weeks 1–5. Weeks 1–3 course-schedule originals were retrieved 2026-10-22 and are unchanged (23 files). Weeks 4–5 originals added 2026-10-27: two Google Slides PPTX exports and two guest-page HTML snapshots. Slide notes, article archives, the YouTube metadata stub, and the X article text are local derivatives and are not listed here. themodernsoftware.dev/materials/10-13-26-transcript.txt, 10-15-26-transcript.txt, 10-20-26-transcript.txt, and 10-22-26-transcript.txt returned HTTP 404 on 2026-10-27; the course homepage HTML exposed no alternate transcript files.",
   "path_base": "repository root",
   "files": [
     {
@@ -140,6 +140,30 @@
       "url": "https://leerob.com/",
       "bytes": 802774,
       "sha256": "771903583dde540ea25756574f33b299a46a54f29e1a439cf28111249b40cfd9"
+    },
+    {
+      "path": "Resource/Fall2026/week4/1013-agent-config en.pptx",
+      "url": "https://docs.google.com/presentation/d/152VaUifBKH4T6hxd6fCKKM9kJTSAuBmkF8zSYwuTYAo/export/pptx",
+      "bytes": 1731568,
+      "sha256": "1fbd6a8c506f2b6db05fb6b976a13494e26ed16edae8c4bd6a613e452c361640"
+    },
+    {
+      "path": "Resource/Fall2026/week4/1015-boris-cherny en.html",
+      "url": "https://borischerny.com/",
+      "bytes": 6768,
+      "sha256": "bfe90d4dbb7be1e6b1b936d8d92e12fb16cb0f1564859b0aab258d15c6cf3de6"
+    },
+    {
+      "path": "Resource/Fall2026/week5/1020-agent-readiness en.pptx",
+      "url": "https://docs.google.com/presentation/d/1yCxocmUrGIN7IrC42WB6NW08PtYYFLe1ombDj3Ay6_8/export/pptx",
+      "bytes": 135713,
+      "sha256": "8d98caf509e704f2afe932d327037c23e1850e310faae0248c51678f1f131ab8"
+    },
+    {
+      "path": "Resource/Fall2026/week5/1022-eno-reyes en.html",
+      "url": "https://www.linkedin.com/in/enoreyes",
+      "bytes": 744327,
+      "sha256": "7a0b2bee9272053c819c6fbdb2773d40444a0ef3947b55c7f5ee7047910fd65b"
     }
   ]
 }

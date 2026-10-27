@@ -77,15 +77,15 @@
 
 **阅读（Reading）**
 
-- [I Still Prefer MCP Over Skills](https://david.coffee/i-still-prefer-mcp-over-skills)
-- [AGENTS.md (Factory Docs)](https://docs.factory.com/harness/agents-md)
-- [Steering Claude Code: Skills, Hooks, Rules, Subagents, and More](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more)
-- [Writing a Good CLAUDE.md](https://hlyr.dev/blog/writing-a-good-claude-md)
+- [I Still Prefer MCP Over Skills](./Resource/Fall2026/week4/I%20Still%20Prefer%20MCP%20Over%20Skills%20zh.md) · [原文](https://david.coffee/i-still-prefer-mcp-over-skills)
+- [AGENTS.md (Factory Docs)](./Resource/Fall2026/week4/Factory%20AGENTS.md%20zh.md) · [原文](https://docs.factory.com/harness/agents-md)
+- [Steering Claude Code: Skills, Hooks, Rules, Subagents, and More](./Resource/Fall2026/week4/Steering%20Claude%20Code%20zh.md) · [原文](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more)
+- [Writing a Good CLAUDE.md](./Resource/Fall2026/week4/Writing%20a%20Good%20CLAUDE.md%20zh.md) · [原文](https://hlyr.dev/blog/writing-a-good-claude-md)
 
 **课时（Sessions）**
 
-- **Tue 10/13:** 定制你的 Agent 配置（CLAUDE.md、AGENTS.md、hooks） — [幻灯片](https://docs.google.com/presentation/d/152VaUifBKH4T6hxd6fCKKM9kJTSAuBmkF8zSYwuTYAo/edit?usp=sharing)
-- **Thu 10/15:** [嘉宾：Boris Cherny（Claude Code 创建者 @ Anthropic）](https://borischerny.com)
+- **Tue 10/13:** 定制你的 Agent 配置（CLAUDE.md、AGENTS.md、hooks） — [幻灯片](./Resource/Fall2026/week4/1013-agent-config%20zh.md) · [PPTX](./Resource/Fall2026/week4/1013-agent-config%20en.pptx)
+- **Thu 10/15:** [嘉宾：Boris Cherny（Claude Code 创建者 @ Anthropic）](./Resource/Fall2026/week4/1015-boris-cherny%20zh.md) — [官网](https://borischerny.com)
 
 ### 第 5 周：Agent 友好的代码库
 
@@ -97,13 +97,13 @@
 
 **阅读（Reading）**
 
-- [Making Codebases Agent Ready](https://www.youtube.com/watch?v=ShuJ_CN6zr4)
-- [Making Ergonomic Repositories](https://x.com/trybasis/status/2056881705269580023)
+- [Making Codebases Agent Ready](./Resource/Fall2026/week5/Making%20Codebases%20Agent%20Ready%20zh.md) · [原文](https://www.youtube.com/watch?v=ShuJ_CN6zr4)
+- [Making Ergonomic Repositories](./Resource/Fall2026/week5/Making%20Ergonomic%20Repositories%20zh.md) · [原文](https://x.com/trybasis/status/2056881705269580023)
 
 **课时（Sessions）**
 
-- **Tue 10/20:** 仓库的 Agent 就绪度（结构、文档与检查项） — [幻灯片](https://docs.google.com/presentation/d/1yCxocmUrGIN7IrC42WB6NW08PtYYFLe1ombDj3Ay6_8/edit?usp=drive_link)
-- **Thu 10/22:** [嘉宾：Eno Reyes（CTO @ Factory）](https://www.linkedin.com/in/enoreyes)
+- **Tue 10/20:** 仓库的 Agent 就绪度（结构、文档与检查项） — [幻灯片](./Resource/Fall2026/week5/1020-agent-readiness%20zh.md) · [PPTX](./Resource/Fall2026/week5/1020-agent-readiness%20en.pptx)
+- **Thu 10/22:** [嘉宾：Eno Reyes（CTO @ Factory）](./Resource/Fall2026/week5/1022-eno-reyes%20zh.md) — [LinkedIn](https://www.linkedin.com/in/enoreyes)
 
 ### 第 6 周：Agent 驱动的代码审查
 
