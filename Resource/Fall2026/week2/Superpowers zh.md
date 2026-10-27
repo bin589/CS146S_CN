@@ -18,7 +18,7 @@ Superpowers 是一套完整的软件开发方法论，为你的 coding agent 而
 
 你对设计点头之后，agent 会整理出一份实现计划，清晰到「一个热情但品味差、没判断力、没有项目上下文、还讨厌测试的初级工程师」都能照着做。它强调真正的 red/green TDD、YAGNI（You Aren't Gonna Need It）和 DRY。
 
-接下来，你说「go」，它就启动 **subagent-driven-development** 流程：让 agent 逐个工程任务推进，检查并评审它们的工作，然后继续向前。你的 agent 连续自主工作几个小时而不偏离你们一起制定的计划，这并不罕见。
+接下来，你说「go」，它就启动 **subagent-driven-development** 流程：让多个 agent 分别完成各个工程任务，检查并评审它们的工作，然后继续向前。你的 agent 连续自主工作几个小时而不偏离你们一起制定的计划，这并不罕见。
 
 细节还有很多，但这就是系统的核心。而且因为 skills 会自动触发，你不需要做任何特别的事。你的 coding agent 就是有 Superpowers。
 
@@ -138,7 +138,7 @@ qwen extensions update superpowers
 hermes plugins install obra/superpowers --enable
 ```
 
-安装后重启活跃的 Hermes 会话。注意：Hermes 没有压缩后钩子，所以一个极长、在首轮之后就发生压缩的会话会丢失引导——如果 skills 不再触发，开一个新会话。
+安装后重启活跃的 Hermes 会话。注意：Hermes 没有压缩后钩子，所以一个极长的会话如果把首轮也压缩掉，就会丢失引导——如果 skills 不再触发，开一个新会话。
 
 ### Muse
 

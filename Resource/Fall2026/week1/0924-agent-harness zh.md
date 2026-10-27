@@ -48,7 +48,7 @@ themodernsoftware.dev
 
 **回顾**
 
-图中文字中文对照：这些图标表示用户、编码 agent 客户端、底层 LLM、工具调用、执行环境与循环，共同构成最小 agent 循环。其中一张图标上写有 **LLM**（大语言模型）；其余图标没有可辨识的英文文字。
+图中文字中文对照：这些图标表示用户、编码 agent 客户端（Windsurf、Cursor、Claude）和底层 LLM。其中一张图标上写有 **LLM**（大语言模型）；其余图标没有可辨识的英文文字。
 
 > **演讲者备注**：用户与编码 agent 客户端（Windsurf、Cursor、Claude Code）交互，并围绕底层 LLM 运行一个循环。有时 LLM 会发出工具调用，客户端在 LLM 之外执行这些调用。
 
@@ -64,10 +64,10 @@ themodernsoftware.dev
 |---|---|---:|---:|---:|---:|---:|
 | Agentic coding — Terminal-Bench 4.0 | 智能体编码：终端任务基准 4.0 | 66.4% | 55.8% | 52.3% | 57.9% | 37.3% |
 | Agentic coding — FrontierCode v1.1 (Main) | 智能体编码：前沿代码基准 v1.1（主榜） | 54.4% | 50.3% | 48.0% | 53.3% | 47.5% |
-| Agentic coding — CursorBench 4.0 | 智能体编码：Cursor 基准 4.0 | 57.8% | 51.8% | 46.6% | —（截图未显示） | 41.7% |
+| Agentic coding — CursorBench 4.0 | 智能体编码：Cursor 基准 4.0 | 57.8% | 51.8% | 46.6% | 58.2% | 41.7% |
 | Knowledge work — GDPval-AA v2.1 | 知识工作：GDPval-AA v2.1 | 1846 | 1735 | 1708 | 1542 | 1588 |
 | Business workflows — AutomationBench | 业务流程：自动化基准 | 40.0% | 31.4% | 26.9% | 41.4% | 28.8% |
-| Multidisciplinary reasoning — Humanity's Last Exam (with tools) | 多学科推理：人类最后考试（使用工具） | 67.7% | 65.6% | 63.6% | 57.2% | —（截图未显示） |
+| Multidisciplinary reasoning — Humanity's Last Exam (with tools) | 多学科推理：人类最后考试（使用工具） | 67.7% | 65.6% | 63.6% | 57.2% | 49.6% |
 
 > **演讲者备注**：用户与编码 agent 客户端（Windsurf、Cursor、Claude Code）交互，并围绕底层 LLM 运行一个循环。有时 LLM 会发出工具调用，客户端在 LLM 之外执行这些调用。
 
@@ -174,7 +174,7 @@ themodernsoftware.dev
 - 当上下文即将超限时，对 agent 运行中的关键点生成一份合并摘要。
 - 用摘要替换现有历史。
 - 可以手动或自动触发。
-- 可能是有损的，因此你可能需要调整自己的压缩策略。
+- 可能有损，因此你可能需要改用自己实现的 compaction。
 
 ## 第 16 页：有效 Harness 的原则
 

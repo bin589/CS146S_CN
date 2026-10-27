@@ -7,9 +7,9 @@
 
 构建一个 agent harness 最难的部分之一，是构造它的动作空间（action space）。
 
-Claude 完全通过 Tool Calling 行动，但在 Claude API 里，工具可以用多种原语构造：比如 [bash](https://platform.claude.com/docs/en/agents-and-tools/tool-use/bash-tool)、[skills](https://code.claude.com/docs/en/skills)，以及最近加入的 [code execution](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool)（关于 Claude API 上的 programmatic tool calling，可以读 [@RLanceMartin 的新文章](https://x.com/RLanceMartin/status/2027450018513490419)）。
+Claude 通过 Tool Calling 行动，但在 Claude API 里，工具可以用多种原语构造：比如 [bash](https://platform.claude.com/docs/en/agents-and-tools/tool-use/bash-tool)、[skills](https://code.claude.com/docs/en/skills)，以及最近加入的 [code execution](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool)（关于 Claude API 上的 programmatic tool calling，可以读 [@RLanceMartin 的新文章](https://x.com/RLanceMartin/status/2027450018513490419)）。
 
-有这么多选项，你该怎么设计 agent 的工具？只给它一个通用工具，比如 code execution 或 bash？还是给它 50 个专用工具，每个对应用例一个？
+有这么多选项，你该怎么设计 agent 的工具？只给它一个工具，比如 code execution 或 bash？还是给它 50 个工具，每个用例一个？
 
 为了站在模型的视角思考，我喜欢想象自己拿到一道很难的数学题：为了解出它，我想要什么工具？这取决于我自己的技能水平。
 
@@ -27,7 +27,7 @@ Claude 当然可以用纯文本提问，但我们发现回答这些问题会不�
 
 ### 尝试 1 —— 修改 ExitPlanTool
 
-我们最先试的是给 ExitPlanTool 加一个参数，让它在给出 plan 的同时附带一个 questions 数组。这是最容易实现的改法，但它让 Claude 困惑：我们同时在要一份 plan，又在要一组关于这份 plan 的问题。如果用户的回答与 plan 冲突怎么办？Claude 是否要调用两次 ExitPlanTool？我们知道这条路不通，于是回到画板前。
+我们最先试的是给 ExitPlanTool 加一个参数，让它在给出 plan 的同时附带一个 questions 数组。这是最容易实现的改法，但它让 Claude 困惑：我们同时在要一份 plan，又在要一组关于这份 plan 的问题。如果用户的回答与 plan 冲突怎么办？Claude 是否要调用两次 ExitPlanTool？我们需要换一种做法。
 
 （关于我们为什么做 ExitPlanTool，可以读[这篇关于 prompt caching 的文章](https://x.com/trq212/status/2024574133011673516)）
 
@@ -53,11 +53,11 @@ Claude 当然可以用纯文本提问，但我们发现回答这些问题会不�
 
 ## 随能力演进 —— 从 Todos 到 Tasks
 
-Claude Code 刚发布时，我们意识到模型需要一个 Todo 列表来保持进度。Todo 可以在开始时写好，模型完成一项就勾掉一项。为此我们给了 Claude TodoWrite 工具，它可以写入或更新 Todo，并展示给用户。
+Claude Code 刚发布时，我们意识到模型需要一个 Todo 列表，以免偏离正轨。Todo 可以在开始时写好，模型完成一项就勾掉一项。为此我们给了 Claude TodoWrite 工具，它可以写入或更新 Todo，并展示给用户。
 
 但即便如此，我们仍经常看到 Claude 忘记自己要做什么。为此我们每隔 5 轮插入一次 system reminder，提醒它目标是什么。
 
-然而随着模型变强，它们不仅不需要被提醒 Todo 列表，反而会觉得这是一种限制。被反复提醒 todo 列表，会让 Claude 以为必须严格遵守列表，而不是在意识到需要调整方向时去修改它。我们还看到 Opus 4.5 在使用 subagent 方面强了很多，但多个 subagent 如何在一个共享 Todo 列表上协作？
+然而随着模型变强，它们不仅不需要被提醒 Todo 列表，反而会觉得这是一种限制。被反复提醒 todo 列表，会让 Claude 以为必须严格遵守列表，而不是去修改它。我们还看到 Opus 4.5 在使用 subagent 方面强了很多，但多个 subagent 如何在一个共享 Todo 列表上协作？
 
 看到这些，我们用 [Task 工具](https://x.com/trq212/status/2014480496013803643)取代了 TodoWrite（关于 Tasks 可以读那篇）。Todo 的重点是让模型保持在轨道上，而 Task 的重点是帮助多个 agent 彼此沟通。Task 可以带依赖关系、在 subagent 之间共享更新，模型还可以修改和删除它们。
 
@@ -81,7 +81,7 @@ Claude 可以读 skill 文件，而这些文件又可以引用其他文件，模
 
 一年时间里，Claude 从基本无法自行构建上下文，进步到能跨多层文件做嵌套搜索，精确找到它需要的上下文。
 
-现在，progressive disclosure 已经是我们「不新增工具就增加新功能」的常用技术。下一节说明具体做法。
+现在，progressive disclosure 已经是我们「不新增工具就增加新功能」的常用技术。
 
 ## Progressive Disclosure —— Claude Code Guide Agent
 
@@ -93,7 +93,7 @@ Claude Code 目前约有 20 个工具，我们经常自问是否全都需要。�
 
 于是我们尝试了一种 progressive disclosure：给 Claude 一个指向文档的链接，需要时由它自己去加载和搜索。这招有效，但我们发现 Claude 会把大量结果拉进上下文只为找到答案，而实际上你只需要那句答案。
 
-所以我们做了 Claude Code Guide 这个 subagent：当你询问 Claude Code 自身时，Claude 被提示去调用它。这个 subagent 带有详尽指令，说明怎样把文档搜好、该返回什么。主 agent 的上下文因此保持干净。
+所以我们做了 Claude Code Guide 这个 subagent：当你询问 Claude Code 自身时，Claude 被提示去调用它。这个 subagent 带有详尽指令，说明怎样把文档搜好、该返回什么。
 
 这并不完美（你问它如何配置自己时，Claude 仍可能犯迷糊），但比过去好多了！我们得以在不新增工具的前提下，扩展 Claude 的动作空间。
 

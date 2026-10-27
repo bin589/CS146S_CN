@@ -43,7 +43,7 @@ MCP 是 Model Context Protocol，由 Anthropic 大约两年前开发的开放协
 
 用 MCP 就能去掉中间那些过多的交叉边：LLM 一侧实现协议的接收端，第三方服务一侧实现自己的一端，MCP 定义了这些连接器的标准语言。连接从九条变成六条：agent 或 LLM 一侧三条，服务一侧三条。看起来提升不大，但在规模上差别巨大——可能有几百甚至更多编码 agent 和模型，服务则更多。考虑一下你想集成或暴露给编码 agent 的所有第三方 API，两侧都很大时结果是巨大的乘积，而 MCP 把它变成加法。
 
-需要澄清的是，那张图的中简化得有点过头：中间那个符号代表 MCP 这个协议，是公共语言的总体桶，而不是一个 server。实践中每个 API 都有对应的 server——Twitter 一个 MCP server、Facebook 一个，等等。
+需要澄清的是，这张图简化得有点过头：中间是讲者用来概括 MCP 协议的总称，那个符号代表共同语言，而不是某个 server 本身。实践中每个 API 都有对应的 server——Twitter 一个 MCP server、Facebook 一个，等等。
 
 ## 术语：host、client、server、tool
 

@@ -17,7 +17,7 @@
 ## 搜索与代码智能
 
 - **WebSearch**——搜索网页，返回结果标题和 URL。
-- **WebFetch**——获取一个 URL，并根据页面回答提示词中的问题。
+- **WebFetch**——获取一个 URL，并依据该页面回答给定的 prompt。
 - **LSP**——向语言服务器查询定义、引用、悬停信息和符号。
 
 ## 代理
@@ -43,7 +43,7 @@
 - **ScheduleWakeup**——在 `/loop` 动态模式下，调度下一次自主节奏的唤醒。
 - **RemoteTrigger**——创建、更新、运行和检查 claude.ai 的远程触发器。
 
-## 产物
+## Artifacts
 
 - **Artifact**——将 HTML 页面发布为私有 claude.ai artifact。
 - **ArtifactComments**——读取并回复已发布 artifact 中的评论线程。
@@ -61,7 +61,7 @@
 - **Skill**——加载当前任务所需的已打包技能指令。
 - **PushNotification**——发送桌面通知；如果连接了 Remote Control，还会向手机推送。
 - **SendFeedback**——起草关于 Claude Code 产品或模型问题的反馈。
-- **EndConversation**——在持续辱骂或明确的演示请求之后结束对话。
+- **EndConversation**——在持续的不当对待（abuse），或用户明确要求演示之后，结束对话。
 
 ## 设计与审查
 

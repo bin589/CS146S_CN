@@ -49,7 +49,7 @@ Cloudflare 的员工不断使用 MCP server 访问各种内部资源，包括项
 
 除此之外，MCP server portals 还提供集中日志、一致的政策执行和[数据防泄漏](https://www.cloudflare.com/learning/access-management/what-is-dlp/)（DLP）护栏。管理员能看到谁登录了哪个 MCP portal，并创建 DLP 规则，阻止某些数据（如个人身份信息 PII）被共享给某些 MCP server。
 
-我们还能创建策略，控制谁有权访问 portal 本身，以及每个 MCP server 的哪些工具应当暴露。例如，可以设一个只对 *finance* 组员工开放、且只暴露内部代码仓库 MCP server 只读工具的 portal；另一个只对 *engineering* 团队、使用公司笔记本的员工开放，暴露该代码仓库 MCP server 更强的读写工具。
+我们还能创建策略，控制谁有权访问 portal 本身，以及每个 MCP server 的哪些工具应当暴露。例如，可以设一个只对 *finance* 组员工开放、且只暴露内部代码仓库 MCP server 只读工具的 portal；另一个只对使用公司笔记本且属于 *engineering* 团队的员工开放，暴露该代码仓库 MCP server 更强的读写工具。
 
 portal 同时支持托管在 Cloudflare 上的远程 MCP server，以及托管在任何地方的第三方 MCP server。这个架构性能独特的来源是：所有这些安全与网络组件都跑在全球网络中的同一台物理机器上。当员工请求穿过 MCP server portal、Cloudflare 托管的远程 MCP server 和 Cloudflare Access 时，流量从不需要离开同一台物理机器。
 

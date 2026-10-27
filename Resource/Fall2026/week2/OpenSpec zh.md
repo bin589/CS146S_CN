@@ -100,7 +100,7 @@ openspec/
 └── openspec-bulk-archive-change/  一次归档多个变更（默认不装）
 ```
 
-默认情况下每个工作流以两种形态安装：**skill**（`openspec-apply-change`，agent 在你提出工作时自行取用）和 **command**（Claude Code 里的 `/opsx:apply`，同样指令的键入式入口）。部分工具只装 skill 形态。项目更偏好 skill，并计划最终淘汰 command。
+默认情况下每个工作流以两种形态安装：**skill**（`openspec-apply-change`，agent 在你提出工作时自行取用）和 **command**（Claude Code 里的 `/opsx:apply`，同样指令的键入式入口）。部分工具只装 skill 形态。项目更偏好 skill，并预期最终会淘汰 command。
 
 ## 工作流
 
@@ -210,9 +210,9 @@ proposal ────┤          ├── tasks ── apply
              └─ design ─┘
 ```
 
-proposal 最先。specs 和 design 顺序可换，tasks 需要两者。以下情况跳过 `design`：跨切面变更、新外部依赖或重要数据模型变化、安全/性能/迁移复杂度、值得在写码前先解决的技术歧义。只有变更的 `.openspec.yaml` 里设置 `skip_specs: true` 才跳过 `specs`——而 `openspec validate` 会拒绝零 delta 且没有该标记的变更，所以别为了通过校验去编造需求。
+proposal 最先。specs 和 design 顺序可换，tasks 需要两者。`design` 在下列条件都不成立时才跳过：跨切面变更、新依赖或数据模型变化、安全/性能/迁移复杂度、值得在写码前解决的歧义。只有变更的 `.openspec.yaml` 里设置 `skip_specs: true` 才跳过 `specs`——而 `openspec validate` 会拒绝零 delta 且没有该标记的变更，所以别为了通过校验去编造需求。
 
-spec 是行为契约，不是实现计划。要写可观测行为、输入输出、错误条件、外部约束、可测场景；不要写内部类名、库选择、逐行实现步骤。快速检验：**如果实现可以改变而不改变外部可见行为，它多半不该出现在 spec 里。**
+spec 是行为契约，不是实现计划。要写可观测行为、输入输出、错误条件、外部约束、可测场景；不要写内部类名、库选择或逐步实现步骤。快速检验：**如果实现可以改变而不改变外部可见行为，它多半不该出现在 spec 里。**
 
 Delta spec 的形状：
 
@@ -234,7 +234,7 @@ The system SHALL allow users to export their data in CSV format.
 
 delta 操作有 `## ADDED Requirements`、`## MODIFIED Requirements`（必须给完整更新内容，标题与原文精确匹配）、`## REMOVED Requirements`（必须带 **Reason** 和 **Migration**）、`## RENAMED Requirements`（FROM:/TO: 格式）。规范需求用 SHALL/MUST；每条需求至少一个场景；场景必须正好用四个井号（`####`）——三个或项目符号会静默失败。
 
-`tasks.md` 会被解析以追踪进度：只含 `x` 的方框算完成；其他任何标记（`- [~]`、`- [-]`、`- []`）都算未完成。每个任务必须写明如何验证完成；每个任务组必须交付自身工作所需的测试与文档——不要把测试集中到最后一组，否则后组第一次跑到前组的工作时，失败会沿着中间的每一组级联回来。
+`tasks.md` 会被解析以追踪进度：只含 `x` 的方框算完成；其他任何标记（`- [~]`、`- [-]`、`- []`）都算未完成。每个任务必须写明如何验证完成；每个任务组必须交付自身工作所需的测试与文档——不要把测试集中到最后一组，否则失败会沿着中间的每一组级联回来。
 
 ## Profiles 与定制
 

@@ -115,7 +115,7 @@ themodernsoftware.dev
 - 宿主把这份 JSON 注入模型的上下文。
 - 用户提示触发模型，模型发出结构化的工具调用。
 - MCP 服务器执行，对话继续。
-- MCP 提供 stdio 与可流式 HTTP 传输层。
+- MCP 提供 stdio 与 Streamable HTTP 传输层。
 
 ## 第 10 页：MCP 请求流程
 
@@ -142,7 +142,7 @@ themodernsoftware.dev
   4. **Call function for tool and get response**（调用工具函数并获得响应）。
   5. **Send response**（把响应发回）。
 
-图中说明：左侧是用户、聊天界面/MCP 客户端与模型；右侧是 MCP 服务器以及邮件等数据源。MCP 客户端先从服务器获取工具定义，再把用户查询和选中的工具及参数发给服务器，服务器调用底层数据源后把结果返回对话。
+图中说明：左侧是用户、聊天界面/MCP 客户端与模型；右侧是 MCP 服务器以及邮件等数据源。MCP 客户端先从服务器获取工具定义（Get tools）。随后把用户查询交给模型，由模型选定工具和参数（Send query and pick tool with params），再调用该工具函数并取回响应（Call function for tool and get response）；服务器访问右侧数据源。最后把响应发回用户（Send response）。
 
 ## 第 11 页：如何设计一个好的 MCP 服务器（方案 1）
 
@@ -184,15 +184,16 @@ themodernsoftware.dev
 
 ![筛选 Jira 与 Drive 工具的代码截图](images/1001/slide13-01.png)
 
-图中代码（按截图转录；截图右侧被裁切，末尾不完整）：
+图中代码（按截图转录；`properties` 后换行，代码完整）：
 
 ```js
 async () => {
   const tools = await codemode.tools();
   return tools
     .filter(t => t.name.includes("jira") || t.name.includes("drive"))
-    .map(t => ({
-      name: t.name, params: Object.keys(t.inputSchema.properties)
+    .map(t => ({ name: t.name, params: Object.keys(t.inputSchema.properties
+|| {}) }));
+}
 ```
 
 中文说明：这段代码从 `codemode.tools()` 取出全部工具，只保留名称中包含 `jira` 或 `drive` 的工具，并映射出工具名和参数名。也就是说，agent 先“搜索”出与任务相关的工具，而不是把全部工具定义都塞进上下文。
@@ -229,9 +230,8 @@ async () => {
 图中文字中文对照与结构说明：
 
 - 左侧 **MCP clients**（MCP 客户端）：**ChatGPT**、**CURSOR**。
-- 中央 **MCP server portals**（MCP 服务器门户）。
-- 门户与远程服务器之间经过 **ZTNA (Access)**（零信任网络访问/访问控制）。
-- 中间 **Remote MCP servers**（远程 MCP 服务器）：**CLOUDFLARE**。
+- 中央橙色框是 **CLOUDFLARE**，框内是 **MCP server portals**（MCP 服务器门户）、**Remote MCP servers**（远程 MCP 服务器）和 **ZTNA (Access)**（零信任网络访问，即 Cloudflare Access）。
+- 客户端指向门户；门户有箭头直达远程 MCP 服务器，远程 MCP 服务器再指向内部服务。ZTNA (Access) 与远程 MCP 服务器双向相连。门户另有箭头指向 SaaS MCP 服务器。
 - 右上 **Internal services**（内部服务）：**ClickHouse**、**snowflake**。
 - 右下 **SaaS MCP servers**（SaaS 类 MCP 服务器）：**slack**、**salesforce**、**Jira**、**PayPal**、**shopify**、**GitHub**。
 

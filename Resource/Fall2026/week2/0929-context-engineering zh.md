@@ -73,7 +73,7 @@ themodernsoftware.dev
 
 > **Andrej Karpathy** @karpathy
 >
-> 我发明了一种新的编码方式，叫“氛围编程”（vibe coding）：你完全沉浸在氛围里，拥抱指数级增长，甚至忘记代码的存在。之所以可行，是因为 LLM（比如搭配 Sonnet 的 Cursor Composer）已经太强了。另外，我用 SuperWhisper 跟 Composer 说话，几乎都不用碰键盘。我会让它做特别蠢的事，比如“把侧边栏的内边距减半”，因为我懒得自己去找。我总是点“全部接受”（Accept All），再也不读 diff 了。遇到报错信息，我就直接复制粘贴进去，不加任何说明，通常这样就能修好。代码逐渐超出了我平常的理解范围，我得认真读一阵子才能明白。有时 LLM 修不好某个 bug，我就绕过它，或者让它随便改改，直到问题消失。对于周末的一次性项目来说这还不算太糟，但仍然挺有意思。我是在构建一个项目或 Web 应用，但这其实不算真正在写代码——我只是看看东西、说说话、跑一跑、复制粘贴一下，而且大多数时候它还真能跑。
+> 有一种新的编码方式，我称之为“氛围编程”（vibe coding）：你完全沉浸在氛围里，拥抱指数级增长，甚至忘记代码的存在。之所以可行，是因为 LLM（比如搭配 Sonnet 的 Cursor Composer）已经太强了。另外，我用 SuperWhisper 跟 Composer 说话，几乎都不用碰键盘。我会让它做特别蠢的事，比如“把侧边栏的内边距减半”，因为我懒得自己去找。我总是点“全部接受”（Accept All），再也不读 diff 了。遇到报错信息，我就直接复制粘贴进去，不加任何说明，通常这样就能修好。代码逐渐超出了我平常的理解范围，我得认真读一阵子才能明白。有时 LLM 修不好某个 bug，我就绕过它，或者让它随便改改，直到问题消失。对于周末的一次性项目来说这还不算太糟，但仍然挺有意思。我是在构建一个项目或 Web 应用，但这其实不算真正在写代码——我只是看看东西、说说话、跑一跑、复制粘贴一下，而且大多数时候它还真能跑。
 >
 > 2025 年 2 月 2 日下午 3:17 · 530 万次浏览
 
@@ -93,10 +93,10 @@ themodernsoftware.dev
 
 - **Settings**：设置；**Overview**：总览；**Spending**：支出；**Budgets**：预算。
 - **ACCOUNTS**：账户；**Cash**：现金；**Credit Debt**：信用卡债务；**$32,801**：32,801 美元；**-$18,034**：-18,034 美元。
-- **BUDGETS November**：11 月预算；**TODAY**：今天；**CASH FLOW**：现金流；**$3,549 Earned**：已收入 3,549 美元；**-$811 Spent**：已支出 811 美元。
+- **BUDGETS November**：11 月预算；**TODAY**：今天；**CASH FLOW**：现金流；**$3,549 Earned**：已收入 3,549 美元；**-$811 Spent**：已支出 811 美元；**$2,739**：净现金流 2,739 美元。
 - **ALERTS**：提醒；**High Spending**：高支出；**ADVICE**：建议；**Save on interest and fees with Slate.**：使用 Slate 节省利息和费用。
 - **SPENDING November 2013**：2013 年 11 月支出；**Auto & Transport**：汽车与交通；**12 Transactions**：12 笔交易；**Updated 11/05/2013 at 10:11 AM**：更新于 2013 年 11 月 5 日上午 10:11。
-- **Food & Dining**：餐饮；**NOV**：11 月；**$198**：198 美元；**$2,739**：2,739 美元。
+- **Food & Dining**：餐饮；**NOV**：11 月；**$198**：198 美元。
 - **November 2013**：2013 年 11 月；**$321 Left**：剩余 321 美元；**$421 of $742**：已用 421/742 美元。
 - **Gas & Fuel**：加油；**$136 Left**：剩余 136 美元；**$236 of $372**：已用 236/372 美元。
 - **Alcohol & Bars**：酒类与酒吧；**-$24 Over**：超支 24 美元；**$44 of $20**：已用 44/20 美元。
@@ -179,27 +179,27 @@ themodernsoftware.dev
 - （先研究，再计划）× N
 - 每种做法分别在什么时候使用？
 
-## 第 16 页：任务委派分类矩阵
+## 第 16 页：任务委派分类法
 
-![任务委派方式与任务难度对应矩阵](images/0929/slide16-01.png)
+![任务委派散点图](images/0929/slide16-01.png)
 
 图中文字中文对照与结构说明：
 
 - 纵轴：**hardest problem you can solve**（你能解决的最难问题），向上表示问题越来越难。
 - 横轴：**amount of compaction and context engineering**（压缩与上下文工程的程度），向右表示投入越来越多。
-- 任务行，从难到易：
+- 任务以空心圆标在图上。**greenfield apps w/ medium complexity** 与 **small features across 3-5 files** 在同一高度：
   - **big refactors, whole new features**：大型重构、全新功能。
   - **medium features across multiple project and repos**：跨多个项目和仓库的中型功能。
   - **greenfield apps w/ medium complexity**：中等复杂度的全新应用。
   - **small features across 3-5 files**：跨 3–5 个文件的小功能。
   - **small fixes**：小修复。
-  - **copy changes**：文案/复制内容的修改。
-- 委派方式列，从左到右：
+  - **copy changes**：文案修改。
+- 横轴上的委派方式，从左到右：
   - **just talk to claude**：直接跟 Claude 说。
   - **make a simple plan then work the plan**：做一个简单计划，然后按计划执行。
   - **do 1 research then build a plan then implement phase by phase**：做 1 次调研，然后制定计划，再分阶段实现。
   - **multiple research steps multiple plans broken out many implement sessions**：多轮调研、拆成多个计划、进行多次实现会话。
-- 图中用色块把不同难度的任务与推荐的委派方式对应起来；任务越难，越需要向右采用更重的调研、计划和上下文工程流程。
+- 空心圆把任务标在难度与压缩/上下文工程投入的坐标上；任务越难，位置越靠右，对应更重的调研、计划和上下文工程。
 
 ## 第 17 页：其他流行框架
 
