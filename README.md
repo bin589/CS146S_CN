@@ -19,13 +19,13 @@
 **Reading**
 
 - [Building a Coding Agent](https://youtube.com/watch?v=s7ZzkdvCMDY)
-- [Lessons from Building Claude Code](https://x.com/trq212/status/2027463795355095314?s=20)
-- [Dive into Claude Code](https://arxiv.org/pdf/2604.14228)
+- [Lessons from Building Claude Code](./Resource/Fall2026/week1/Seeing%20like%20an%20Agent%20en.md) · [Original](https://x.com/trq212/status/2027463795355095314?s=20)
+- [Dive into Claude Code](./Resource/Fall2026/week1/%20深入剖析%20Claude%20Code%20en.pdf) · [Original](https://arxiv.org/pdf/2604.14228)
 
 **Sessions**
 
-- **Tue 9/22:** Course intro + build Claude Code in 200 lines — [Slides](https://docs.google.com/presentation/d/1uztIhjHAG6O_9QOD1N_3wdhwhABml1fANXEN2dGwdbg/edit?usp=drive_link) · [Completed code](https://drive.google.com/file/d/1DxKa_autBOu9s8DvItodgUAwH_pBg7aR/view?usp=drive_link)
-- **Thu 9/24:** How state-of-the-art coding agents are designed: deep dive into the system prompts that define the agent — [Slides](https://docs.google.com/presentation/d/1RZu-p18Qybbgm8WVP2RH04ESc4Bn377B-T9j5-TBFdQ/edit?usp=drive_link) · [Prompts](https://drive.google.com/drive/folders/1c6_atVW0RrqEBWsNIscG2KNwCiuPxWQG?usp=drive_link) · [Transcript](https://themodernsoftware.dev/materials/9-24-26-transcript.txt)
+- **Tue 9/22:** Course intro + build Claude Code in 200 lines — [Slides](./Resource/Fall2026/week1/0922-intro-and-coding-agent%20en.pptx) · [Notes](./Resource/Fall2026/week1/0922-intro-and-coding-agent%20en.md) · [Completed code](./Resource/Fall2026/week1/0922-coding-agent.py)
+- **Thu 9/24:** How state-of-the-art coding agents are designed: deep dive into the system prompts that define the agent — [Slides](./Resource/Fall2026/week1/0924-agent-harness%20en.pptx) · [Notes](./Resource/Fall2026/week1/0924-agent-harness%20en.md) · [Prompts](./Resource/Fall2026/week1/0924-prompts/) · [Transcript](./Resource/Fall2026/week1/0924-transcript%20en.txt)
 
 ### Week 2: Advanced Context Engineering
 
@@ -38,15 +38,15 @@
 
 **Reading**
 
-- [The Context Tax: When to Compact](https://langwatch.ai/blog/context-tax-when-to-compact)
-- [OpenSpec](https://openspec.dev)
-- [Superpowers](https://github.com/obra/superpowers)
-- [Enterprise MCP (Cloudflare)](https://blog.cloudflare.com/enterprise-mcp)
+- [The Context Tax: When to Compact](./Resource/Fall2026/week2/Context%20Tax%20en.md) · [Original](https://langwatch.ai/blog/context-tax-when-to-compact)
+- [OpenSpec](./Resource/Fall2026/week2/OpenSpec%20en.md) · [Original](https://openspec.dev)
+- [Superpowers](./Resource/Fall2026/week2/Superpowers%20en.md) · [Original](https://github.com/obra/superpowers)
+- [Enterprise MCP (Cloudflare)](./Resource/Fall2026/week2/Enterprise%20MCP%20en.md) · [Original](https://blog.cloudflare.com/enterprise-mcp)
 
 **Sessions**
 
-- **Tue 9/29:** Advanced prompting + agentic dev frameworks (RePPIT, spec-driven development) — [Slides](https://docs.google.com/presentation/d/17brqoQQZHF3K82WgYaV6urAV3Q7iIwyGUBYRvSuY8QY/edit?usp=sharing) · [Transcript](https://themodernsoftware.dev/materials/9-29-26-transcript.txt)
-- **Thu 10/1:** Full introduction to MCP and tool-calling (theory, setup, and advanced tool design) — [Slides](https://docs.google.com/presentation/d/1q2cB1a7P4XsR0UJqE0RmtZFeggNOLdPaSnOpbBVewHA/edit?usp=sharing) · [Skills](https://drive.google.com/drive/folders/1aEHCXzZKkokuA4AYjD_2i6OrcM5iQosW?usp=drive_link) · [Transcript](https://themodernsoftware.dev/materials/10-1-26-transcript.txt)
+- **Tue 9/29:** Advanced prompting + agentic dev frameworks (RePPIT, spec-driven development) — [Slides](./Resource/Fall2026/week2/0929-context-engineering%20en.pptx) · [Notes](./Resource/Fall2026/week2/0929-context-engineering%20en.md) · [Transcript](./Resource/Fall2026/week2/0929-transcript%20en.txt)
+- **Thu 10/1:** Full introduction to MCP and tool-calling (theory, setup, and advanced tool design) — [Slides](./Resource/Fall2026/week2/1001-mcp-and-tools%20en.pptx) · [Notes](./Resource/Fall2026/week2/1001-mcp-and-tools%20en.md) · [Skills](./Resource/Fall2026/week2/1001-skills/) · [Transcript](./Resource/Fall2026/week2/1001-transcript%20en.txt)
 
 ### Week 3: Agent Skills and CLI
 
@@ -64,8 +64,8 @@
 
 **Sessions**
 
-- **Tue 10/6:** All about agent skills (including web skills) — [Slides](https://docs.google.com/presentation/d/15bPu5c-i8D8McTh6l7SpUPk2n9M_Y-CdDQLfyzL8RD8/edit?usp=sharing)
-- **Thu 10/8:** [Guest: Lee Robinson (Model Behavior @ SpaceX)](https://leerob.com) — [Slides](https://drive.google.com/file/d/1b8WiBk_lcB3ue-jZMLijSUMLj6SDiF6Z/view?usp=drive_link)
+- **Tue 10/6:** All about agent skills (including web skills) — [Slides](./Resource/Fall2026/week3/1006-agent-skills%20en.pptx) · [Notes](./Resource/Fall2026/week3/1006-agent-skills%20en.md)
+- **Thu 10/8:** [Guest: Lee Robinson (Model Behavior @ SpaceX)](./Resource/Fall2026/week3/1008-lee-robinson%20en.md) — [Slides](https://drive.google.com/file/d/1b8WiBk_lcB3ue-jZMLijSUMLj6SDiF6Z/view?usp=drive_link) · [Site](https://leerob.com)
 
 ### Week 4: Customizing Your Agent and Repository
 
