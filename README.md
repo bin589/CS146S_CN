@@ -113,10 +113,16 @@
 - Review architectures and custom rules
 - Fitting AI review into a team's PR workflow
 
+**Reading**
+
+- [Layered Code Review and Risk-Based Human Oversight](./Resource/Fall2026/week6/Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20en.md) · [Original](https://x.com/addyosmani/status/2114604912520921136)
+- [Coordinating Specialist Review Agents at Scale](./Resource/Fall2026/week6/Coordinating%20Specialist%20Review%20Agents%20at%20Scale%20en.md) · [Original](https://blog.cloudflare.com/ai-code-review)
+- [Beyond the Diff: Context, Testing, and Model Selection](./Resource/Fall2026/week6/Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20en.md) · [Original](https://greptile.com/blog/how-to-build-a-code-review-agent)
+
 **Sessions**
 
-- **Tue 10/27:** Agentic code review: best practices and architectures
-- **Thu 10/29:** [Guest: Silas Alberti (SVP Research @ Cognition)](https://sil.as)
+- **Tue 10/27:** Agentic code review: best practices and architectures — [Slides](./Resource/Fall2026/week6/1027-agentic-code-review%20en.pptx) · [Notes](./Resource/Fall2026/week6/1027-agentic-code-review%20en.md)
+- **Thu 10/29:** [Guest: Silas Alberti (Chief Research Officer @ Cognition)](./Resource/Fall2026/week6/1029-silas-alberti%20en.md) — [Site](https://sil.as)
 
 ### Week 7: Security
 

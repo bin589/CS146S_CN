@@ -113,10 +113,16 @@
 - 审查架构与自定义规则
 - 把 AI 审查嵌入团队的 PR 流程
 
+**阅读（Reading）**
+
+- [Layered Code Review and Risk-Based Human Oversight](./Resource/Fall2026/week6/Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20zh.md) · [原文](https://x.com/addyosmani/status/2114604912520921136)
+- [Coordinating Specialist Review Agents at Scale](./Resource/Fall2026/week6/Coordinating%20Specialist%20Review%20Agents%20at%20Scale%20zh.md) · [原文](https://blog.cloudflare.com/ai-code-review)
+- [Beyond the Diff: Context, Testing, and Model Selection](./Resource/Fall2026/week6/Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20zh.md) · [原文](https://greptile.com/blog/how-to-build-a-code-review-agent)
+
 **课时（Sessions）**
 
-- **Tue 10/27:** Agent 驱动的代码审查：最佳实践与架构
-- **Thu 10/29:** [嘉宾：Silas Alberti（SVP Research @ Cognition）](https://sil.as)
+- **Tue 10/27:** Agent 驱动的代码审查：最佳实践与架构 — [幻灯片](./Resource/Fall2026/week6/1027-agentic-code-review%20zh.md) · [PPTX](./Resource/Fall2026/week6/1027-agentic-code-review%20en.pptx)
+- **Thu 10/29:** [嘉宾：Silas Alberti（Chief Research Officer @ Cognition）](./Resource/Fall2026/week6/1029-silas-alberti%20zh.md) — [官网](https://sil.as)
 
 ### 第 7 周：安全
 
