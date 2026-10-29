@@ -6,24 +6,24 @@
 
 | 周次 / 日期 | 资料 | 英文原件 | 中文版 |
 |---|---|---|---|
-| 第 1 周 · 9/22 | 课程简介 + 用 200 行代码构建 Claude Code · 幻灯片 | [PPTX](week1/0922-intro-and-coding-agent%20en.pptx) | [逐页译文](week1/0922-intro-and-coding-agent%20zh.md) |
+| 第 1 周 · 9/22 | 课程简介 + 用 200 行代码构建 Claude Code · 幻灯片 | [PPTX](week1/0922-intro-and-coding-agent%20en.pptx) | [逐页译文](week1/0922-导论与编码Agent.md) |
 | 第 1 周 · 9/22 | 示例代码 | [Python 原文件](week1/0922-coding-agent.py) | 代码不翻译，保持原样 |
-| 第 1 周 · 9/24 | 前沿 Coding Agent 的设计方式 · 幻灯片 | [PPTX](week1/0924-agent-harness%20en.pptx) | [逐页译文](week1/0924-agent-harness%20zh.md) |
+| 第 1 周 · 9/24 | 前沿 Coding Agent 的设计方式 · 幻灯片 | [PPTX](week1/0924-agent-harness%20en.pptx) | [逐页译文](week1/0924-现代编码Agent解剖.md) |
 | 第 1 周 · 9/24 | 提示词文件夹 | [6 个英文文件](week1/0924-prompts/) | [下表逐文件对照](#924-提示词) |
-| 第 1 周 · 9/24 | 课堂转写 | [TXT](week1/0924-transcript%20en.txt) | [完整译文](week1/0924-transcript%20zh.md) · [精编讲义](week1/0924-transcript%20精编%20zh.md) |
-| 第 2 周 · 9/29 | 高级 prompting + Agentic 开发框架 · 幻灯片 | [PPTX](week2/0929-context-engineering%20en.pptx) | [逐页译文](week2/0929-context-engineering%20zh.md) |
-| 第 2 周 · 9/29 | 课堂转写 | [TXT](week2/0929-transcript%20en.txt) | [完整译文](week2/0929-transcript%20zh.md) · [精编讲义](week2/0929-transcript%20精编%20zh.md) |
-| 第 2 周 · 10/1 | MCP 与 tool calling · 幻灯片 | [PPTX](week2/1001-mcp-and-tools%20en.pptx) | [逐页译文](week2/1001-mcp-and-tools%20zh.md) |
+| 第 1 周 · 9/24 | 课堂转写 | [TXT](week1/0924-transcript%20en.txt) | [完整译文](week1/0924-课堂转写.md) · [精编讲义](week1/0924-课堂转写精编.md) |
+| 第 2 周 · 9/29 | 高级 prompting + Agentic 开发框架 · 幻灯片 | [PPTX](week2/0929-context-engineering%20en.pptx) | [逐页译文](week2/0929-上下文工程.md) |
+| 第 2 周 · 9/29 | 课堂转写 | [TXT](week2/0929-transcript%20en.txt) | [完整译文](week2/0929-课堂转写.md) · [精编讲义](week2/0929-课堂转写精编.md) |
+| 第 2 周 · 10/1 | MCP 与 tool calling · 幻灯片 | [PPTX](week2/1001-mcp-and-tools%20en.pptx) | [逐页译文](week2/1001-MCP与工具调用.md) |
 | 第 2 周 · 10/1 | Skills 文件夹 | [6 个技能目录、7 个英文文件](week2/1001-skills/) | [下表逐文件对照](#101-skills) |
-| 第 2 周 · 10/1 | 课堂转写 | [TXT](week2/1001-transcript%20en.txt) | [完整译文](week2/1001-transcript%20zh.md) · [精编讲义](week2/1001-transcript%20精编%20zh.md) |
-| 第 3 周 · 10/6 | Agent Skills（含 Web Skills）· 幻灯片 | [PPTX](week3/1006-agent-skills%20en.pptx) | [逐页译文](week3/1006-agent-skills%20zh.md) |
-| 第 3 周 · 10/8 | 嘉宾 Lee Robinson · 个人主页 | [可读文本](week3/1008-lee-robinson%20en.md) · [HTML 原始快照](week3/1008-lee-robinson%20en.html) | [主页译文](week3/1008-lee-robinson%20zh.md) |
-| 第 4 周 · 10/13 | 定制 Agent 配置（CLAUDE.md、AGENTS.md、hooks）· 幻灯片 | [PPTX](week4/1013-agent-config%20en.pptx) · [英文逐页](week4/1013-agent-config%20en.md) | [逐页译文](week4/1013-agent-config%20zh.md) |
-| 第 4 周 · 10/15 | 嘉宾 Boris Cherny · 个人博客首页 | [可读文本](week4/1015-boris-cherny%20en.md) · [HTML 原始快照](week4/1015-boris-cherny%20en.html) | [首页译文](week4/1015-boris-cherny%20zh.md) |
-| 第 5 周 · 10/20 | 仓库的 Agent 就绪度 · 幻灯片 | [PPTX](week5/1020-agent-readiness%20en.pptx) · [英文逐页](week5/1020-agent-readiness%20en.md) | [逐页译文](week5/1020-agent-readiness%20zh.md) |
-| 第 5 周 · 10/22 | 嘉宾 Eno Reyes · LinkedIn 公开页 | [可读文本](week5/1022-eno-reyes%20en.md) · [HTML 原始快照](week5/1022-eno-reyes%20en.html) | [公开页译文](week5/1022-eno-reyes%20zh.md) |
-| 第 6 周 · 10/27 | Agent 驱动的代码审查 · 幻灯片 | [PPTX](week6/1027-agentic-code-review%20en.pptx) · [英文逐页](week6/1027-agentic-code-review%20en.md) | [逐页译文](week6/1027-agentic-code-review%20zh.md) |
-| 第 6 周 · 10/29 | 嘉宾 Silas Alberti · 个人主页 | [可读文本](week6/1029-silas-alberti%20en.md) · [HTML 原始快照](week6/1029-silas-alberti%20en.html) | [主页译文](week6/1029-silas-alberti%20zh.md) |
+| 第 2 周 · 10/1 | 课堂转写 | [TXT](week2/1001-transcript%20en.txt) | [完整译文](week2/1001-课堂转写.md) · [精编讲义](week2/1001-课堂转写精编.md) |
+| 第 3 周 · 10/6 | Agent Skills（含 Web Skills）· 幻灯片 | [PPTX](week3/1006-agent-skills%20en.pptx) | [逐页译文](week3/1006-Agent技能.md) |
+| 第 3 周 · 10/8 | 嘉宾 Lee Robinson · 个人主页 | [可读文本](week3/1008-lee-robinson%20en.md) · [HTML 原始快照](week3/1008-lee-robinson%20en.html) | [主页译文](week3/1008-嘉宾Lee-Robinson主页.md) |
+| 第 4 周 · 10/13 | 定制 Agent 配置（CLAUDE.md、AGENTS.md、hooks）· 幻灯片 | [PPTX](week4/1013-agent-config%20en.pptx) · [英文逐页](week4/1013-agent-config%20en.md) | [逐页译文](week4/1013-定制Agent配置.md) |
+| 第 4 周 · 10/15 | 嘉宾 Boris Cherny · 个人博客首页 | [可读文本](week4/1015-boris-cherny%20en.md) · [HTML 原始快照](week4/1015-boris-cherny%20en.html) | [首页译文](week4/1015-嘉宾Boris-Cherny博客.md) |
+| 第 5 周 · 10/20 | 仓库的 Agent 就绪度 · 幻灯片 | [PPTX](week5/1020-agent-readiness%20en.pptx) · [英文逐页](week5/1020-agent-readiness%20en.md) | [逐页译文](week5/1020-仓库Agent就绪度.md) |
+| 第 5 周 · 10/22 | 嘉宾 Eno Reyes · LinkedIn 公开页 | [可读文本](week5/1022-eno-reyes%20en.md) · [HTML 原始快照](week5/1022-eno-reyes%20en.html) | [公开页译文](week5/1022-嘉宾Eno-Reyes.md) |
+| 第 6 周 · 10/27 | Agent 驱动的代码审查 · 幻灯片 | [PPTX](week6/1027-agentic-code-review%20en.pptx) · [英文逐页](week6/1027-agentic-code-review%20en.md) | [逐页译文](week6/1027-Agent驱动的代码审查.md) |
+| 第 6 周 · 10/29 | 嘉宾 Silas Alberti · 个人主页 | [可读文本](week6/1029-silas-alberti%20en.md) · [HTML 原始快照](week6/1029-silas-alberti%20en.html) | [主页译文](week6/1029-嘉宾Silas-Alberti主页.md) |
 
 **10/8 说明**：课程安排仅链接 [Lee Robinson 个人主页](https://leerob.com/)，并未在该单元格提供讲义、录像或转写链接。本地归档是个人主页，不应当作嘉宾课堂讲义。主页文章索引保留链接，不递归下载链接文章；HTML 快照不包含外部静态资源，可离线阅读的文字请使用 Markdown。
 
@@ -39,17 +39,17 @@
 
 | # | 主题 | 原文 | 英文存档 | 中文翻译 |
 |---|---|---|---|---|
-| 1 | 仍然更喜欢 MCP 而不是 Skills | [david.coffee](https://david.coffee/i-still-prefer-mcp-over-skills) | [en.md](week4/I%20Still%20Prefer%20MCP%20Over%20Skills%20en.md) | [zh.md](week4/I%20Still%20Prefer%20MCP%20Over%20Skills%20zh.md) |
-| 2 | Factory 的 AGENTS.md 文档 | [docs.factory.com](https://docs.factory.com/harness/agents-md) | [en.md](week4/Factory%20AGENTS.md%20en.md) | [zh.md](week4/Factory%20AGENTS.md%20zh.md) |
-| 3 | 驾驭 Claude Code | [claude.com](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more) | [en.md](week4/Steering%20Claude%20Code%20en.md) | [zh.md](week4/Steering%20Claude%20Code%20zh.md) |
-| 4 | 写好一份 CLAUDE.md | [hlyr.dev](https://hlyr.dev/blog/writing-a-good-claude-md) | [en.md](week4/Writing%20a%20Good%20CLAUDE.md%20en.md) | [zh.md](week4/Writing%20a%20Good%20CLAUDE.md%20zh.md) |
+| 1 | 仍然更喜欢 MCP 而不是 Skills | [david.coffee](https://david.coffee/i-still-prefer-mcp-over-skills) | [en.md](week4/I%20Still%20Prefer%20MCP%20Over%20Skills%20en.md) | [zh.md](week4/仍然更喜欢MCP而不是Skills.md) |
+| 2 | Factory 的 AGENTS.md 文档 | [docs.factory.com](https://docs.factory.com/harness/agents-md) | [en.md](week4/Factory%20AGENTS.md%20en.md) | [zh.md](week4/Factory的AGENTS-md.md) |
+| 3 | 驾驭 Claude Code | [claude.com](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more) | [en.md](week4/Steering%20Claude%20Code%20en.md) | [zh.md](week4/驾驭Claude-Code.md) |
+| 4 | 写好一份 CLAUDE.md | [hlyr.dev](https://hlyr.dev/blog/writing-a-good-claude-md) | [en.md](week4/Writing%20a%20Good%20CLAUDE.md%20en.md) | [zh.md](week4/写好一份CLAUDE-md.md) |
 
 ## 第 5 周阅读
 
 | # | 主题 | 原文 | 英文存档 | 中文翻译 |
 |---|---|---|---|---|
-| 1 | 让代码库为 Agent 做好准备（视频） | [YouTube](https://www.youtube.com/watch?v=ShuJ_CN6zr4) | [元数据条目](week5/Making%20Codebases%20Agent%20Ready%20en.md) | [中文条目](week5/Making%20Codebases%20Agent%20Ready%20zh.md) |
-| 2 | 让仓库对 Agent 更顺手（X Article） | [x.com/trybasis](https://x.com/trybasis/status/2056881705269580023) | [en.md](week5/Making%20Ergonomic%20Repositories%20en.md) | [zh.md](week5/Making%20Ergonomic%20Repositories%20zh.md) |
+| 1 | 让代码库为 Agent 做好准备（视频） | [YouTube](https://www.youtube.com/watch?v=ShuJ_CN6zr4) | [元数据条目](week5/Making%20Codebases%20Agent%20Ready%20en.md) | [中文条目](week5/让代码库为Agent做好准备.md) |
+| 2 | 让仓库对 Agent 更顺手（X Article） | [x.com/trybasis](https://x.com/trybasis/status/2056881705269580023) | [en.md](week5/Making%20Ergonomic%20Repositories%20en.md) | [zh.md](week5/让仓库对Agent更顺手.md) |
 
 视频没有下载文件。X 帖子的公开页面只露出标题；文章正文来自同一 status 的公开 FxTwitter 聚合，原文三张图未下载。详见 [week4/README.md](week4/README.md) 与 [week5/README.md](week5/README.md)。
 
@@ -57,9 +57,9 @@
 
 | # | 主题 | 原文 | 英文存档 | 中文翻译 |
 |---|---|---|---|---|
-| 1 | 分层代码审查与按风险的人类把关（X Article） | [x.com/addyosmani](https://x.com/addyosmani/status/2114604912520921136) | [en.md](week6/Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20en.md) | [zh.md](week6/Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20zh.md) |
-| 2 | 大规模协调专项审查 Agent | [blog.cloudflare.com](https://blog.cloudflare.com/ai-code-review) | [en.md](week6/Coordinating%20Specialist%20Review%20Agents%20at%20Scale%20en.md) | [zh.md](week6/Coordinating%20Specialist%20Review%20Agents%20at%20Scale%20zh.md) |
-| 3 | 超越 Diff：上下文、测试与模型选择 | [greptile.com](https://greptile.com/blog/how-to-build-a-code-review-agent) | [en.md](week6/Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20en.md) | [zh.md](week6/Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20zh.md) |
+| 1 | 分层代码审查与按风险的人类把关（X Article） | [x.com/addyosmani](https://x.com/addyosmani/status/2114604912520921136) | [en.md](week6/Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20en.md) | [zh.md](week6/分层代码审查与按风险的人类把关.md) |
+| 2 | 大规模协调专项审查 Agent | [blog.cloudflare.com](https://blog.cloudflare.com/ai-code-review) | [en.md](week6/Coordinating%20Specialist%20Review%20Agents%20at%20Scale%20en.md) | [zh.md](week6/大规模协调专项审查Agent.md) |
+| 3 | 超越 Diff：上下文、测试与模型选择 | [greptile.com](https://greptile.com/blog/how-to-build-a-code-review-agent) | [en.md](week6/Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20en.md) | [zh.md](week6/超越Diff：上下文测试与模型选择.md) |
 
 X Article 公开页面几乎无正文；文章文字来自同一 status 的公开 FxTwitter 聚合，附图未下载。Cloudflare / Greptile 博文图未下载。详见 [week6/README.md](week6/README.md)。
 
@@ -69,12 +69,12 @@ X Article 公开页面几乎无正文；文章文字来自同一 status 的公�
 
 | 文件 | 英文原件 | 完整中文译文 |
 |---|---|---|
-| 上下文压缩 | [compaction_prompt.md](week1/0924-prompts/compaction_prompt.md) | [compaction_prompt zh.md](week1/0924-prompts/compaction_prompt%20zh.md) |
-| 配置文件 | [config_files.md](week1/0924-prompts/config_files.md) | [config_files zh.md](week1/0924-prompts/config_files%20zh.md) |
-| 计划模式 | [plan_mode.md](week1/0924-prompts/plan_mode.md) | [plan_mode zh.md](week1/0924-prompts/plan_mode%20zh.md) |
-| 子代理 | [subagent_prompt.md](week1/0924-prompts/subagent_prompt.md) | [subagent_prompt zh.md](week1/0924-prompts/subagent_prompt%20zh.md) |
-| 系统提示词 | [system_prompt.md](week1/0924-prompts/system_prompt.md) | [system_prompt zh.md](week1/0924-prompts/system_prompt%20zh.md) |
-| 内置工具清单 | [tool_list.md](week1/0924-prompts/tool_list.md) | [tool_list zh.md](week1/0924-prompts/tool_list%20zh.md) |
+| 上下文压缩 | [compaction_prompt.md](week1/0924-prompts/compaction_prompt.md) | [上下文压缩提示词.md](week1/0924-prompts/上下文压缩提示词.md) |
+| 配置文件 | [config_files.md](week1/0924-prompts/config_files.md) | [配置文件.md](week1/0924-prompts/配置文件.md) |
+| 计划模式 | [plan_mode.md](week1/0924-prompts/plan_mode.md) | [计划模式.md](week1/0924-prompts/计划模式.md) |
+| 子代理 | [subagent_prompt.md](week1/0924-prompts/subagent_prompt.md) | [子代理提示词.md](week1/0924-prompts/子代理提示词.md) |
+| 系统提示词 | [system_prompt.md](week1/0924-prompts/system_prompt.md) | [系统提示词.md](week1/0924-prompts/系统提示词.md) |
+| 内置工具清单 | [tool_list.md](week1/0924-prompts/tool_list.md) | [内置工具清单.md](week1/0924-prompts/内置工具清单.md) |
 
 ## 10/1 Skills
 
@@ -82,13 +82,13 @@ Google Drive 文件夹原名为 `9_28_26-skills`；此处按照 README 中 10/1 
 
 | 文件 | 英文原件 | 完整中文译文 |
 |---|---|---|
-| explore | [SKILL.md](week2/1001-skills/explore/SKILL.md) | [SKILL zh.md](week2/1001-skills/explore/SKILL%20zh.md) |
-| implement | [SKILL.md](week2/1001-skills/implement/SKILL.md) | [SKILL zh.md](week2/1001-skills/implement/SKILL%20zh.md) |
-| make-proposals | [SKILL.md](week2/1001-skills/make-proposals/SKILL.md) | [SKILL zh.md](week2/1001-skills/make-proposals/SKILL%20zh.md) |
-| plan | [SKILL.md](week2/1001-skills/plan/SKILL.md) | [SKILL zh.md](week2/1001-skills/plan/SKILL%20zh.md) |
-| plan · 设计文档模板 | [design_doc_template.md](week2/1001-skills/plan/design_doc_template.md) | [design_doc_template zh.md](week2/1001-skills/plan/design_doc_template%20zh.md) |
-| research-codebase | [SKILL.md](week2/1001-skills/research-codebase/SKILL.md) | [SKILL zh.md](week2/1001-skills/research-codebase/SKILL%20zh.md) |
-| review | [SKILL.md](week2/1001-skills/review/SKILL.md) | [SKILL zh.md](week2/1001-skills/review/SKILL%20zh.md) |
+| explore | [SKILL.md](week2/1001-skills/explore/SKILL.md) | [SKILL中文.md](week2/1001-skills/explore/SKILL中文.md) |
+| implement | [SKILL.md](week2/1001-skills/implement/SKILL.md) | [SKILL中文.md](week2/1001-skills/implement/SKILL中文.md) |
+| make-proposals | [SKILL.md](week2/1001-skills/make-proposals/SKILL.md) | [SKILL中文.md](week2/1001-skills/make-proposals/SKILL中文.md) |
+| plan | [SKILL.md](week2/1001-skills/plan/SKILL.md) | [SKILL中文.md](week2/1001-skills/plan/SKILL中文.md) |
+| plan · 设计文档模板 | [design_doc_template.md](week2/1001-skills/plan/design_doc_template.md) | [设计文档模板.md](week2/1001-skills/plan/设计文档模板.md) |
+| research-codebase | [SKILL.md](week2/1001-skills/research-codebase/SKILL.md) | [SKILL中文.md](week2/1001-skills/research-codebase/SKILL中文.md) |
+| review | [SKILL.md](week2/1001-skills/review/SKILL.md) | [SKILL中文.md](week2/1001-skills/review/SKILL中文.md) |
 
 ## 格式、来源与版权
 

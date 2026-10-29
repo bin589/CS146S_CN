@@ -9,9 +9,9 @@
 
 | # | 主题 | 原文 | 英文存档 | 中文翻译 |
 |---|---|---|---|---|
-| 1 | 分层代码审查与按风险的人类把关 | [x.com/addyosmani](https://x.com/addyosmani/status/2114604912520921136) | [en.md](./Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20en.md) | [zh.md](./Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20zh.md) |
-| 2 | 大规模协调专项审查 Agent | [blog.cloudflare.com](https://blog.cloudflare.com/ai-code-review) | [en.md](./Coordinating%20Specialist%20Review%20Agents%20at%20Scale%20en.md) | [zh.md](./Coordinating%20Specialist%20Review%20Agents%20at%20Scale%20zh.md) |
-| 3 | 超越 Diff：上下文、测试与模型选择 | [greptile.com](https://greptile.com/blog/how-to-build-a-code-review-agent) | [en.md](./Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20en.md) | [zh.md](./Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20zh.md) |
+| 1 | 分层代码审查与按风险的人类把关 | [x.com/addyosmani](https://x.com/addyosmani/status/2114604912520921136) | [en.md](./Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20en.md) | [zh.md](./分层代码审查与按风险的人类把关.md) |
+| 2 | 大规模协调专项审查 Agent | [blog.cloudflare.com](https://blog.cloudflare.com/ai-code-review) | [en.md](./Coordinating%20Specialist%20Review%20Agents%20at%20Scale%20en.md) | [zh.md](./大规模协调专项审查Agent.md) |
+| 3 | 超越 Diff：上下文、测试与模型选择 | [greptile.com](https://greptile.com/blog/how-to-build-a-code-review-agent) | [en.md](./Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20en.md) | [zh.md](./超越Diff：上下文测试与模型选择.md) |
 
 ## 各篇要点
 

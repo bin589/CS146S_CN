@@ -11,10 +11,10 @@
 
 | # | 主题 | 原文 | 英文存档 | 中文翻译 |
 |---|---|---|---|---|
-| 1 | 上下文税：何时压缩上下文 | [langwatch.ai](https://langwatch.ai/blog/context-tax-when-to-compact) | [Context Tax en.md](./Context%20Tax%20en.md) | [Context Tax zh.md](./Context%20Tax%20zh.md) |
-| 2 | OpenSpec：轻量 spec 框架 | [openspec.dev](https://openspec.dev/) | [OpenSpec en.md](./OpenSpec%20en.md) | [OpenSpec zh.md](./OpenSpec%20zh.md) |
-| 3 | Superpowers：agent 开发方法论 | [github.com/obra/superpowers](https://github.com/obra/superpowers) | [Superpowers en.md](./Superpowers%20en.md) | [Superpowers zh.md](./Superpowers%20zh.md) |
-| 4 | 企业级 MCP 参考架构（Cloudflare） | [blog.cloudflare.com](https://blog.cloudflare.com/enterprise-mcp) | [Enterprise MCP en.md](./Enterprise%20MCP%20en.md) | [Enterprise MCP zh.md](./Enterprise%20MCP%20zh.md) |
+| 1 | 上下文税：何时压缩上下文 | [langwatch.ai](https://langwatch.ai/blog/context-tax-when-to-compact) | [Context Tax en.md](./Context%20Tax%20en.md) | [上下文税.md](./上下文税.md) |
+| 2 | OpenSpec：轻量 spec 框架 | [openspec.dev](https://openspec.dev/) | [OpenSpec en.md](./OpenSpec%20en.md) | [OpenSpec中文.md](./OpenSpec中文.md) |
+| 3 | Superpowers：agent 开发方法论 | [github.com/obra/superpowers](https://github.com/obra/superpowers) | [Superpowers en.md](./Superpowers%20en.md) | [Superpowers中文.md](./Superpowers中文.md) |
+| 4 | 企业级 MCP 参考架构（Cloudflare） | [blog.cloudflare.com](https://blog.cloudflare.com/enterprise-mcp) | [Enterprise MCP en.md](./Enterprise%20MCP%20en.md) | [企业级MCP.md](./企业级MCP.md) |
 
 ## 各篇要点
 
@@ -27,9 +27,9 @@
 
 ```text
 week2/
-├── Context Tax en.md / Context Tax zh.md
-├── OpenSpec en.md / OpenSpec zh.md
-├── Superpowers en.md / Superpowers zh.md
-├── Enterprise MCP en.md / Enterprise MCP zh.md
+├── Context Tax en.md / 上下文税.md
+├── OpenSpec en.md / OpenSpec中文.md
+├── Superpowers en.md / Superpowers中文.md
+├── Enterprise MCP en.md / 企业级MCP.md
 └── images/       文章配图（PNG）
 ```

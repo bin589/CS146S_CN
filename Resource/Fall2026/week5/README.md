@@ -9,8 +9,8 @@
 
 | # | 主题 | 原文 | 英文存档 | 中文翻译 |
 |---|---|---|---|---|
-| 1 | 让代码库为 Agent 做好准备 | [YouTube](https://www.youtube.com/watch?v=ShuJ_CN6zr4) | [元数据条目](./Making%20Codebases%20Agent%20Ready%20en.md) | [中文条目](./Making%20Codebases%20Agent%20Ready%20zh.md) |
-| 2 | 让 Monorepo 对 Agent 更顺手 | [x.com/trybasis](https://x.com/trybasis/status/2056881705269580023) | [en.md](./Making%20Ergonomic%20Repositories%20en.md) | [zh.md](./Making%20Ergonomic%20Repositories%20zh.md) |
+| 1 | 让代码库为 Agent 做好准备 | [YouTube](https://www.youtube.com/watch?v=ShuJ_CN6zr4) | [元数据条目](./Making%20Codebases%20Agent%20Ready%20en.md) | [中文条目](./让代码库为Agent做好准备.md) |
+| 2 | 让 Monorepo 对 Agent 更顺手 | [x.com/trybasis](https://x.com/trybasis/status/2056881705269580023) | [en.md](./Making%20Ergonomic%20Repositories%20en.md) | [zh.md](./让仓库对Agent更顺手.md) |
 
 ## 各篇要点
 
