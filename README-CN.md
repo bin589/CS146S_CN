@@ -39,8 +39,8 @@
 **阅读（Reading）**
 
 - [The Context Tax: When to Compact](./Resource/Fall2026/week2/上下文税.md) · [原文](https://langwatch.ai/blog/context-tax-when-to-compact)
-- [OpenSpec](./Resource/Fall2026/week2/OpenSpec中文.md) · [原文](https://openspec.dev)
-- [Superpowers](./Resource/Fall2026/week2/Superpowers中文.md) · [原文](https://github.com/obra/superpowers)
+- [OpenSpec](./Resource/Fall2026/week2/PPT引用外链/OpenSpec中文.md) · [原文](https://openspec.dev)
+- [Superpowers](./Resource/Fall2026/week2/PPT引用外链/Superpowers中文.md) · [原文](https://github.com/obra/superpowers)
 - [Enterprise MCP (Cloudflare)](./Resource/Fall2026/week2/企业级MCP.md) · [原文](https://blog.cloudflare.com/enterprise-mcp)
 
 **课时（Sessions）**
@@ -115,9 +115,9 @@
 
 **阅读（Reading）**
 
-- [Layered Code Review and Risk-Based Human Oversight](./Resource/Fall2026/week6/分层代码审查与按风险的人类把关.md) · [原文](https://x.com/addyosmani/status/2114604912520921136)
+- [Layered Code Review and Risk-Based Human Oversight](./Resource/Fall2026/week6/PPT引用外链/分层代码审查与按风险的人类把关.md) · [原文](https://x.com/addyosmani/status/2114604912520921136)
 - [Coordinating Specialist Review Agents at Scale](./Resource/Fall2026/week6/大规模协调专项审查Agent.md) · [原文](https://blog.cloudflare.com/ai-code-review)
-- [Beyond the Diff: Context, Testing, and Model Selection](./Resource/Fall2026/week6/超越Diff：上下文测试与模型选择.md) · [原文](https://greptile.com/blog/how-to-build-a-code-review-agent)
+- [Beyond the Diff: Context, Testing, and Model Selection](./Resource/Fall2026/week6/PPT引用外链/超越Diff：上下文测试与模型选择.md) · [原文](https://greptile.com/blog/how-to-build-a-code-review-agent)
 
 **课时（Sessions）**
 

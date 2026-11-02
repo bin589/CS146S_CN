@@ -57,9 +57,9 @@
 
 | # | 主题 | 原文 | 英文存档 | 中文翻译 |
 |---|---|---|---|---|
-| 1 | 分层代码审查与按风险的人类把关（X Article） | [x.com/addyosmani](https://x.com/addyosmani/status/2114604912520921136) | [en.md](week6/Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20en.md) | [zh.md](week6/分层代码审查与按风险的人类把关.md) |
+| 1 | 分层代码审查与按风险的人类把关（X Article） | [x.com/addyosmani](https://x.com/addyosmani/status/2114604912520921136) | [en.md](week6/PPT引用外链/Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20en.md) | [zh.md](week6/PPT引用外链/分层代码审查与按风险的人类把关.md) |
 | 2 | 大规模协调专项审查 Agent | [blog.cloudflare.com](https://blog.cloudflare.com/ai-code-review) | [en.md](week6/Coordinating%20Specialist%20Review%20Agents%20at%20Scale%20en.md) | [zh.md](week6/大规模协调专项审查Agent.md) |
-| 3 | 超越 Diff：上下文、测试与模型选择 | [greptile.com](https://greptile.com/blog/how-to-build-a-code-review-agent) | [en.md](week6/Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20en.md) | [zh.md](week6/超越Diff：上下文测试与模型选择.md) |
+| 3 | 超越 Diff：上下文、测试与模型选择 | [greptile.com](https://greptile.com/blog/how-to-build-a-code-review-agent) | [en.md](week6/PPT引用外链/Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20en.md) | [zh.md](week6/PPT引用外链/超越Diff：上下文测试与模型选择.md) |
 
 X Article 公开页面几乎无正文；文章文字来自同一 status 的公开 FxTwitter 聚合，附图未下载。Cloudflare / Greptile 博文图未下载。详见 [week6/README.md](week6/README.md)。
 

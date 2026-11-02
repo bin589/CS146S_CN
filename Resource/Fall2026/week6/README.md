@@ -9,9 +9,9 @@
 
 | # | 主题 | 原文 | 英文存档 | 中文翻译 |
 |---|---|---|---|---|
-| 1 | 分层代码审查与按风险的人类把关 | [x.com/addyosmani](https://x.com/addyosmani/status/2114604912520921136) | [en.md](./Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20en.md) | [zh.md](./分层代码审查与按风险的人类把关.md) |
+| 1 | 分层代码审查与按风险的人类把关 | [x.com/addyosmani](https://x.com/addyosmani/status/2114604912520921136) | [en.md](./PPT引用外链/Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20en.md) | [zh.md](./PPT引用外链/分层代码审查与按风险的人类把关.md) |
 | 2 | 大规模协调专项审查 Agent | [blog.cloudflare.com](https://blog.cloudflare.com/ai-code-review) | [en.md](./Coordinating%20Specialist%20Review%20Agents%20at%20Scale%20en.md) | [zh.md](./大规模协调专项审查Agent.md) |
-| 3 | 超越 Diff：上下文、测试与模型选择 | [greptile.com](https://greptile.com/blog/how-to-build-a-code-review-agent) | [en.md](./Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20en.md) | [zh.md](./超越Diff：上下文测试与模型选择.md) |
+| 3 | 超越 Diff：上下文、测试与模型选择 | [greptile.com](https://greptile.com/blog/how-to-build-a-code-review-agent) | [en.md](./PPT引用外链/Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20en.md) | [zh.md](./PPT引用外链/超越Diff：上下文测试与模型选择.md) |
 
 ## 各篇要点
 
@@ -35,6 +35,6 @@
 | vercel-labs-deepsec仓库 | [github.com/vercel-labs/deepsec](https://github.com/vercel-labs/deepsec) | [vercel-labs-deepsec仓库 en.md](./PPT引用外链/vercel-labs-deepsec仓库%20en.md) | [vercel-labs-deepsec仓库.md](./PPT引用外链/vercel-labs-deepsec仓库.md) | `1027-agentic-code-review` |
 | Semgrep官网 | [semgrep.dev/](https://semgrep.dev/) | [Semgrep homepage en.md](./PPT引用外链/Semgrep%20homepage%20en.md) | [Semgrep官网.md](./PPT引用外链/Semgrep官网.md) | `1027-agentic-code-review` |
 | Augment-Cosmos代码审查 | [www.augmentcode.com/blog/solving-code-review-with-cosmos](https://www.augmentcode.com/blog/solving-code-review-with-cosmos) | [Augment Cosmos code review en.md](./PPT引用外链/Augment%20Cosmos%20code%20review%20en.md) | [Augment-Cosmos代码审查.md](./PPT引用外链/Augment-Cosmos代码审查.md) | `1027-agentic-code-review` |
-| 超越Diff：上下文测试与模型选择（已有阅读材料） | [www.greptile.com/blog/how-to-build-a-code-review-agent](https://www.greptile.com/blog/how-to-build-a-code-review-agent) | [Beyond the Diff Context Testing and Model Selection en.md](./Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20en.md) | [超越Diff：上下文测试与模型选择.md](./超越Diff：上下文测试与模型选择.md) | `1027-agentic-code-review` |
+| 超越Diff：上下文测试与模型选择（已有阅读材料） | [www.greptile.com/blog/how-to-build-a-code-review-agent](https://www.greptile.com/blog/how-to-build-a-code-review-agent) | [Beyond the Diff Context Testing and Model Selection en.md](./PPT引用外链/Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20en.md) | [超越Diff：上下文测试与模型选择.md](./PPT引用外链/超越Diff：上下文测试与模型选择.md) | `1027-agentic-code-review` |
 | Wiz官网 | [www.wiz.io/](https://www.wiz.io/) | [Wiz homepage en.md](./PPT引用外链/Wiz%20homepage%20en.md) | [Wiz官网.md](./PPT引用外链/Wiz官网.md) | `1027-agentic-code-review` |
-| 分层代码审查与按风险的人类把关（已有阅读材料） | [x.com/addyosmani/status/2114604912520921136?s=43](https://x.com/addyosmani/status/2114604912520921136?s=43) | [Layered Code Review and Risk-Based Human Oversight en.md](./Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20en.md) | [分层代码审查与按风险的人类把关.md](./分层代码审查与按风险的人类把关.md) | `1027-agentic-code-review` |
+| 分层代码审查与按风险的人类把关（已有阅读材料） | [x.com/addyosmani/status/2114604912520921136?s=43](https://x.com/addyosmani/status/2114604912520921136?s=43) | [Layered Code Review and Risk-Based Human Oversight en.md](./PPT引用外链/Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20en.md) | [分层代码审查与按风险的人类把关.md](./PPT引用外链/分层代码审查与按风险的人类把关.md) | `1027-agentic-code-review` |
