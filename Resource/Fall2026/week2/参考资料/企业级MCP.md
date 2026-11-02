@@ -6,7 +6,7 @@
 > 抓取时间：2026-10-22
 > 译文说明：`MCP server portal`、`Code Mode`、`Shadow MCP`、`DLP`、`AI Gateway` 等产品名保留英文，代码与正则照录。
 
-![MCP 与 Cloudflare 平台](images/cf-fig01.png)
+![MCP 与 Cloudflare 平台](../images/cf-fig01.png)
 
 Cloudflare 一直激进地把 [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) 作为我们 AI 战略的核心部分。这一转变早已超出工程组织，产品、销售、市场和财务团队的员工现在都在用 agentic 工作流提升日常任务效率。但把 agentic 工作流与 MCP 结合，并非没有[安全风险](https://www.cloudflare.com/learning/ai/what-is-ai-security/)：从授权蔓延（authorization sprawl）、[prompt injection](https://www.cloudflare.com/learning/ai/prompt-injection/)，到[供应链风险](https://www.cloudflare.com/learning/security/what-is-a-supply-chain-attack/)。为了保障这种全公司范围的广泛采用，我们整合了 [Cloudflare One（SASE）平台](https://www.cloudflare.com/sase/)和 [Cloudflare 开发者平台](https://workers.cloudflare.com/)的一系列安全控制，让我们能在不拖慢员工的前提下治理 MCP 的 AI 使用。
 
@@ -21,7 +21,7 @@ Cloudflare 一直激进地把 [Model Context Protocol (MCP)](https://modelcontex
 
 [MCP](https://www.cloudflare.com/learning/ai/what-is-model-context-protocol-mcp/) 是一个开放标准，让开发者能在 AI 应用与其需要访问的数据源之间建立双向连接。在这个架构里，MCP client 是与 [LLM](https://www.cloudflare.com/learning/ai/what-is-large-language-model/) 或其他 [AI agent](https://www.cloudflare.com/learning/ai/what-is-agentic-ai/) 的集成点，MCP server 位于 MCP client 与企业资源之间。
 
-![MCP client、MCP server 与企业资源：client 是与 LLM 的集成点，server 持有企业资源的凭证与 API](images/cf-fig02.png)
+![MCP client、MCP server 与企业资源：client 是与 LLM 的集成点，server 持有企业资源的凭证与 API](../images/cf-fig02.png)
 
 MCP client 与 MCP server 的分离，让 agent 能自主追求目标、采取行动，同时在 AI（集成在 MCP client）与企业资源的凭证和 API（集成在 MCP server）之间维持清晰边界。
 
@@ -29,7 +29,7 @@ Cloudflare 的员工不断使用 MCP server 访问各种内部资源，包括项
 
 很早我们就意识到，本地托管的 MCP server 是一个安全负债。本地 MCP server 部署可能依赖未经审查的软件来源和版本，从而提高[供应链攻击](https://owasp.org/www-project-mcp-top-10/2025/MCP04-2025%E2%80%93Software-Supply-Chain-Attacks&Dependency-Tampering)或[工具注入攻击](https://owasp.org/www-community/attacks/MCP_Tool_Poisoning)的风险。它们让 IT 和安全管理员无法管理这些 server，只能由员工和开发者各自决定跑哪些 MCP server、怎么保持更新。这是一场必输的游戏。
 
-![本地托管的 MCP server：每个员工自己挑、自己更新，IT 无从管理](images/cf-fig03.png)
+![本地托管的 MCP server：每个员工自己挑、自己更新，IT 无从管理](../images/cf-fig03.png)
 
 相反，Cloudflare 有一个集中团队负责全企业的 MCP server 部署。这个团队在我们的 monorepo 内建了一个共享 MCP 平台，开箱即提供受治理的基础设施。当员工想通过 MCP 暴露某个内部资源时，先拿到我们 AI 治理团队的批准，然后复制模板、写工具定义、部署，同时免费继承默认拒绝的写控制（带审计日志）、自动生成的 [CI/CD 流水线](https://www.cloudflare.com/learning/serverless/glossary/what-is-ci-cd/)和[密钥管理](https://www.cloudflare.com/learning/security/glossary/secrets-management/)。这意味着起一个受治理的新 MCP server 只需几分钟脚手架。治理被烘进平台本身，这正是采用能迅速铺开的原因。
 
@@ -41,7 +41,7 @@ Cloudflare 的员工不断使用 MCP server 访问各种内部资源，包括项
 
 ## MCP server portals 集中发现与治理
 
-![MCP server portals 统一治理和控制所有 AI 活动](images/cf-fig04.png)
+![MCP server portals 统一治理和控制所有 AI 活动](../images/cf-fig04.png)
 
 *MCP server portals 统一治理和控制所有 AI 活动。*
 
@@ -107,7 +107,7 @@ async () => {
 
 还没完。我们把 [AI Gateway](https://www.cloudflare.com/developer-platform/products/ai-gateway/) 放在 MCP client 与 LLM 之间的连接上，接入我们的架构。这让我们能快速切换不同 LLM provider（避免厂商锁定），并执行成本控制（限制每个员工能烧掉的 token 数）。完整架构如下图。
 
-![完整架构：MCP client、位于 client 与 LLM 之间的 AI Gateway、MCP server portal、远程 MCP server、Cloudflare Access](images/cf-fig05.png)
+![完整架构：MCP client、位于 client 与 LLM 之间的 AI Gateway、MCP server portal、远程 MCP server、Cloudflare Access](../images/cf-fig05.png)
 
 ## Cloudflare Gateway 发现并阻断 shadow MCP
 

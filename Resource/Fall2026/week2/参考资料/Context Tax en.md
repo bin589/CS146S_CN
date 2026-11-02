@@ -10,7 +10,7 @@ Analysis of 2,451 agent sessions, 287,748 traced API calls, 201 manually audited
 
 *By Rogerio Chaves · August 2, 2026*
 
-![The Context Tax: When to Compact Your Coding Agent](images/cover.png)
+![The Context Tax: When to Compact Your Coding Agent](../images/cover.png)
 
 ## TL;DR
 
@@ -43,7 +43,7 @@ Luckily, I could now put a Claude to investigate the token spend of my other Cla
 
 Of the 2.25 billion tokens, **1.14 billion came from two subagents out of thirty-four**. They were both forked subagents, meaning they were spawned holding a full copy of the parent coordinator's conversation. Their briefing told them to execute one directive and *stop*, but they never did! One lived 10.7 hours and made 1,301 API calls, the other 8.7 hours and 595.
 
-![Token burn on the blowup day in 15-minute buckets, with the two forked subagents separated from everything else](images/fig01-timeline.png)
+![Token burn on the blowup day in 15-minute buckets, with the two forked subagents separated from everything else](../images/fig01-timeline.png)
 
 Three ordinary decisions multiplied into that. A fork starts at the parent's context size, so these two began at 523K and 304K tokens instead of the roughly 30,000 a fresh subagent gets. A long-lived worker only accumulates from there, and the first one peaked at 997,634 tokens, within 0.3% of the model's hard ceiling, and every lint, typecheck and test run is another API call that re-reads the whole window. That worker ran 1,112 bash commands. At its average context, one `pnpm test` cost about 568,000 tokens before the tests did anything.
 
@@ -53,7 +53,7 @@ None of the three is unreasonable on its own: forking preserves context that too
 
 So how does this scale in general? Across all 162 days of traces: by the time an agent's context first reaches size C, how many tokens has it spent getting there?
 
-![Cumulative tokens burned by the time an agent first reaches a given context size, log scale](images/fig02-cost.png)
+![Cumulative tokens burned by the time an agent first reaches a given context size, log scale](../images/fig02-cost.png)
 
 Reaching 100k of context costs a median of 1.4M tokens. Reaching 200k costs 9M. Reaching 800k costs 338M, which is 250 times the 100k figure for 8 times the window.
 
@@ -63,13 +63,13 @@ Why 2.5 and not plain quadratic? Quadratic is what you would get if each step ad
 
 Caching does not save you here either. Cache reads are indeed about 10x cheaper per token, but they were also 95% of everything the blowup day consumed: a cached token is still a token you buy again on every single step. Caching lowers the price of each re-read, and the 6x-per-doubling growth stays.
 
-![Tokens read per token of output, by context window](images/fig03-tax.png)
+![Tokens read per token of output, by context window](../images/fig03-tax.png)
 
 Dividing tokens read by tokens of output gives the tax rate directly, and the curve is a U rather than a slope: it bottoms out near 75k at 217 tokens read per token produced and reaches 2,290 to 1 at 900k. The left side of the U is interesting too: below about 50k the model has not accumulated enough to produce anything substantial, so tiny windows are wasteful as well. There is a floor and a ceiling, so "compact constantly" is not the answer either.
 
 Knowing your task does not help you predict the cost either: cost is window times step count, and step count is close to unpredictable.
 
-![Distribution of API calls per subagent directive, log axis](images/fig04-variance.png)
+![Distribution of API calls per subagent directive, log axis](../images/fig04-variance.png)
 
 Across 2,107 subagents, each handed exactly one directive, the median takes 20 API calls. The 90th percentile takes 72, the 99th takes 359, and the worst single agent took 1,545. The top 10% of agents account for half of all calls. You cannot look at a task and know which regime you are in, and whatever context you started that agent with gets multiplied by the answer.
 
@@ -79,7 +79,7 @@ Compaction is the escape valve: replace the conversation with a summary and keep
 
 Across **873 real compaction events** on my machine, a compaction lands the session at a median of 65,588 tokens, context then grows about 1,470 tokens per step, and for roughly 28 steps afterward the agent re-ingests context above its own steady-state rate, re-reading files and re-establishing state it used to just know. That last number is the measured price of losing the original context, and it is why compacting constantly fails.
 
-![Amortised cost per productive step versus compaction threshold](images/fig05-sweetspot.png)
+![Amortised cost per productive step versus compaction threshold](../images/fig05-sweetspot.png)
 
 Put the cycle together and cost per unit of real work is a bathtub with a steep left wall. The minimum sits at **220,000 tokens**, anything from 170k to 316k is within 10% of it, and below about 110k the whole thing stops working because rediscovery eats more steps than the cycle gives back.
 
@@ -101,7 +101,7 @@ So I ran an audit. I segmented the corpus into 3,036 runs, each spanning a sessi
 
 For each sampled run, an Opus judge got everything the agent had in front of it at that moment: the directive, any inherited summary (explicitly labelled as a lossy digest), a numbered inventory of every accumulated conversation item with its token count, and three sampled steps showing exactly what the agent had seen and what it did. Judges marked which items each step actually drew on. I computed the token fractions from their item lists rather than asking for a percentage, which keeps the number out of the judge's hands. **201 steps judged, 195 at medium or high confidence.** The full judging rubric, the packet format and every measured parameter are in the [companion paper](https://langwatch.ai/research/finding-the-optimal-context-window).
 
-![Median window size against the context in actual use and the minimum the step needed](images/fig06-divergence.png)
+![Median window size against the context in actual use and the minimum the step needed](../images/fig06-divergence.png)
 
 The window across bands grows 16.6x, from a median 38,886 tokens to 644,962. The part the judges marked as actually used goes from 7,949 tokens to 8,452, which is to say it does not go anywhere. Their estimate of the minimum that would have sufficed for the same step sits near 1,500 tokens in every band but the largest.
 
@@ -109,7 +109,7 @@ As a share, the context in use falls from **47.5% below 50k to 2.5% above 600k**
 
 The obvious objection is task mix, since different work has different memory demands.
 
-![Share of carried context still in use, by context band and kind of work](images/fig07-bycut.png)
+![Share of carried context still in use, by context band and kind of work](../images/fig07-bycut.png)
 
 The decay shows up in all five, and the differences between them are interpretable. Code understanding holds value longest, still 18% at 150k to 350k, because reading is cumulative and each file read stays relevant to the explanation being assembled. QA and PR driving decay fastest, because each browser check or review reply is a closed loop whose result supersedes its inputs.
 
@@ -119,7 +119,7 @@ One caveat governs that chart. In my usage the kind of work and the window size 
 
 Heavy users tend to believe the raw original conversation is worth more than any digest of it, and that this is exactly what compaction destroys. So for every step, the judges were asked whether the verbatim form of older context was doing work a summary would not capture.
 
-![Share of steps where verbatim context was needed, a summary would do, or nothing old was needed, by kind of work](images/fig08-verbatim.png)
+![Share of steps where verbatim context was needed, a summary would do, or nothing old was needed, by kind of work](../images/fig08-verbatim.png)
 
 **28 of 195 steps, 14%, genuinely needed the verbatim old context.** The cases cluster hard around copying exact strings. An edit whose search text has to match a previously read file character for character needs the verbatim read. A restart command reusing literal connection strings from 390 items earlier needs the verbatim command. Where the dependency was a decision, a constraint or a finding rather than a literal, a summary carried it fine. In one case at 622k the single old fact the step depended on reached it through a hand-written digest, which is about as direct a counterexample as the data offers.
 
@@ -139,7 +139,7 @@ My own experience also kept challenging these numbers. I compact at 500k to 600k
 
 So: two proxies over 128,853 observations from 700 transcripts. The rate at which tool calls come back as errors, and the rate at which my own messages contain a correction, detected by phrase match. Both measured against how many steps had passed since the last compaction, which keeps the comparison inside a single session and broadly controls for how hard the task was.
 
-![Share of user messages containing a correction, by steps since the last compaction](images/fig09-dip.png)
+![Share of user messages containing a correction, by steps since the last compaction](../images/fig09-dip.png)
 
 In the five steps after a compaction, **41.9% of my messages contain a correction against a steady-state baseline of 17.7%**. That is 2.37x, it stays elevated for at least 30 steps, and it has not fully recovered by 120. Over the same window the tool-error rate is flat at 2.6% to 3.2%: the calls still work, the decisions behind them got worse.
 
@@ -147,7 +147,7 @@ Measuring the compaction event itself explains why. Across those 873 compactions
 
 Compaction frequency then compounds it. A 30-step disruption inside a 105-step cycle, which is what a 220k threshold gives you, means **about 29% of all your steps happen inside the post-compaction fog**. At a 577k threshold the cycle is 348 steps and the figure drops to 9%. Compacting often does not just cost rediscovery, it keeps putting you back in the worst part of the cycle.
 
-![Cost-optimal threshold as a function of how many steps of real work one compaction destroys](images/fig10-hedge.png)
+![Cost-optimal threshold as a function of how many steps of real work one compaction destroys](../images/fig10-hedge.png)
 
 So the optimum depends almost entirely on one hard-to-measure parameter: how many steps of real work a single compaction destroys.
 
@@ -172,7 +172,7 @@ So I re-ran the same model, this time charging a compaction 55 steps of lost wor
 
 The floor at 146k is the more interesting number though. A compaction drops you to about 66k, and context grows by roughly 1,470 tokens a step, so setting the threshold at 146k buys you 55 steps before the next compaction is due. If each compaction costs you 55 steps of degraded work, you spend the whole cycle recovering from the one that started it and never get a clean step out of it. Compacting more often than that buys nothing at all.
 
-![Cost per unit of real work against compaction threshold, with compaction priced for the decision damage it causes](images/fig11-wheretocompact.png)
+![Cost per unit of real work against compaction threshold, with compaction priced for the decision damage it causes](../images/fig11-wheretocompact.png)
 
 ## Where it lands
 

@@ -38,7 +38,7 @@ While this was the most general change we could make and Claude even seemed to b
 
 ### Attempt #3 - The AskUserQuestion Tool
 
-![AskUserQuestion tool in the Claude Code terminal: tabs for Paradigm, Theme, Snacks, Indentation, Submit; the question "Which programming paradigm do you prefer for this project?" with numbered options Functional, Object-Oriented, Procedural, Mixed, Type something, Chat about this.](images/askuserquestion-terminal.jpg)
+![AskUserQuestion tool in the Claude Code terminal: tabs for Paradigm, Theme, Snacks, Indentation, Submit; the question "Which programming paradigm do you prefer for this project?" with numbered options Functional, Object-Oriented, Procedural, Mixed, Type something, Chat about this.](../images/askuserquestion-terminal.jpg)
 
 Finally, we landed on creating a tool that Claude could call at any point, but it was particularly prompted to do so during plan mode. When the tool triggered we would show a modal to display the questions and block the agent's loop until the user answered.
 
@@ -48,7 +48,7 @@ Most importantly, Claude seemed to like calling this tool and we found its outpu
 
 Is this the final form of elicitation in Claude Code? We're not sure. As you'll see in the next example, what works for one model may not be the best for another.
 
-![Finding the sweet spot: a spectrum from "no structure" to "too rigid". Modified markdown output sits near no structure (model free but messy, hard to format); an ExitPlanTool parameter sits near too rigid (plan already formed, questions come too late); the AskUserQuestion tool is in the middle (structured + composable, clear UI surface).](images/finding-the-sweet-spot.jpg)
+![Finding the sweet spot: a spectrum from "no structure" to "too rigid". Modified markdown output sits near no structure (model free but messy, hard to format); an ExitPlanTool parameter sits near too rigid (plan already formed, questions come too late); the AskUserQuestion tool is in the middle (structured + composable, clear UI surface).](../images/finding-the-sweet-spot.jpg)
 
 ## Updating with Capabilities - Tasks & Todos
 
@@ -60,7 +60,7 @@ But as models improved, they not only did not need to be reminded of the Todo Li
 
 Seeing this, we replaced TodoWrite with the [Task Tool](https://x.com/trq212/status/2014480496013803643) (read more on Tasks there). Whereas Todos were about keeping the model on track, Tasks were more about helping agents communicate with each other. Tasks could include dependencies, share updates across subagents and the model could alter and delete them.
 
-![From todos to tasks: a single agent with a checklist (set up project, write tests, implement feature, deploy) becomes Agent A and Agent B sharing tasks with dependencies — Task 1 and Task 2 done, feeding Task 3 in progress, then Task 4.](images/from-todos-to-tasks.jpg)
+![From todos to tasks: a single agent with a checklist (set up project, write tests, implement feature, deploy) becomes Agent A and Agent B sharing tasks with dependencies — Task 1 and Task 2 done, feeding Task 3 in progress, then Task 4.](../images/from-todos-to-tasks.jpg)
 
 As model capabilities increase, the tools that your models once needed might now be constraining them. It's important to constantly revisit previous assumptions on what tools are needed. This is also why it's useful to stick to a small set of models to support that have a fairly similar capabilities profile.
 

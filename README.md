@@ -19,8 +19,8 @@
 **Reading**
 
 - [Building a Coding Agent](https://youtube.com/watch?v=s7ZzkdvCMDY)
-- [Lessons from Building Claude Code](./Resource/Fall2026/week1/Seeing%20like%20an%20Agent%20en.md) · [Original](https://x.com/trq212/status/2027463795355095314?s=20)
-- [Dive into Claude Code](./Resource/Fall2026/week1/%20深入剖析%20Claude%20Code%20en.pdf) · [Original](https://arxiv.org/pdf/2604.14228)
+- [Lessons from Building Claude Code](./Resource/Fall2026/week1/参考资料/Seeing%20like%20an%20Agent%20en.md) · [Original](https://x.com/trq212/status/2027463795355095314?s=20)
+- [Dive into Claude Code](./Resource/Fall2026/week1/参考资料/%20深入剖析%20Claude%20Code%20en.pdf) · [Original](https://arxiv.org/pdf/2604.14228)
 
 **Sessions**
 
@@ -38,10 +38,10 @@
 
 **Reading**
 
-- [The Context Tax: When to Compact](./Resource/Fall2026/week2/Context%20Tax%20en.md) · [Original](https://langwatch.ai/blog/context-tax-when-to-compact)
+- [The Context Tax: When to Compact](./Resource/Fall2026/week2/参考资料/Context%20Tax%20en.md) · [Original](https://langwatch.ai/blog/context-tax-when-to-compact)
 - [OpenSpec](./Resource/Fall2026/week2/PPT引用外链/OpenSpec%20en.md) · [Original](https://openspec.dev)
 - [Superpowers](./Resource/Fall2026/week2/PPT引用外链/Superpowers%20en.md) · [Original](https://github.com/obra/superpowers)
-- [Enterprise MCP (Cloudflare)](./Resource/Fall2026/week2/Enterprise%20MCP%20en.md) · [Original](https://blog.cloudflare.com/enterprise-mcp)
+- [Enterprise MCP (Cloudflare)](./Resource/Fall2026/week2/参考资料/Enterprise%20MCP%20en.md) · [Original](https://blog.cloudflare.com/enterprise-mcp)
 
 **Sessions**
 
@@ -77,10 +77,10 @@
 
 **Reading**
 
-- [I Still Prefer MCP Over Skills](./Resource/Fall2026/week4/I%20Still%20Prefer%20MCP%20Over%20Skills%20en.md) · [Original](https://david.coffee/i-still-prefer-mcp-over-skills)
-- [AGENTS.md (Factory Docs)](./Resource/Fall2026/week4/Factory%20AGENTS.md%20en.md) · [Original](https://docs.factory.com/harness/agents-md)
-- [Steering Claude Code: Skills, Hooks, Rules, Subagents, and More](./Resource/Fall2026/week4/Steering%20Claude%20Code%20en.md) · [Original](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more)
-- [Writing a Good CLAUDE.md](./Resource/Fall2026/week4/Writing%20a%20Good%20CLAUDE.md%20en.md) · [Original](https://hlyr.dev/blog/writing-a-good-claude-md)
+- [I Still Prefer MCP Over Skills](./Resource/Fall2026/week4/参考资料/I%20Still%20Prefer%20MCP%20Over%20Skills%20en.md) · [Original](https://david.coffee/i-still-prefer-mcp-over-skills)
+- [AGENTS.md (Factory Docs)](./Resource/Fall2026/week4/参考资料/Factory%20AGENTS.md%20en.md) · [Original](https://docs.factory.com/harness/agents-md)
+- [Steering Claude Code: Skills, Hooks, Rules, Subagents, and More](./Resource/Fall2026/week4/参考资料/Steering%20Claude%20Code%20en.md) · [Original](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more)
+- [Writing a Good CLAUDE.md](./Resource/Fall2026/week4/参考资料/Writing%20a%20Good%20CLAUDE.md%20en.md) · [Original](https://hlyr.dev/blog/writing-a-good-claude-md)
 
 **Sessions**
 
@@ -97,8 +97,8 @@
 
 **Reading**
 
-- [Making Codebases Agent Ready](./Resource/Fall2026/week5/Making%20Codebases%20Agent%20Ready%20en.md) · [Original](https://www.youtube.com/watch?v=ShuJ_CN6zr4)
-- [Making Ergonomic Repositories](./Resource/Fall2026/week5/Making%20Ergonomic%20Repositories%20en.md) · [Original](https://x.com/trybasis/status/2056881705269580023)
+- [Making Codebases Agent Ready](./Resource/Fall2026/week5/参考资料/Making%20Codebases%20Agent%20Ready%20en.md) · [Original](https://www.youtube.com/watch?v=ShuJ_CN6zr4)
+- [Making Ergonomic Repositories](./Resource/Fall2026/week5/参考资料/Making%20Ergonomic%20Repositories%20en.md) · [Original](https://x.com/trybasis/status/2056881705269580023)
 
 **Sessions**
 
@@ -116,7 +116,7 @@
 **Reading**
 
 - [Layered Code Review and Risk-Based Human Oversight](./Resource/Fall2026/week6/PPT引用外链/Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20en.md) · [Original](https://x.com/addyosmani/status/2114604912520921136)
-- [Coordinating Specialist Review Agents at Scale](./Resource/Fall2026/week6/Coordinating%20Specialist%20Review%20Agents%20at%20Scale%20en.md) · [Original](https://blog.cloudflare.com/ai-code-review)
+- [Coordinating Specialist Review Agents at Scale](./Resource/Fall2026/week6/参考资料/Coordinating%20Specialist%20Review%20Agents%20at%20Scale%20en.md) · [Original](https://blog.cloudflare.com/ai-code-review)
 - [Beyond the Diff: Context, Testing, and Model Selection](./Resource/Fall2026/week6/PPT引用外链/Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20en.md) · [Original](https://greptile.com/blog/how-to-build-a-code-review-agent)
 
 **Sessions**

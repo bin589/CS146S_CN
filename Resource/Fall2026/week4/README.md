@@ -5,14 +5,16 @@
 
 幻灯片、嘉宾博客首页及中文译文的对照表见 [Fall 2026 课程资料索引](../README.md)。
 
-## 阅读材料
+## 参考资料
+
+> 与 PPT 重叠的篇目只存放在 `PPT引用外链/`，本表直接链过去。本周大纲阅读均未与 PPT 外链重复。
 
 | # | 主题 | 原文 | 英文存档 | 中文翻译 |
 |---|---|---|---|---|
-| 1 | 仍然更喜欢 MCP 而不是 Skills | [david.coffee](https://david.coffee/i-still-prefer-mcp-over-skills) | [en.md](./I%20Still%20Prefer%20MCP%20Over%20Skills%20en.md) | [zh.md](./仍然更喜欢MCP而不是Skills.md) |
-| 2 | Factory 的 AGENTS.md 文档 | [docs.factory.com](https://docs.factory.com/harness/agents-md) | [en.md](./Factory%20AGENTS.md%20en.md) | [zh.md](./Factory的AGENTS-md.md) |
-| 3 | 驾驭 Claude Code | [claude.com](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more) | [en.md](./Steering%20Claude%20Code%20en.md) | [zh.md](./驾驭Claude-Code.md) |
-| 4 | 写好一份 CLAUDE.md | [hlyr.dev](https://hlyr.dev/blog/writing-a-good-claude-md) | [en.md](./Writing%20a%20Good%20CLAUDE.md%20en.md) | [zh.md](./写好一份CLAUDE-md.md) |
+| 1 | 仍然更喜欢 MCP 而不是 Skills | [david.coffee](https://david.coffee/i-still-prefer-mcp-over-skills) | [en.md](./参考资料/I%20Still%20Prefer%20MCP%20Over%20Skills%20en.md) | [zh.md](./参考资料/仍然更喜欢MCP而不是Skills.md) |
+| 2 | Factory 的 AGENTS.md 文档 | [docs.factory.com](https://docs.factory.com/harness/agents-md) | [en.md](./参考资料/Factory%20AGENTS.md%20en.md) | [zh.md](./参考资料/Factory的AGENTS-md.md) |
+| 3 | 驾驭 Claude Code | [claude.com](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more) | [en.md](./参考资料/Steering%20Claude%20Code%20en.md) | [zh.md](./参考资料/驾驭Claude-Code.md) |
+| 4 | 写好一份 CLAUDE.md | [hlyr.dev](https://hlyr.dev/blog/writing-a-good-claude-md) | [en.md](./参考资料/Writing%20a%20Good%20CLAUDE.md%20en.md) | [zh.md](./参考资料/写好一份CLAUDE-md.md) |
 
 ## 各篇要点
 

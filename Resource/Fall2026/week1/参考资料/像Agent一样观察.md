@@ -39,7 +39,7 @@ Claude 当然可以用纯文本提问，但我们发现回答这些问题会不�
 
 ### 尝试 3 —— AskUserQuestion 工具
 
-![Claude Code 终端里的 AskUserQuestion 工具：顶部有 Paradigm、Theme、Snacks、Indentation、Submit 标签页，问题是「Which programming paradigm do you prefer for this project?」，下面是编号选项 Functional、Object-Oriented、Procedural、Mixed、Type something、Chat about this。](images/askuserquestion-terminal.jpg)
+![Claude Code 终端里的 AskUserQuestion 工具：顶部有 Paradigm、Theme、Snacks、Indentation、Submit 标签页，问题是「Which programming paradigm do you prefer for this project?」，下面是编号选项 Functional、Object-Oriented、Procedural、Mixed、Type something、Chat about this。](../images/askuserquestion-terminal.jpg)
 
 最终我们落到了一个专用工具：Claude 可以在任意时刻调用它，但在 plan mode 下会被特别提示去调用。工具触发时，我们弹出一个 modal 展示问题，并阻塞 agent 循环，直到用户作答。
 
@@ -49,7 +49,7 @@ Claude 当然可以用纯文本提问，但我们发现回答这些问题会不�
 
 这是 Claude Code 里 elicitation 的最终形态吗？我们不确定。下一个例子会说明：对某个模型有效的做法，对另一个模型未必最好。
 
-![找到甜点区：一条从「无结构」到「过于僵硬」的谱系。修改版 markdown 输出靠近「无结构」（模型自由但凌乱、难以格式化）；ExitPlanTool 参数靠近「过于僵硬」（plan 已经成形，问题来得太晚）；AskUserQuestion 工具位于中间（结构化、可组合、有清晰的 UI 表面）。](images/finding-the-sweet-spot.jpg)
+![找到甜点区：一条从「无结构」到「过于僵硬」的谱系。修改版 markdown 输出靠近「无结构」（模型自由但凌乱、难以格式化）；ExitPlanTool 参数靠近「过于僵硬」（plan 已经成形，问题来得太晚）；AskUserQuestion 工具位于中间（结构化、可组合、有清晰的 UI 表面）。](../images/finding-the-sweet-spot.jpg)
 
 ## 随能力演进 —— 从 Todos 到 Tasks
 
@@ -61,7 +61,7 @@ Claude Code 刚发布时，我们意识到模型需要一个 Todo 列表，以�
 
 看到这些，我们用 [Task 工具](https://x.com/trq212/status/2014480496013803643)取代了 TodoWrite（关于 Tasks 可以读那篇）。Todo 的重点是让模型保持在轨道上，而 Task 的重点是帮助多个 agent 彼此沟通。Task 可以带依赖关系、在 subagent 之间共享更新，模型还可以修改和删除它们。
 
-![从 todos 到 tasks：左侧是单个 agent 配一张清单（建项目、写测试、实现功能、部署）；箭头标注「models improve」指向右侧，Agent A 与 Agent B 共享带依赖的任务——Task 1、Task 2 已完成并汇入进行中的 Task 3，之后是 Task 4。](images/from-todos-to-tasks.jpg)
+![从 todos 到 tasks：左侧是单个 agent 配一张清单（建项目、写测试、实现功能、部署）；箭头标注「models improve」指向右侧，Agent A 与 Agent B 共享带依赖的任务——Task 1、Task 2 已完成并汇入进行中的 Task 3，之后是 Task 4。](../images/from-todos-to-tasks.jpg)
 
 随着模型能力提升，模型曾经需要的工具，如今可能正在约束它们。持续重新审视「到底需要哪些工具」的旧假设很重要。这也是为什么最好只支持一小批能力画像相近的模型。
 

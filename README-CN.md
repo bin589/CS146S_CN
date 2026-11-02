@@ -19,8 +19,8 @@
 **阅读（Reading）**
 
 - [Building a Coding Agent](https://youtube.com/watch?v=s7ZzkdvCMDY)
-- [Lessons from Building Claude Code](./Resource/Fall2026/week1/像Agent一样观察.md) · [原文](https://x.com/trq212/status/2027463795355095314?s=20)
-- [Dive into Claude Code](./Resource/Fall2026/week1/深入剖析Claude-Code.md) · [原文](https://arxiv.org/pdf/2604.14228)
+- [Lessons from Building Claude Code](./Resource/Fall2026/week1/参考资料/像Agent一样观察.md) · [原文](https://x.com/trq212/status/2027463795355095314?s=20)
+- [Dive into Claude Code](./Resource/Fall2026/week1/参考资料/深入剖析Claude-Code.md) · [原文](https://arxiv.org/pdf/2604.14228)
 
 **课时（Sessions）**
 
@@ -38,10 +38,10 @@
 
 **阅读（Reading）**
 
-- [The Context Tax: When to Compact](./Resource/Fall2026/week2/上下文税.md) · [原文](https://langwatch.ai/blog/context-tax-when-to-compact)
+- [The Context Tax: When to Compact](./Resource/Fall2026/week2/参考资料/上下文税.md) · [原文](https://langwatch.ai/blog/context-tax-when-to-compact)
 - [OpenSpec](./Resource/Fall2026/week2/PPT引用外链/OpenSpec中文.md) · [原文](https://openspec.dev)
 - [Superpowers](./Resource/Fall2026/week2/PPT引用外链/Superpowers中文.md) · [原文](https://github.com/obra/superpowers)
-- [Enterprise MCP (Cloudflare)](./Resource/Fall2026/week2/企业级MCP.md) · [原文](https://blog.cloudflare.com/enterprise-mcp)
+- [Enterprise MCP (Cloudflare)](./Resource/Fall2026/week2/参考资料/企业级MCP.md) · [原文](https://blog.cloudflare.com/enterprise-mcp)
 
 **课时（Sessions）**
 
@@ -77,10 +77,10 @@
 
 **阅读（Reading）**
 
-- [I Still Prefer MCP Over Skills](./Resource/Fall2026/week4/仍然更喜欢MCP而不是Skills.md) · [原文](https://david.coffee/i-still-prefer-mcp-over-skills)
-- [AGENTS.md (Factory Docs)](./Resource/Fall2026/week4/Factory的AGENTS-md.md) · [原文](https://docs.factory.com/harness/agents-md)
-- [Steering Claude Code: Skills, Hooks, Rules, Subagents, and More](./Resource/Fall2026/week4/驾驭Claude-Code.md) · [原文](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more)
-- [Writing a Good CLAUDE.md](./Resource/Fall2026/week4/写好一份CLAUDE-md.md) · [原文](https://hlyr.dev/blog/writing-a-good-claude-md)
+- [I Still Prefer MCP Over Skills](./Resource/Fall2026/week4/参考资料/仍然更喜欢MCP而不是Skills.md) · [原文](https://david.coffee/i-still-prefer-mcp-over-skills)
+- [AGENTS.md (Factory Docs)](./Resource/Fall2026/week4/参考资料/Factory的AGENTS-md.md) · [原文](https://docs.factory.com/harness/agents-md)
+- [Steering Claude Code: Skills, Hooks, Rules, Subagents, and More](./Resource/Fall2026/week4/参考资料/驾驭Claude-Code.md) · [原文](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more)
+- [Writing a Good CLAUDE.md](./Resource/Fall2026/week4/参考资料/写好一份CLAUDE-md.md) · [原文](https://hlyr.dev/blog/writing-a-good-claude-md)
 
 **课时（Sessions）**
 
@@ -97,8 +97,8 @@
 
 **阅读（Reading）**
 
-- [Making Codebases Agent Ready](./Resource/Fall2026/week5/让代码库为Agent做好准备.md) · [原文](https://www.youtube.com/watch?v=ShuJ_CN6zr4)
-- [Making Ergonomic Repositories](./Resource/Fall2026/week5/让仓库对Agent更顺手.md) · [原文](https://x.com/trybasis/status/2056881705269580023)
+- [Making Codebases Agent Ready](./Resource/Fall2026/week5/参考资料/让代码库为Agent做好准备.md) · [原文](https://www.youtube.com/watch?v=ShuJ_CN6zr4)
+- [Making Ergonomic Repositories](./Resource/Fall2026/week5/参考资料/让仓库对Agent更顺手.md) · [原文](https://x.com/trybasis/status/2056881705269580023)
 
 **课时（Sessions）**
 
@@ -116,7 +116,7 @@
 **阅读（Reading）**
 
 - [Layered Code Review and Risk-Based Human Oversight](./Resource/Fall2026/week6/PPT引用外链/分层代码审查与按风险的人类把关.md) · [原文](https://x.com/addyosmani/status/2114604912520921136)
-- [Coordinating Specialist Review Agents at Scale](./Resource/Fall2026/week6/大规模协调专项审查Agent.md) · [原文](https://blog.cloudflare.com/ai-code-review)
+- [Coordinating Specialist Review Agents at Scale](./Resource/Fall2026/week6/参考资料/大规模协调专项审查Agent.md) · [原文](https://blog.cloudflare.com/ai-code-review)
 - [Beyond the Diff: Context, Testing, and Model Selection](./Resource/Fall2026/week6/PPT引用外链/超越Diff：上下文测试与模型选择.md) · [原文](https://greptile.com/blog/how-to-build-a-code-review-agent)
 
 **课时（Sessions）**

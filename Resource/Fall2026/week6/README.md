@@ -5,12 +5,14 @@
 
 幻灯片、嘉宾个人主页及中文译文的对照表见 [Fall 2026 课程资料索引](../README.md)。
 
-## 阅读材料
+## 参考资料
+
+> 与 PPT 重叠的篇目只存放在 `PPT引用外链/`，本表直接链过去。
 
 | # | 主题 | 原文 | 英文存档 | 中文翻译 |
 |---|---|---|---|---|
 | 1 | 分层代码审查与按风险的人类把关 | [x.com/addyosmani](https://x.com/addyosmani/status/2114604912520921136) | [en.md](./PPT引用外链/Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20en.md) | [zh.md](./PPT引用外链/分层代码审查与按风险的人类把关.md) |
-| 2 | 大规模协调专项审查 Agent | [blog.cloudflare.com](https://blog.cloudflare.com/ai-code-review) | [en.md](./Coordinating%20Specialist%20Review%20Agents%20at%20Scale%20en.md) | [zh.md](./大规模协调专项审查Agent.md) |
+| 2 | 大规模协调专项审查 Agent | [blog.cloudflare.com](https://blog.cloudflare.com/ai-code-review) | [en.md](./参考资料/Coordinating%20Specialist%20Review%20Agents%20at%20Scale%20en.md) | [zh.md](./参考资料/大规模协调专项审查Agent.md) |
 | 3 | 超越 Diff：上下文、测试与模型选择 | [greptile.com](https://greptile.com/blog/how-to-build-a-code-review-agent) | [en.md](./PPT引用外链/Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20en.md) | [zh.md](./PPT引用外链/超越Diff：上下文测试与模型选择.md) |
 
 ## 各篇要点

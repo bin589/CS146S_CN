@@ -5,12 +5,14 @@
 
 幻灯片、LinkedIn 公开页及中文译文的对照表见 [Fall 2026 课程资料索引](../README.md)。
 
-## 阅读材料
+## 参考资料
+
+> 与 PPT 重叠的篇目只存放在 `PPT引用外链/`，本表直接链过去。本周大纲阅读均未与 PPT 外链重复。
 
 | # | 主题 | 原文 | 英文存档 | 中文翻译 |
 |---|---|---|---|---|
-| 1 | 让代码库为 Agent 做好准备 | [YouTube](https://www.youtube.com/watch?v=ShuJ_CN6zr4) | [元数据条目](./Making%20Codebases%20Agent%20Ready%20en.md) | [中文条目](./让代码库为Agent做好准备.md) |
-| 2 | 让 Monorepo 对 Agent 更顺手 | [x.com/trybasis](https://x.com/trybasis/status/2056881705269580023) | [en.md](./Making%20Ergonomic%20Repositories%20en.md) | [zh.md](./让仓库对Agent更顺手.md) |
+| 1 | 让代码库为 Agent 做好准备 | [YouTube](https://www.youtube.com/watch?v=ShuJ_CN6zr4) | [元数据条目](./参考资料/Making%20Codebases%20Agent%20Ready%20en.md) | [中文条目](./参考资料/让代码库为Agent做好准备.md) |
+| 2 | 让 Monorepo 对 Agent 更顺手 | [x.com/trybasis](https://x.com/trybasis/status/2056881705269580023) | [en.md](./参考资料/Making%20Ergonomic%20Repositories%20en.md) | [zh.md](./参考资料/让仓库对Agent更顺手.md) |
 
 ## 各篇要点
 

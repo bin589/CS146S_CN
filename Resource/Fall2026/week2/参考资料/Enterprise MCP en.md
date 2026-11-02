@@ -4,7 +4,7 @@
 > 原文：<https://blog.cloudflare.com/enterprise-mcp/>（2026-04-14 发布，2026-07-15 更新）
 > 抓取时间：2026-10-22
 
-![MCP and the Cloudflare platform](images/cf-fig01.png)
+![MCP and the Cloudflare platform](../images/cf-fig01.png)
 
 We at Cloudflare have aggressively adopted [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) as a core part of our AI strategy. This shift has moved well beyond our engineering organization, with employees across product, sales, marketing, and finance teams now using agentic workflows to drive efficiency in their daily tasks. But the adoption of agentic workflow with MCP is not without its [security risks](https://www.cloudflare.com/learning/ai/what-is-ai-security/). These range from authorization sprawl, [prompt injection](https://www.cloudflare.com/learning/ai/prompt-injection/), and [supply chain risks](https://www.cloudflare.com/learning/security/what-is-a-supply-chain-attack/). To secure this broad company-wide adoption, we have integrated a suite of security controls from both our [Cloudflare One (SASE) platform](https://www.cloudflare.com/sase/) and our [Cloudflare Developer platform](https://workers.cloudflare.com/), allowing us to govern AI usage with MCP without slowing down our workforce.
 
@@ -19,7 +19,7 @@ We also talk about how our organization approached deploying MCP, and how we bui
 
 [MCP](https://www.cloudflare.com/learning/ai/what-is-model-context-protocol-mcp/) is an open standard that enables developers to build a two-way connection between AI applications and the data sources they need to access. In this architecture, the MCP client is the integration point with the [LLM](https://www.cloudflare.com/learning/ai/what-is-large-language-model/) or other [AI agent](https://www.cloudflare.com/learning/ai/what-is-agentic-ai/), and the MCP server sits between the MCP client and the corporate resources.
 
-![MCP client, MCP server and corporate resources: the client is the integration point with the LLM, the server holds the credentials and APIs of the corporate resource](images/cf-fig02.png)
+![MCP client, MCP server and corporate resources: the client is the integration point with the LLM, the server holds the credentials and APIs of the corporate resource](../images/cf-fig02.png)
 
 The separation between MCP clients and MCP servers allows agents to autonomously pursue goals and take actions while maintaining a clear boundary between the AI (integrated at the MCP client) and the credentials and APIs of the corporate resource (integrated at the MCP server).
 
@@ -27,7 +27,7 @@ Our workforce at Cloudflare is constantly using MCP servers to access informatio
 
 Very early on, we realized that locally-hosted MCP servers were a security liability. Local MCP server deployments may rely on unvetted software sources and versions, which increases the risk of [supply chain attacks](https://owasp.org/www-project-mcp-top-10/2025/MCP04-2025%E2%80%93Software-Supply-Chain-Attacks&Dependency-Tampering) or [tool injection attacks](https://owasp.org/www-community/attacks/MCP_Tool_Poisoning). They prevent IT and security administrators from administrating these servers, leaving it up to individual employees and developers to choose which MCP servers they want to run and how they want to keep them up to date. This is a losing game.
 
-![Locally hosted MCP servers: each employee picks and updates their own servers, IT has no administration](images/cf-fig03.png)
+![Locally hosted MCP servers: each employee picks and updates their own servers, IT has no administration](../images/cf-fig03.png)
 
 Instead, we have a centralized team at Cloudflare that manages our MCP server deployment across the enterprise. This team built a shared MCP platform inside our monorepo that provides governed infrastructure out of the box. When an employee wants to expose an internal resource via MCP, they first get approval from our AI governance team, and then they copy a template, write their tool definitions, and deploy, all the while inheriting default-deny write controls with audit logging, auto-generated [CI/CD pipelines](https://www.cloudflare.com/learning/serverless/glossary/what-is-ci-cd/), and [secrets management](https://www.cloudflare.com/learning/security/glossary/secrets-management/) for free. This means standing up a new governed MCP server is minutes of scaffolding. The governance is baked into the platform itself, which is what allowed adoption to spread so quickly.
 
@@ -39,7 +39,7 @@ Some of our MCP servers sit in front of public resources, like our [Cloudflare d
 
 ## MCP server portals centralize discovery and governance
 
-![MCP server portals unify governance and control for all AI activity](images/cf-fig04.png)
+![MCP server portals unify governance and control for all AI activity](../images/cf-fig04.png)
 
 *MCP server portals unify governance and control for all AI activity.*
 
@@ -105,7 +105,7 @@ Code Mode can be activated on an MCP server portal by adding a query parameter t
 
 We aren't done yet. We plug [AI Gateway](https://www.cloudflare.com/developer-platform/products/ai-gateway/) into our architecture by positioning it on the connection between the MCP client and the LLM. This allows us to quickly switch between various LLM providers (to prevent vendor lock-in) and to enforce cost controls (by limiting the number of tokens each employee can burn through). The full architecture is shown below.
 
-![Full architecture: MCP client, AI Gateway between client and LLM, MCP server portal, remote MCP servers, Cloudflare Access](images/cf-fig05.png)
+![Full architecture: MCP client, AI Gateway between client and LLM, MCP server portal, remote MCP servers, Cloudflare Access](../images/cf-fig05.png)
 
 ## Cloudflare Gateway discovers and blocks shadow MCP
 

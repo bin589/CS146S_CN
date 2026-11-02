@@ -1,6 +1,6 @@
 # Fall 2026 · 前六周课程资料
 
-对应根目录 [README 教学大纲](../../README.md#fall-2026进行中内容以官网发布为准)。第 1–3 周只收了**课程安排**列（抓取日期 **2026-10-22**），不包括当时“主题与要点”列的阅读材料；已有的 week1、week2 阅读材料保留不动。第 4–5 周同时收了课程安排和阅读材料，抓取日期 **2026-10-27**。第 6 周同时收了课程安排和阅读材料，抓取日期 **2026-10-29**。
+对应根目录 [README 教学大纲](../../README.md#fall-2026进行中内容以官网发布为准)。第 1–3 周只收了**课程安排**列（抓取日期 **2026-10-22**），不包括当时“主题与要点”列的阅读材料；已有的 week1、week2 参考资料已归入各周 `参考资料/`（与 PPT 重叠者在 `PPT引用外链/`）。第 4–5 周同时收了课程安排和阅读材料，抓取日期 **2026-10-27**。第 6 周同时收了课程安排和阅读材料，抓取日期 **2026-10-29**。
 
 ## 课程资料
 
@@ -35,33 +35,49 @@
 
 **10/29 说明**：课程安排仅链接 [Silas Alberti 个人主页](https://sil.as/)。本地归档是公开主页可读文本与 HTML 快照，不应当作嘉宾课堂讲义。大纲与 10/27 幻灯片将其写作 Chief Research Officer @ Cognition；公开主页正文未重复该职称，归档不把页外信息回填进主页文本。
 
-## 第 4 周阅读
+## 第 1 周参考资料
 
 | # | 主题 | 原文 | 英文存档 | 中文翻译 |
 |---|---|---|---|---|
-| 1 | 仍然更喜欢 MCP 而不是 Skills | [david.coffee](https://david.coffee/i-still-prefer-mcp-over-skills) | [en.md](week4/I%20Still%20Prefer%20MCP%20Over%20Skills%20en.md) | [zh.md](week4/仍然更喜欢MCP而不是Skills.md) |
-| 2 | Factory 的 AGENTS.md 文档 | [docs.factory.com](https://docs.factory.com/harness/agents-md) | [en.md](week4/Factory%20AGENTS.md%20en.md) | [zh.md](week4/Factory的AGENTS-md.md) |
-| 3 | 驾驭 Claude Code | [claude.com](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more) | [en.md](week4/Steering%20Claude%20Code%20en.md) | [zh.md](week4/驾驭Claude-Code.md) |
-| 4 | 写好一份 CLAUDE.md | [hlyr.dev](https://hlyr.dev/blog/writing-a-good-claude-md) | [en.md](week4/Writing%20a%20Good%20CLAUDE.md%20en.md) | [zh.md](week4/写好一份CLAUDE-md.md) |
+| 1 | 像 Agent 一样观察 | [x.com/trq212](https://x.com/trq212/status/2027463795355095314?s=20) | [en.md](week1/参考资料/Seeing%20like%20an%20Agent%20en.md) | [zh.md](week1/参考资料/像Agent一样观察.md) |
+| 2 | 深入剖析 Claude Code | [arxiv.org](https://arxiv.org/pdf/2604.14228) | [PDF](week1/参考资料/%20深入剖析%20Claude%20Code%20en.pdf) | [zh.md](week1/参考资料/深入剖析Claude-Code.md) |
 
-## 第 5 周阅读
+## 第 2 周参考资料
 
 | # | 主题 | 原文 | 英文存档 | 中文翻译 |
 |---|---|---|---|---|
-| 1 | 让代码库为 Agent 做好准备（视频） | [YouTube](https://www.youtube.com/watch?v=ShuJ_CN6zr4) | [元数据条目](week5/Making%20Codebases%20Agent%20Ready%20en.md) | [中文条目](week5/让代码库为Agent做好准备.md) |
-| 2 | 让仓库对 Agent 更顺手（X Article） | [x.com/trybasis](https://x.com/trybasis/status/2056881705269580023) | [en.md](week5/Making%20Ergonomic%20Repositories%20en.md) | [zh.md](week5/让仓库对Agent更顺手.md) |
+| 1 | 上下文税：何时压缩上下文 | [langwatch.ai](https://langwatch.ai/blog/context-tax-when-to-compact) | [en.md](week2/参考资料/Context%20Tax%20en.md) | [zh.md](week2/参考资料/上下文税.md) |
+| 2 | OpenSpec（与 PPT 重叠，见 PPT引用外链） | [openspec.dev](https://openspec.dev/) | [en.md](week2/PPT引用外链/OpenSpec%20en.md) | [zh.md](week2/PPT引用外链/OpenSpec中文.md) |
+| 3 | Superpowers（与 PPT 重叠） | [github.com/obra/superpowers](https://github.com/obra/superpowers) | [en.md](week2/PPT引用外链/Superpowers%20en.md) | [zh.md](week2/PPT引用外链/Superpowers中文.md) |
+| 4 | 企业级 MCP | [blog.cloudflare.com](https://blog.cloudflare.com/enterprise-mcp) | [en.md](week2/参考资料/Enterprise%20MCP%20en.md) | [zh.md](week2/参考资料/企业级MCP.md) |
+
+## 第 4 周参考资料
+
+| # | 主题 | 原文 | 英文存档 | 中文翻译 |
+|---|---|---|---|---|
+| 1 | 仍然更喜欢 MCP 而不是 Skills | [david.coffee](https://david.coffee/i-still-prefer-mcp-over-skills) | [en.md](week4/参考资料/I%20Still%20Prefer%20MCP%20Over%20Skills%20en.md) | [zh.md](week4/参考资料/仍然更喜欢MCP而不是Skills.md) |
+| 2 | Factory 的 AGENTS.md 文档 | [docs.factory.com](https://docs.factory.com/harness/agents-md) | [en.md](week4/参考资料/Factory%20AGENTS.md%20en.md) | [zh.md](week4/参考资料/Factory的AGENTS-md.md) |
+| 3 | 驾驭 Claude Code | [claude.com](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more) | [en.md](week4/参考资料/Steering%20Claude%20Code%20en.md) | [zh.md](week4/参考资料/驾驭Claude-Code.md) |
+| 4 | 写好一份 CLAUDE.md | [hlyr.dev](https://hlyr.dev/blog/writing-a-good-claude-md) | [en.md](week4/参考资料/Writing%20a%20Good%20CLAUDE.md%20en.md) | [zh.md](week4/参考资料/写好一份CLAUDE-md.md) |
+
+## 第 5 周参考资料
+
+| # | 主题 | 原文 | 英文存档 | 中文翻译 |
+|---|---|---|---|---|
+| 1 | 让代码库为 Agent 做好准备（视频） | [YouTube](https://www.youtube.com/watch?v=ShuJ_CN6zr4) | [元数据条目](week5/参考资料/Making%20Codebases%20Agent%20Ready%20en.md) | [中文条目](week5/参考资料/让代码库为Agent做好准备.md) |
+| 2 | 让仓库对 Agent 更顺手（X Article） | [x.com/trybasis](https://x.com/trybasis/status/2056881705269580023) | [en.md](week5/参考资料/Making%20Ergonomic%20Repositories%20en.md) | [zh.md](week5/参考资料/让仓库对Agent更顺手.md) |
 
 视频没有下载文件。X 帖子的公开页面只露出标题；文章正文来自同一 status 的公开 FxTwitter 聚合，原文三张图未下载。详见 [week4/README.md](week4/README.md) 与 [week5/README.md](week5/README.md)。
 
-## 第 6 周阅读
+## 第 6 周参考资料
 
 | # | 主题 | 原文 | 英文存档 | 中文翻译 |
 |---|---|---|---|---|
-| 1 | 分层代码审查与按风险的人类把关（X Article） | [x.com/addyosmani](https://x.com/addyosmani/status/2114604912520921136) | [en.md](week6/PPT引用外链/Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20en.md) | [zh.md](week6/PPT引用外链/分层代码审查与按风险的人类把关.md) |
-| 2 | 大规模协调专项审查 Agent | [blog.cloudflare.com](https://blog.cloudflare.com/ai-code-review) | [en.md](week6/Coordinating%20Specialist%20Review%20Agents%20at%20Scale%20en.md) | [zh.md](week6/大规模协调专项审查Agent.md) |
-| 3 | 超越 Diff：上下文、测试与模型选择 | [greptile.com](https://greptile.com/blog/how-to-build-a-code-review-agent) | [en.md](week6/PPT引用外链/Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20en.md) | [zh.md](week6/PPT引用外链/超越Diff：上下文测试与模型选择.md) |
+| 1 | 分层代码审查与按风险的人类把关（X Article；与 PPT 重叠） | [x.com/addyosmani](https://x.com/addyosmani/status/2114604912520921136) | [en.md](week6/PPT引用外链/Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20en.md) | [zh.md](week6/PPT引用外链/分层代码审查与按风险的人类把关.md) |
+| 2 | 大规模协调专项审查 Agent | [blog.cloudflare.com](https://blog.cloudflare.com/ai-code-review) | [en.md](week6/参考资料/Coordinating%20Specialist%20Review%20Agents%20at%20Scale%20en.md) | [zh.md](week6/参考资料/大规模协调专项审查Agent.md) |
+| 3 | 超越 Diff：上下文、测试与模型选择（与 PPT 重叠） | [greptile.com](https://greptile.com/blog/how-to-build-a-code-review-agent) | [en.md](week6/PPT引用外链/Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20en.md) | [zh.md](week6/PPT引用外链/超越Diff：上下文测试与模型选择.md) |
 
-X Article 公开页面几乎无正文；文章文字来自同一 status 的公开 FxTwitter 聚合，附图未下载。Cloudflare / Greptile 博文图未下载。详见 [week6/README.md](week6/README.md)。
+X Article 公开页面几乎无正文；文章文字来自同一 status 的公开 FxTwitter 聚合，附图未下载。Cloudflare / Greptile 博文图未下载。与 PPT 重叠的篇目只放在 `PPT引用外链/`。详见 [week6/README.md](week6/README.md)。
 
 ## 9/24 提示词
 
@@ -102,7 +118,7 @@ Google Drive 文件夹原名为 `9_28_26-skills`；此处按照 README 中 10/1 
 - [week5/README.md](week5/README.md) · [week5/PPT引用外链/](week5/PPT引用外链/)
 - [week6/README.md](week6/README.md) · [week6/PPT引用外链/](week6/PPT引用外链/)
 
-约定：短链（`agents.md` / `skills.md` / `claude.md` 等）解析落地页后归档；重复引用只在最早周存一份并交叉链接；YouTube 仅元数据；GitHub 只归档 README／关键文件落地页；产品首页为快照。大纲阅读材料仍放在各周根目录，不迁入该子目录。**未**抓取 `week1/深入剖析 Claude Code en.pdf` 的参考文献表。Markdown 译文与快照为本地衍生资料，不写入 [course-schedule-sources.json](course-schedule-sources.json)。
+约定：短链（`agents.md` / `skills.md` / `claude.md` 等）解析落地页后归档；重复引用只在最早周存一份并交叉链接；YouTube 仅元数据；GitHub 只归档 README／关键文件落地页；产品首页为快照。各周外链分两目录：`PPT引用外链/`（PPT 引用，含与大纲重叠篇目）与 `参考资料/`（仅大纲／配套阅读）。**未**抓取 `week1/参考资料/深入剖析 Claude Code en.pdf` 的参考文献表。Markdown 译文与快照为本地衍生资料，不写入 [course-schedule-sources.json](course-schedule-sources.json)。
 
 ## 格式、来源与版权
 
