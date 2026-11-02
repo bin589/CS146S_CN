@@ -90,6 +90,20 @@ Google Drive 文件夹原名为 `9_28_26-skills`；此处按照 README 中 10/1 
 | research-codebase | [SKILL.md](week2/1001-skills/research-codebase/SKILL.md) | [SKILL中文.md](week2/1001-skills/research-codebase/SKILL中文.md) |
 | review | [SKILL.md](week2/1001-skills/review/SKILL.md) | [SKILL中文.md](week2/1001-skills/review/SKILL中文.md) |
 
+
+## PPT 引用外链归档（week1–6）
+
+8 份英文 PPTX 中的超链接与讲者备注外链，已按周做**英文可读存档 + 中文整理**（2026-11-02）。索引表见各周 README：
+
+- [week1/README.md](week1/README.md)
+- [week2/README.md](week2/README.md)
+- [week3/README.md](week3/README.md)
+- [week4/README.md](week4/README.md)
+- [week5/README.md](week5/README.md)
+- [week6/README.md](week6/README.md)
+
+约定：短链（`agents.md` / `skills.md` / `claude.md` 等）解析落地页后归档；重复引用只在最早周存一份并交叉链接；YouTube 仅元数据；GitHub 只归档 README／关键文件落地页；产品首页为快照。**未**抓取 `week1/深入剖析 Claude Code en.pdf` 的参考文献表。Markdown 译文与快照为本地衍生资料，不写入 [course-schedule-sources.json](course-schedule-sources.json)。
+
 ## 格式、来源与版权
 
 - 幻灯片保留 Google Slides 导出的英文 PPTX，中文版采用逐页 Markdown，以便在仓库中直接阅读。图片仍保留原图，图内英文的中文对照见对应页；代码、命令、标识符和 URL 不翻译。

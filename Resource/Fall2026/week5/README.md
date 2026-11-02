@@ -21,3 +21,29 @@
 
 - 10/20、10/22 的课堂转写在 `themodernsoftware.dev/materials/` 对应路径上返回 404。
 - LinkedIn 未登录页面不包含完整履历。公开页职位字段被打码；大纲中的 “CTO @ Factory” 没有写回那一栏。动态流里他人的转发和点赞留在 HTML 快照中，不当作讲稿。
+
+## PPT 引用外链归档
+
+> 抓取时间：2026-11-02。仅归档 week1–6 **PPTX** 超链接／讲者备注中的外链（英文存档 + 中文整理）；**不含** `深入剖析 Claude Code en.pdf` 文献表。YouTube 只记元数据；GitHub 不整库克隆；产品首页为可读快照。
+
+| 主题 | 原文 URL | 英文存档 | 中文版 | 来自哪份 PPT |
+|---|---|---|---|---|
+| AGENTS-md规范站点 | [agents.md](http://agents.md) | [AGENTS-md规范站点 en.md](../week1/AGENTS-md规范站点%20en.md) | [AGENTS-md规范站点.md](../week1/AGENTS-md规范站点.md) | `1020-agent-readiness` |
+| Factory对Next.js的就绪度演示 | [app.factory.ai/analytics/readiness/https%253A%252F%252Fgithu](https://app.factory.ai/analytics/readiness/https%253A%252F%252Fgithub.com%252Fvercel%252Fnext.js) | [Factory Next.js readiness demo en.md](./Factory%20Next.js%20readiness%20demo%20en.md) | [Factory对Next.js的就绪度演示.md](./Factory对Next.js的就绪度演示.md) | `1020-agent-readiness` |
+| Claude-Code-Agent团队 | [code.claude.com/docs/en/agent-teams](https://code.claude.com/docs/en/agent-teams) | [Claude Code Agent Teams en.md](./Claude%20Code%20Agent%20Teams%20en.md) | [Claude-Code-Agent团队.md](./Claude-Code-Agent团队.md) | `1020-agent-readiness` |
+| Claude-Code网页版 | [code.claude.com/docs/en/claude-code-on-the-web](https://code.claude.com/docs/en/claude-code-on-the-web) | [Claude Code on the Web en.md](./Claude%20Code%20on%20the%20Web%20en.md) | [Claude-Code网页版.md](./Claude-Code网页版.md) | `1020-agent-readiness` |
+| Claude-Code-GitHub-Actions | [code.claude.com/docs/en/github-actions](https://code.claude.com/docs/en/github-actions) | [Claude Code GitHub Actions en.md](./Claude%20Code%20GitHub%20Actions%20en.md) | [Claude-Code-GitHub-Actions.md](./Claude-Code-GitHub-Actions.md) | `1020-agent-readiness` |
+| Claude-Code与Slack | [code.claude.com/docs/en/slack](https://code.claude.com/docs/en/slack) | [Claude Code in Slack en.md](./Claude%20Code%20in%20Slack%20en.md) | [Claude-Code与Slack.md](./Claude-Code与Slack.md) | `1020-agent-readiness` |
+| Devin-Review博客 | [cognition.ai/blog/devin-review](https://cognition.ai/blog/devin-review) | [Devin Review Cognition blog en.md](./Devin%20Review%20Cognition%20blog%20en.md) | [Devin-Review博客.md](./Devin-Review博客.md) | `1020-agent-readiness` |
+| Cursor-Worktrees文档 | [cursor.com/docs/configuration/worktrees](https://cursor.com/docs/configuration/worktrees) | [Cursor Worktrees docs en.md](./Cursor%20Worktrees%20docs%20en.md) | [Cursor-Worktrees文档.md](./Cursor-Worktrees文档.md) | `1020-agent-readiness` |
+| OpenAI-Codex-Cloud | [developers.openai.com/codex/cloud/](https://developers.openai.com/codex/cloud/) | [OpenAI Codex Cloud en.md](./OpenAI%20Codex%20Cloud%20en.md) | [OpenAI-Codex-Cloud.md](./OpenAI-Codex-Cloud.md) | `1020-agent-readiness` |
+| OpenAI-Codex与Slack集成 | [developers.openai.com/codex/integrations/slack/](https://developers.openai.com/codex/integrations/slack/) | [OpenAI Codex Slack integration en.md](./OpenAI%20Codex%20Slack%20integration%20en.md) | [OpenAI-Codex与Slack集成.md](./OpenAI-Codex与Slack集成.md) | `1020-agent-readiness` |
+| Devin官网 | [devin.ai/](https://devin.ai/) | [Devin homepage en.md](./Devin%20homepage%20en.md) | [Devin官网.md](./Devin官网.md) | `1020-agent-readiness` |
+| Ramp自建后台Agent-Inspect | [engineering.ramp.com/post/why-we-built-our-background-agent](https://engineering.ramp.com/post/why-we-built-our-background-agent) | [Ramp Inspect background agent en.md](./Ramp%20Inspect%20background%20agent%20en.md) | [Ramp自建后台Agent-Inspect.md](./Ramp自建后台Agent-Inspect.md) | `1020-agent-readiness` |
+| Factory-Agent就绪度报告页 | [factory.ai/agent-readiness](https://factory.ai/agent-readiness) | [Factory Agent Readiness Reports en.md](./Factory%20Agent%20Readiness%20Reports%20en.md) | [Factory-Agent就绪度报告页.md](./Factory-Agent就绪度报告页.md) | `1020-agent-readiness` |
+| Factory-Agent就绪度新闻 | [factory.ai/news/agent-readiness](https://factory.ai/news/agent-readiness) | [Factory Agent Readiness news en.md](./Factory%20Agent%20Readiness%20news%20en.md) | [Factory-Agent就绪度新闻.md](./Factory-Agent就绪度新闻.md) | `1020-agent-readiness` |
+| kodustech-agent-readiness仓库 | [github.com/kodustech/agent-readiness](https://github.com/kodustech/agent-readiness) | [kodustech-agent-readiness仓库 en.md](./kodustech-agent-readiness仓库%20en.md) | [kodustech-agent-readiness仓库.md](./kodustech-agent-readiness仓库.md) | `1020-agent-readiness` |
+| Graphite官网 | [graphite.com/](https://graphite.com/) | [Graphite homepage en.md](./Graphite%20homepage%20en.md) | [Graphite官网.md](./Graphite官网.md) | `1020-agent-readiness` |
+| Cyrus官网 | [www.atcyrus.com/](https://www.atcyrus.com/) | [Cyrus homepage en.md](./Cyrus%20homepage%20en.md) | [Cyrus官网.md](./Cyrus官网.md) | `1020-agent-readiness` |
+| Conductor官网 | [www.conductor.build/](https://www.conductor.build/) | [Conductor homepage en.md](./Conductor%20homepage%20en.md) | [Conductor官网.md](./Conductor官网.md) | `1020-agent-readiness` |
+| Alvin-Sng关于Factory-CI的帖子 | [x.com/alvinsng/status/2030056110317818206?s=20](https://x.com/alvinsng/status/2030056110317818206?s=20) | [Alvin Sng Factory CI X post en.md](./Alvin%20Sng%20Factory%20CI%20X%20post%20en.md) | [Alvin-Sng关于Factory-CI的帖子.md](./Alvin-Sng关于Factory-CI的帖子.md) | `1020-agent-readiness` |

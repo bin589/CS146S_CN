@@ -23,3 +23,18 @@
 
 - 10/27、10/29 的课堂转写在 `themodernsoftware.dev/materials/` 对应路径（`10-27-26-transcript.txt`、`10-29-26-transcript.txt` 及邻近命名）上返回 404。
 - Silas Alberti 的个人站只收了公开主页可读文本与 HTML 快照，不应当作嘉宾课堂讲义；未递归下载项目页。大纲职称 **Chief Research Officer @ Cognition** 以课程首页 JS 为准（幻灯片第 2 页同此）；公开主页正文未重复写出该职称，归档不把页外信息回填进主页文本。
+
+## PPT 引用外链归档
+
+> 抓取时间：2026-11-02。仅归档 week1–6 **PPTX** 超链接／讲者备注中的外链（英文存档 + 中文整理）；**不含** `深入剖析 Claude Code en.pdf` 文献表。YouTube 只记元数据；GitHub 不整库克隆；产品首页为可读快照。
+
+| 主题 | 原文 URL | 英文存档 | 中文版 | 来自哪份 PPT |
+|---|---|---|---|---|
+| 代码审查要点-Blake-Smith | [blakesmith.me/2015/02/09/code-review-essentials-for-software](https://blakesmith.me/2015/02/09/code-review-essentials-for-software-teams.html) | [Code Review Essentials Blake Smith en.md](./Code%20Review%20Essentials%20Blake%20Smith%20en.md) | [代码审查要点-Blake-Smith.md](./代码审查要点-Blake-Smith.md) | `1027-agentic-code-review` |
+| Cloudflare内部AI工程栈 | [blog.cloudflare.com/internal-ai-engineering-stack/](https://blog.cloudflare.com/internal-ai-engineering-stack/) | [Cloudflare Internal AI Engineering Stack en.md](./Cloudflare%20Internal%20AI%20Engineering%20Stack%20en.md) | [Cloudflare内部AI工程栈.md](./Cloudflare内部AI工程栈.md) | `1027-agentic-code-review` |
+| vercel-labs-deepsec仓库 | [github.com/vercel-labs/deepsec](https://github.com/vercel-labs/deepsec) | [vercel-labs-deepsec仓库 en.md](./vercel-labs-deepsec仓库%20en.md) | [vercel-labs-deepsec仓库.md](./vercel-labs-deepsec仓库.md) | `1027-agentic-code-review` |
+| Semgrep官网 | [semgrep.dev/](https://semgrep.dev/) | [Semgrep homepage en.md](./Semgrep%20homepage%20en.md) | [Semgrep官网.md](./Semgrep官网.md) | `1027-agentic-code-review` |
+| Augment-Cosmos代码审查 | [www.augmentcode.com/blog/solving-code-review-with-cosmos](https://www.augmentcode.com/blog/solving-code-review-with-cosmos) | [Augment Cosmos code review en.md](./Augment%20Cosmos%20code%20review%20en.md) | [Augment-Cosmos代码审查.md](./Augment-Cosmos代码审查.md) | `1027-agentic-code-review` |
+| 超越Diff：上下文测试与模型选择（已有阅读材料） | [www.greptile.com/blog/how-to-build-a-code-review-agent](https://www.greptile.com/blog/how-to-build-a-code-review-agent) | [Beyond the Diff Context Testing and Model Selection en.md](./Beyond%20the%20Diff%20Context%20Testing%20and%20Model%20Selection%20en.md) | [超越Diff：上下文测试与模型选择.md](./超越Diff：上下文测试与模型选择.md) | `1027-agentic-code-review` |
+| Wiz官网 | [www.wiz.io/](https://www.wiz.io/) | [Wiz homepage en.md](./Wiz%20homepage%20en.md) | [Wiz官网.md](./Wiz官网.md) | `1027-agentic-code-review` |
+| 分层代码审查与按风险的人类把关（已有阅读材料） | [x.com/addyosmani/status/2114604912520921136?s=43](https://x.com/addyosmani/status/2114604912520921136?s=43) | [Layered Code Review and Risk-Based Human Oversight en.md](./Layered%20Code%20Review%20and%20Risk-Based%20Human%20Oversight%20en.md) | [分层代码审查与按风险的人类把关.md](./分层代码审查与按风险的人类把关.md) | `1027-agentic-code-review` |

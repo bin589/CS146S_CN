@@ -25,3 +25,24 @@
 
 - 10/13、10/15 的课堂转写在 `themodernsoftware.dev/materials/` 对应路径上返回 404，课程首页也没有替代链接。
 - Boris Cherny 的博客只收了首页索引，没有下载各篇文章正文。
+
+## PPT 引用外链归档
+
+> 抓取时间：2026-11-02。仅归档 week1–6 **PPTX** 超链接／讲者备注中的外链（英文存档 + 中文整理）；**不含** `深入剖析 Claude Code en.pdf` 文献表。YouTube 只记元数据；GitHub 不整库克隆；产品首页为可读快照。
+
+| 主题 | 原文 URL | 英文存档 | 中文版 | 来自哪份 PPT |
+|---|---|---|---|---|
+| AGENTS-md规范站点 | [agents.md](http://agents.md) | [AGENTS-md规范站点 en.md](../week1/AGENTS-md规范站点%20en.md) | [AGENTS-md规范站点.md](../week1/AGENTS-md规范站点.md) | `1013-agent-config` |
+| api-gateway-md短链说明 | [api-gateway.md](http://api-gateway.md) | [api-gateway-md短链说明 en.md](./api-gateway-md短链说明%20en.md) | [api-gateway-md短链说明.md](./api-gateway-md短链说明.md) | `1013-agent-config` |
+| Claude-md短链落地页 | [claude.md](http://claude.md) | [Claude-md短链落地页 en.md](../week1/Claude-md短链落地页%20en.md) | [Claude-md短链落地页.md](../week1/Claude-md短链落地页.md) | `1013-agent-config` |
+| Arize-Phoenix-MCP服务器 | [arize.com/docs/phoenix/integrations/phoenix-mcp-server](https://arize.com/docs/phoenix/integrations/phoenix-mcp-server) | [Arize Phoenix MCP Server en.md](./Arize%20Phoenix%20MCP%20Server%20en.md) | [Arize-Phoenix-MCP服务器.md](./Arize-Phoenix-MCP服务器.md) | `1013-agent-config` |
+| AWS-Redshift-MCP服务器 | [awslabs.github.io/mcp/servers/redshift-mcp-server](https://awslabs.github.io/mcp/servers/redshift-mcp-server) | [AWS Redshift MCP Server en.md](./AWS%20Redshift%20MCP%20Server%20en.md) | [AWS-Redshift-MCP服务器.md](./AWS-Redshift-MCP服务器.md) | `1013-agent-config` |
+| Notion-MCP | [developers.notion.com/guides/mcp/mcp](https://developers.notion.com/guides/mcp/mcp) | [Notion MCP en.md](./Notion%20MCP%20en.md) | [Notion-MCP.md](./Notion-MCP.md) | `1013-agent-config` |
+| Datadog-Bits-AI-MCP服务器 | [docs.datadoghq.com/bits_ai/mcp_server/](https://docs.datadoghq.com/bits_ai/mcp_server/) | [Datadog Bits AI MCP Server en.md](./Datadog%20Bits%20AI%20MCP%20Server%20en.md) | [Datadog-Bits-AI-MCP服务器.md](./Datadog-Bits-AI-MCP服务器.md) | `1013-agent-config` |
+| Sentry-MCP | [docs.sentry.io/product/sentry-mcp/](https://docs.sentry.io/product/sentry-mcp/) | [Sentry MCP en.md](./Sentry%20MCP%20en.md) | [Sentry-MCP.md](./Sentry-MCP.md) | `1013-agent-config` |
+| upstash-context7仓库 | [github.com/upstash/context7](https://github.com/upstash/context7) | [upstash-context7仓库 en.md](./upstash-context7仓库%20en.md) | [upstash-context7仓库.md](./upstash-context7仓库.md) | `1013-agent-config` |
+| next.js的AGENTS-md | [github.com/vercel/next.js/blob/canary/AGENTS.md](https://github.com/vercel/next.js/blob/canary/AGENTS.md) | [next.js AGENTS.md en.md](./next.js%20AGENTS.md%20en.md) | [next.js的AGENTS-md.md](./next.js的AGENTS-md.md) | `1013-agent-config` |
+| Linear-MCP | [linear.app/docs/mcp](https://linear.app/docs/mcp) | [Linear MCP en.md](./Linear%20MCP%20en.md) | [Linear-MCP.md](./Linear-MCP.md) | `1013-agent-config` |
+| Atlassian远程MCP服务器 | [www.atlassian.com/blog/announcements/remote-mcp-server](https://www.atlassian.com/blog/announcements/remote-mcp-server) | [Atlassian Remote MCP Server en.md](./Atlassian%20Remote%20MCP%20Server%20en.md) | [Atlassian远程MCP服务器.md](./Atlassian远程MCP服务器.md) | `1013-agent-config` |
+| Boris-Cherny关于subagents的帖子 | [x.com/bcherny/status/2007179850139000872?s=20](https://x.com/bcherny/status/2007179850139000872?s=20) | [Boris Cherny subagents X post en.md](./Boris%20Cherny%20subagents%20X%20post%20en.md) | [Boris-Cherny关于subagents的帖子.md](./Boris-Cherny关于subagents的帖子.md) | `1013-agent-config` |
+| Boris-Cherny关于PostToolUse钩子的帖子 | [x.com/bcherny/status/2007179852047335529?s=20](https://x.com/bcherny/status/2007179852047335529?s=20) | [Boris Cherny PostToolUse hook X post en.md](./Boris%20Cherny%20PostToolUse%20hook%20X%20post%20en.md) | [Boris-Cherny关于PostToolUse钩子的帖子.md](./Boris-Cherny关于PostToolUse钩子的帖子.md) | `1013-agent-config` |

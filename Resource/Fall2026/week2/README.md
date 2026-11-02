@@ -33,3 +33,19 @@ week2/
 ├── Enterprise MCP en.md / 企业级MCP.md
 └── images/       文章配图（PNG）
 ```
+
+## PPT 引用外链归档
+
+> 抓取时间：2026-11-02。仅归档 week1–6 **PPTX** 超链接／讲者备注中的外链（英文存档 + 中文整理）；**不含** `深入剖析 Claude Code en.pdf` 文献表。YouTube 只记元数据；GitHub 不整库克隆；产品首页为可读快照。
+
+| 主题 | 原文 URL | 英文存档 | 中文版 | 来自哪份 PPT |
+|---|---|---|---|---|
+| AGENTS-md规范站点 | [agents.md](http://agents.md) | [AGENTS-md规范站点 en.md](../week1/AGENTS-md规范站点%20en.md) | [AGENTS-md规范站点.md](../week1/AGENTS-md规范站点.md) | `0929-context-engineering` |
+| Claude-md短链落地页 | [claude.md](http://claude.md) | [Claude-md短链落地页 en.md](../week1/Claude-md短链落地页%20en.md) | [Claude-md短链落地页.md](../week1/Claude-md短链落地页.md) | `0929-context-engineering` |
+| OpenSpec中文（已有阅读材料） | [github.com/Fission-AI/OpenSpec/](https://github.com/Fission-AI/OpenSpec/) | [OpenSpec en.md](./OpenSpec%20en.md) | [OpenSpec中文.md](./OpenSpec中文.md) | `0929-context-engineering` |
+| Superpowers中文（已有阅读材料） | [github.com/obra/superpowers](https://github.com/obra/superpowers) | [Superpowers en.md](./Superpowers%20en.md) | [Superpowers中文.md](./Superpowers中文.md) | `0929-context-engineering` |
+| 禁止纯感觉：复杂代码库中的上下文工程 | [www.youtube.com/watch?v=rmvDxxNubIg](https://www.youtube.com/watch?v=rmvDxxNubIg) | [No Vibes Allowed Context Engineering en.md](./No%20Vibes%20Allowed%20Context%20Engineering%20en.md) | [禁止纯感觉：复杂代码库中的上下文工程.md](./禁止纯感觉：复杂代码库中的上下文工程.md) | `0929-context-engineering` |
+| Skills-md规范站点 | [skills.md](http://skills.md) | [Skills-md规范站点 en.md](./Skills-md规范站点%20en.md) | [Skills-md规范站点.md](./Skills-md规范站点.md) | `1001-mcp-and-tools` |
+| Agent-Skills概览 | [agentskills.io/home](https://agentskills.io/home) | [Agent Skills Overview en.md](./Agent%20Skills%20Overview%20en.md) | [Agent-Skills概览.md](./Agent-Skills概览.md) | `1001-mcp-and-tools` |
+| anthropics-skills目录 | [github.com/anthropics/skills/tree/main/skills](https://github.com/anthropics/skills/tree/main/skills) | [anthropics-skills目录 en.md](./anthropics-skills目录%20en.md) | [anthropics-skills目录.md](./anthropics-skills目录.md) | `1001-mcp-and-tools` |
+| mattpocock-skills仓库 | [github.com/mattpocock/skills](https://github.com/mattpocock/skills) | [mattpocock-skills仓库 en.md](./mattpocock-skills仓库%20en.md) | [mattpocock-skills仓库.md](./mattpocock-skills仓库.md) | `1001-mcp-and-tools` |
