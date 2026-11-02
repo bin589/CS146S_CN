@@ -8,9 +8,9 @@
 
 | 主题 | 原文 URL | 英文存档 | 中文版 | 来自哪份 PPT |
 |---|---|---|---|---|
-| modern-software-dev-assignments仓库说明 | [github.com/mihail911/modern-software-dev-assignments](https://github.com/mihail911/modern-software-dev-assignments) | [modern-software-dev-assignments README en.md](./modern-software-dev-assignments%20README%20en.md) | [modern-software-dev-assignments仓库说明.md](./modern-software-dev-assignments仓库说明.md) | `0922-intro-and-coding-agent` |
-| 课程官网themodernsoftware | [themodernsoftware.dev](https://themodernsoftware.dev) | [课程官网 themodernsoftware en.md](./课程官网%20themodernsoftware%20en.md) | [课程官网themodernsoftware.md](./课程官网themodernsoftware.md) | `0922-intro-and-coding-agent` |
-| AGENTS-md规范站点 | [agents.md](http://agents.md) | [AGENTS-md规范站点 en.md](./AGENTS-md规范站点%20en.md) | [AGENTS-md规范站点.md](./AGENTS-md规范站点.md) | `0924-agent-harness` |
-| Claude-md短链落地页 | [claude.md](http://claude.md) | [Claude-md短链落地页 en.md](./Claude-md短链落地页%20en.md) | [Claude-md短链落地页.md](./Claude-md短链落地页.md) | `0924-agent-harness` |
-| Claude-md-AGENTS短链说明 | [claude.md/AGENTS.md](http://claude.md/AGENTS.md) | [Claude-md-AGENTS短链说明 en.md](./Claude-md-AGENTS短链说明%20en.md) | [Claude-md-AGENTS短链说明.md](./Claude-md-AGENTS短链说明.md) | `0924-agent-harness` |
-| xAI官网 | [x.ai](http://x.ai) | [xAI官网 en.md](./xAI官网%20en.md) | [xAI官网.md](./xAI官网.md) | `0924-agent-harness` |
+| modern-software-dev-assignments仓库说明 | [github.com/mihail911/modern-software-dev-assignments](https://github.com/mihail911/modern-software-dev-assignments) | [modern-software-dev-assignments README en.md](./PPT引用外链/modern-software-dev-assignments%20README%20en.md) | [modern-software-dev-assignments仓库说明.md](./PPT引用外链/modern-software-dev-assignments仓库说明.md) | `0922-intro-and-coding-agent` |
+| 课程官网themodernsoftware | [themodernsoftware.dev](https://themodernsoftware.dev) | [课程官网 themodernsoftware en.md](./PPT引用外链/课程官网%20themodernsoftware%20en.md) | [课程官网themodernsoftware.md](./PPT引用外链/课程官网themodernsoftware.md) | `0922-intro-and-coding-agent` |
+| AGENTS-md规范站点 | [agents.md](http://agents.md) | [AGENTS-md规范站点 en.md](./PPT引用外链/AGENTS-md规范站点%20en.md) | [AGENTS-md规范站点.md](./PPT引用外链/AGENTS-md规范站点.md) | `0924-agent-harness` |
+| Claude-md短链落地页 | [claude.md](http://claude.md) | [Claude-md短链落地页 en.md](./PPT引用外链/Claude-md短链落地页%20en.md) | [Claude-md短链落地页.md](./PPT引用外链/Claude-md短链落地页.md) | `0924-agent-harness` |
+| Claude-md-AGENTS短链说明 | [claude.md/AGENTS.md](http://claude.md/AGENTS.md) | [Claude-md-AGENTS短链说明 en.md](./PPT引用外链/Claude-md-AGENTS短链说明%20en.md) | [Claude-md-AGENTS短链说明.md](./PPT引用外链/Claude-md-AGENTS短链说明.md) | `0924-agent-harness` |
+| xAI官网 | [x.ai](http://x.ai) | [xAI官网 en.md](./PPT引用外链/xAI官网%20en.md) | [xAI官网.md](./PPT引用外链/xAI官网.md) | `0924-agent-harness` |

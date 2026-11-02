@@ -93,16 +93,16 @@ Google Drive 文件夹原名为 `9_28_26-skills`；此处按照 README 中 10/1 
 
 ## PPT 引用外链归档（week1–6）
 
-8 份英文 PPTX 中的超链接与讲者备注外链，已按周做**英文可读存档 + 中文整理**（2026-11-02）。索引表见各周 README：
+8 份英文 PPTX 中的超链接与讲者备注外链，已按周做**英文可读存档 + 中文整理**（2026-11-02）。归档 Markdown 放在各周的 [`PPT引用外链/`](week1/PPT引用外链/) 子目录；索引表见各周 README：
 
-- [week1/README.md](week1/README.md)
-- [week2/README.md](week2/README.md)
-- [week3/README.md](week3/README.md)
-- [week4/README.md](week4/README.md)
-- [week5/README.md](week5/README.md)
-- [week6/README.md](week6/README.md)
+- [week1/README.md](week1/README.md) · [week1/PPT引用外链/](week1/PPT引用外链/)
+- [week2/README.md](week2/README.md) · [week2/PPT引用外链/](week2/PPT引用外链/)
+- [week3/README.md](week3/README.md) · [week3/PPT引用外链/](week3/PPT引用外链/)
+- [week4/README.md](week4/README.md) · [week4/PPT引用外链/](week4/PPT引用外链/)
+- [week5/README.md](week5/README.md) · [week5/PPT引用外链/](week5/PPT引用外链/)
+- [week6/README.md](week6/README.md) · [week6/PPT引用外链/](week6/PPT引用外链/)
 
-约定：短链（`agents.md` / `skills.md` / `claude.md` 等）解析落地页后归档；重复引用只在最早周存一份并交叉链接；YouTube 仅元数据；GitHub 只归档 README／关键文件落地页；产品首页为快照。**未**抓取 `week1/深入剖析 Claude Code en.pdf` 的参考文献表。Markdown 译文与快照为本地衍生资料，不写入 [course-schedule-sources.json](course-schedule-sources.json)。
+约定：短链（`agents.md` / `skills.md` / `claude.md` 等）解析落地页后归档；重复引用只在最早周存一份并交叉链接；YouTube 仅元数据；GitHub 只归档 README／关键文件落地页；产品首页为快照。大纲阅读材料仍放在各周根目录，不迁入该子目录。**未**抓取 `week1/深入剖析 Claude Code en.pdf` 的参考文献表。Markdown 译文与快照为本地衍生资料，不写入 [course-schedule-sources.json](course-schedule-sources.json)。
 
 ## 格式、来源与版权
 

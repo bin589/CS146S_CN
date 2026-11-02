@@ -8,6 +8,6 @@
 
 | 主题 | 原文 URL | 英文存档 | 中文版 | 来自哪份 PPT |
 |---|---|---|---|---|
-| Skills-md规范站点 | [skills.md](http://skills.md) | [Skills-md规范站点 en.md](../week2/Skills-md规范站点%20en.md) | [Skills-md规范站点.md](../week2/Skills-md规范站点.md) | `1006-agent-skills` |
-| browse-sh技能目录 | [browse.sh/](https://browse.sh/) | [browse-sh技能目录 en.md](./browse-sh技能目录%20en.md) | [browse-sh技能目录.md](./browse-sh技能目录.md) | `1006-agent-skills` |
-| mattpocock-skills仓库 | [github.com/mattpocock/skills](https://github.com/mattpocock/skills) | [mattpocock-skills仓库 en.md](../week2/mattpocock-skills仓库%20en.md) | [mattpocock-skills仓库.md](../week2/mattpocock-skills仓库.md) | `1006-agent-skills` |
+| Skills-md规范站点 | [skills.md](http://skills.md) | [Skills-md规范站点 en.md](../week2/PPT引用外链/Skills-md规范站点%20en.md) | [Skills-md规范站点.md](../week2/PPT引用外链/Skills-md规范站点.md) | `1006-agent-skills` |
+| browse-sh技能目录 | [browse.sh/](https://browse.sh/) | [browse-sh技能目录 en.md](./PPT引用外链/browse-sh技能目录%20en.md) | [browse-sh技能目录.md](./PPT引用外链/browse-sh技能目录.md) | `1006-agent-skills` |
+| mattpocock-skills仓库 | [github.com/mattpocock/skills](https://github.com/mattpocock/skills) | [mattpocock-skills仓库 en.md](../week2/PPT引用外链/mattpocock-skills仓库%20en.md) | [mattpocock-skills仓库.md](../week2/PPT引用外链/mattpocock-skills仓库.md) | `1006-agent-skills` |
