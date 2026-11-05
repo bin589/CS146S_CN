@@ -134,7 +134,7 @@
 
 **课时（Sessions）**
 
-- **Tue 11/3:** AI 代码库中的安全
+- **Tue 11/3:** 不上课（民主日！）
 - **Thu 11/5:** [嘉宾：Isaac Evans（CEO @ Semgrep）](https://www.linkedin.com/in/isaacevans)
 
 ### 第 8 周：后台 Agent

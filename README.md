@@ -134,7 +134,7 @@
 
 **Sessions**
 
-- **Tue 11/3:** Security in AI codebases
+- **Tue 11/3:** No Class (Democracy Day!)
 - **Thu 11/5:** [Guest: Isaac Evans (CEO @ Semgrep)](https://www.linkedin.com/in/isaacevans)
 
 ### Week 8: Background Agents
